@@ -1,0 +1,19 @@
+# Screenshot
+"scrot ~/Pictures/screenshots/%Y-%m-%d-%H-%M-%S.png"
+  m:0x10 + c:107
+  Mod2 + Print
+
+# Increase Volume
+"amixer set Master 5%+"
+  m:0x4 + c:96
+  Control + F12
+
+# Decrease Volume
+"amixer set Master 5%-"
+  m:0x4 + c:95
+  Control + F11
+
+# Launch xkill
+"xkill"
+  m:0x50 + c:53
+  Mod2 + Mod4 + x

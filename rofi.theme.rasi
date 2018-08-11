@@ -1,0 +1,45 @@
+* {
+  text-color: #eff1f5;
+  text-color-alt: #c0c5ce;
+  background-color: #404552;
+  background-color-alt: #2b303b;
+  font: "Ubuntu Mono 12";
+}
+
+#window {
+  anchor: south west;
+  children: [horibox];
+  height: 24px;
+  location: south west;
+  width: 1000px;
+  x-offset: 33px;
+}
+
+#horibox {
+  children: [prompt, entry, listview];
+  orientation: horizontal;
+}
+
+#prompt {
+  background-color: @background-color-alt;
+  padding: 3px 0 0 2px;
+}
+
+#entry {
+  background-color: @background-color-alt;
+  expand: false;
+  margin: 0 0 0 -2px;
+  padding: 3px 0 0 1px;
+  text-color: @text-color-alt;
+  width: 10em;
+}
+
+#listview {
+  cycle: true;
+  layout: vertical;
+  padding: 3px 0 0 0;
+}
+
+#element {
+  padding: 0px 5px;
+}

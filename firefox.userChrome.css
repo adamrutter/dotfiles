@@ -1,0 +1,155 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Accent colour */
+
+:root {
+  --accent-color: #55b166;
+  /* --accent-color: #d99f21; */
+}
+
+/* Toolbar buttons */
+
+.toolbarbutton-1 {
+  --toolbarbutton-active-background: var(--accent-color) !important;
+}
+
+/* URL bar focused */
+
+#urlbar[focused="true"] {
+  box-shadow: inset 0 1px var(--accent-color), inset -1px 0 var(--accent-color), inset 0 -1px var(--accent-color), inset 1px 0 var(--accent-color) !important;
+}
+
+/* Unsure */
+
+#urlbar-reload-button:hover:not([disabled]) {
+  /* color: var(--accent-color) !important; */
+  color: red !important;
+}
+
+/* Popup status panel; on hover over URL, page loading etc */
+
+.statuspanel-label {
+  background-color: var(--accent-color) !important;
+  border: none !important;
+}
+
+/*  Tab loading animation in tab */
+
+.tab-throbber {
+  filter: grayscale(100%);
+}
+
+/* Find dialog */
+
+.findbar-button:-moz-any([checked="true"], :hover:active):not([disabled="true"]) > .toolbarbutton-text {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+.browserContainer > findbar .findbar-textbox[focused="true"] {
+  box-shadow: inset 0 1px var(--accent-color), inset -1px 0 var(--accent-color), inset 0 -1px var(--accent-color), inset 1px 0 var(--accent-color) !important;
+}
+
+.browserContainer > findbar .findbar-find-previous:active:not([disabled]), .browserContainer > findbar .findbar-find-next:active:not([disabled]) {
+  background-color: var(--accent-color) !important;
+}
+
+/* URL bar dropdown menu */
+
+.ac-url-text,
+.ac-action-text,
+.ac-separator{
+  color: var(--accent-color) !important;
+}
+
+.ac-url-text[selected=true],
+.ac-action-text[selected=true],
+.ac-separator[selected=true] {
+  color: white !important;
+}
+
+/* Bookmarks menu */
+
+#BMB_bookmarksPopup menuseparator,
+#BMB_viewBookmarksSidebar,
+#BMB_bookmarksShowAllTop,
+#BMB_recentBookmarks,
+#BMB_pocket,
+#BMB_unsortedBookmarks,
+#BMB_bookmarksToolbar,
+#BMB_bookmarksPopup > menu[label="Recent Tags"],
+#BMB_bookmarksPopup menuitem[simulated-places-node="true"] {
+  display: none !important;
+}
+
+.autorepeatbutton-up,
+.autorepeatbutton-down {
+  border: none !important;
+}
+
+/* Text links; for pop-ups etc */
+
+.text-link {
+  color: var(--accent-color) !important;
+}
+
+/* Tab loading burst animation */
+
+.tab-loading-burst {
+  display: none !important;
+}
+
+/* Tab loading animation */
+
+.tab-throbber-fallback {
+  filter: grayscale(1) brightness(2) !important;
+}
+/* Forward and back buttons */
+
+#forward-button,
+#back-button {
+  display: none !important;
+}
+
+/* Page action button; in URL bar */
+
+#pageActionButton {
+  display: none !important;
+}
+
+/* Tab dividers */
+
+.tabbrowser-tab::before,
+.tabbrowser-tab::after {
+  display: none !important;
+}
+
+/* URL bar */
+
+#urlbar {
+  margin: 5px !important;
+}
+
+/* Hide close tab button until hover, and style it slightly */
+
+.tabbrowser-tab:not([pinned]):not(:hover) .tab-close-button {
+  visibility: collapse !important;
+}
+
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+  border-radius: 2px;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Active tab indicator; the line on top of the active tab */
+
+#tabbrowser-tabs {
+  --tab-line-color: var(--accent-color) !important;
+}
+
+/* Override the toolbar color */
+
+:root {
+  --toolbar-non-lwt-bgimage: !important;
+}

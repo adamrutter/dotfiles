@@ -1,0 +1,296 @@
+@import '/home/adam/.atom/packages/base16-syntax/styles/schemes/ocean.less';
+@import 'ui-variables';
+
+// Accent colour
+
+@accent: #55b166;
+// @accent: #d99f21;
+
+// Bracket matcher
+
+.bracket-matcher .region {
+  background-color: @background-color-selected;
+  border: 1px solid fade(@base16-color-base03, 50%);
+  border-radius: 3px;
+  position: absolute;
+}
+
+// Linter gutter
+
+[gutter-name="linter-ui-default"]{
+  display: none !important;
+}
+
+// atom-text-editor.editor .linter-row {
+//   justify-content: flex-end;
+// }
+
+// Linter icon
+
+atom-text-editor .linter-gutter.icon::before {
+  position: relative;
+  top: 1px;
+}
+
+// Line line-number
+
+// atom-text-editor .line-numbers {
+//   order: 2;
+// }
+
+atom-text-editor .line-number {
+  padding-left: 15px;
+  padding-right: 5px;
+  opacity: 0.5;
+  text-align: center;
+}
+
+atom-text-editor .gutter .line-number.cursor-line-no-selection {
+  background-color: @text-color-subtle;
+  color: @text-color-selected;
+}
+
+// Fold icon
+
+atom-text-editor .line-number .icon-right {
+  padding: 0;
+  position: relative;
+  top: 1px;
+}
+
+// Folded icon
+
+atom-text-editor .gutter .line-number.folded .icon-right {
+  visibility: hidden;
+  position: relative;
+}
+
+// Fold marker
+
+atom-text-editor .fold-marker::after {
+  font-size: 1.2em;
+  vertical-align:  top;
+}
+
+// Tab bar icons
+
+.tab-bar .tab .title.title:before {
+  font-size: 2em;
+  vertical-align: top;
+  line-height: 0.5;
+  margin-right: 0;
+  margin-top: 9px;
+  position: absolute;
+  left: 3px;
+}
+
+atom-workspace.theme-genesis-ui .tab-bar .tab .title::before, atom-workspace.theme-one-dark-ui .tab-bar .tab .title::before, atom-workspace.theme-one-light-ui .tab-bar .tab .title::before {
+  margin-top: 9px;
+}
+
+.tab-bar .tab .title,
+.tab-bar .tab.active .title {
+  padding: 0 1.7em;
+}
+
+// Active tab indicator
+
+.tab.active:before {
+  display: none;
+  // color: @accent !important;
+  // height: 2px;
+  // left: 0 !important;
+  // width: 100% !important;
+}
+
+// Side bar icons
+
+atom-workspace .entries.list-tree .file .icon::before {
+  font-size: 2em;
+  margin-right: 0.4em;
+}
+
+// Tree view icons
+
+.list-group .icon::before, .list-tree .icon::before {
+  vertical-align: top;
+  top: -2px;
+}
+
+// Linter tooltip
+
+#linter-tooltip linter-message:last-child {
+  border-bottom: none !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+// Highlight/selection border
+
+atom-text-editor .highlights .highlight-selected .region {
+  border-color: @base16-color-base03;
+}
+
+// Bracket matcher non-cursor line
+
+.line-number.bracket-matcher:not(.cursor-line)::before {
+  background-color: @syntax-gutter-background-color-selected;
+  content: '';
+  height: 100%;
+  left: -100%;
+  position: absolute;
+  width: 100%;
+  z-index: -99;
+}
+
+atom-text-editor .gutter {
+  overflow: visible;
+  z-index: initial;
+}
+
+// Properly align file icons and folders in tree view
+
+.list-tree.has-collapsable-children li.list-item {
+  margin-left: 1em;
+}
+
+// Git icons; replaces GitHub icon with git icon
+
+[data-name^=".git"]::before {
+  content: '\E027' !important;
+}
+
+// Repo icon
+.icon-repo {
+  filter: grayscale(1) !important;
+}
+
+// Git gutter line numbers
+
+.gutter .line-number.git-line-ignored,
+.gutter .line-number.git-line-added,
+.gutter .line-number.git-line-modified,
+.gutter .line-number.git-line-removed,
+.gutter .line-number.git-line-renamed {
+  padding-left: 13px !important;
+}
+
+// Accent colour overrides
+
+.tooltip .tooltip-inner {
+  background-color: @accent;
+}
+
+.tooltip.top .tooltip-arrow {
+  border-top-color: @accent;
+}
+
+.tooltip.left .tooltip-arrow {
+  border-left-color: @accent;
+}
+
+.tooltip.right .tooltip-arrow  {
+  border-right-color: @accent;
+}
+
+.tooltip.bottom .tooltip-arrow {
+  border-bottom-color: @accent;
+}
+
+.tree-view:focus .selected:before {
+  background-color: @accent;
+}
+
+.tab-bar .tab .close-icon:hover {
+  background-color: @accent;
+}
+
+.tab-bar .tab .close-icon:active {
+  background-color: lighten(@accent, 25%);
+}
+
+.settings-view input[type="checkbox"]:active,
+.settings-view input[type="checkbox"]:checked {
+  background-color: @accent;
+}
+
+.settings-view .link {
+  color: @accent !important;
+}
+
+.settings-view .link:hover {
+  color: lighten(@accent, 7.5%) !important;
+}
+
+.tab-bar .tab.modified:not(:hover) .close-icon,
+.tab-bar .tab.modified:hover .close-icon {
+  color: @accent;
+}
+
+.tab.modified .close-icon {
+  color: @accent;
+}
+
+atom-text-editor[mini].is-focused {
+  border-color: @accent;
+  box-shadow: 0 0 0 1px @accent
+}
+
+.tab-bar .placeholder:before {
+  background: @accent;
+}
+
+.tab-bar .placeholder:after {
+  border: 4px solid @accent;
+}
+
+.editor.mini .cursors .cursor {
+  border-color: @accent;
+}
+
+.btn:focus,
+.btn.btn-default:focus {
+  border-color: @accent !important;
+  box-shadow: 0 0 0 1px @accent !important;
+}
+
+.btn.selected {
+  background-color: @accent !important;
+}
+
+.btn.selected:focus {
+  background-color: @accent;
+  border-color: @accent !important;
+  box-shadow: inset 0 0 0 1px rgba(26, 29, 35, 0.5), 0 0 0 1px @accent !important;
+  z-index: 2 !important;
+}
+
+.btn.selected:hover {
+  background-color: lighten(@accent, 5%);
+}
+
+.btn.btn-info.install-button {
+  background-color: @accent !important;
+  background-image: linear-gradient(@accent, darken(@accent, 5%));
+}
+
+.btn.btn-primary {
+  background-color: @accent !important;
+  background-image: linear-gradient(@accent, darken(@accent, 5%));
+}
+
+.btn.btn-primary:hover {
+  background-color: lighten(@accent, 10%) !important;
+  background-image: linear-gradient(lighten(@accent, 5%), @accent);
+}
+
+.command-palette .key-binding {
+  background-color: @accent;
+}
+
+.command-palette .list-group .character-match {
+  color: @accent;
+}
+
+.settings-view .package-readme a {
+  color: @accent;
+}
