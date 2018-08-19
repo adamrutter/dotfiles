@@ -6,6 +6,12 @@
 @accent: #55b166;
 // @accent: #d99f21;
 
+// Letter spacing
+
+atom-text-editor {
+  // letter-spacing: 0.015em;
+}
+
 // Bracket matcher
 
 .bracket-matcher .region {
@@ -18,7 +24,19 @@
 // Linter gutter
 
 [gutter-name="linter-ui-default"]{
-  display: none !important;
+  // display: none !important;
+  position: absolute !important;
+  left: -1em !important;
+}
+
+// Linter error icon
+
+[gutter-name="linter-ui-default"] .linter-gutter::before {
+  content: '!';
+  font-weight: 900;
+  left: 1em !important;
+  position: relative !important;
+  top: 0 !important;
 }
 
 // atom-text-editor.editor .linter-row {
@@ -119,9 +137,19 @@ atom-workspace .entries.list-tree .file .icon::before {
 
 // Linter tooltip
 
+#linter-tooltip linter-message {
+  border-radius: 0 4px 4px 4px;
+  padding: 7px;
+}
+
 #linter-tooltip linter-message:last-child {
   border-bottom: none !important;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.linter-ui-default-fix-btn {
+  background: rgba(0, 0, 0, 0.05);
+  color: @text-color;
 }
 
 // Highlight/selection border
@@ -172,6 +200,19 @@ atom-text-editor .gutter {
 .gutter .line-number.git-line-removed,
 .gutter .line-number.git-line-renamed {
   padding-left: 13px !important;
+}
+
+// Current line highlight
+
+atom-text-editor .line.highlight-line {
+  background: rgba(100, 100, 100, 0.15) !important;
+}
+
+// Bracket match gutter
+
+.line-number.bracket-matcher.bracket-matcher {
+  // background: rgba(100, 100, 100, 0.4);
+  // background: none !important;
 }
 
 // Accent colour overrides
@@ -293,4 +334,33 @@ atom-text-editor[mini].is-focused {
 
 .settings-view .package-readme a {
   color: @accent;
+}
+
+.linter-ui-default-fix-btn {
+  border-color: @accent;
+}
+
+.github-StagingView:focus .github-StagingView-group.is-focused .is-selected {
+  background: @accent;
+}
+
+atom-text-editor.is-focused {
+  border-color: @accent !important;
+}
+
+.github-FilePatchView:focus .github-HunkView-line.is-selected .github-HunkView-lineNumber {
+  background: @accent;
+  border-color: darken(@accent, 10%);
+}
+
+.github-FilePatchView:focus .github-HunkView.is-selected.is-hunkMode .github-HunkView-title, .github-FilePatchView:focus .github-HunkView.is-selected.is-hunkMode .github-HunkView-header, .github-FilePatchView:focus .github-HunkView-line.is-selected .github-HunkView-lineNumber {
+  background: @accent;
+}
+
+.github-FilePatchView:focus .github-HunkView.is-selected.is-hunkMode .github-HunkView-stageButton:hover, .github-FilePatchView:focus .github-HunkView.is-selected.is-hunkMode .github-HunkView-discardButton:hover {
+  background: darken(@accent, 10%);
+}
+
+.github-FilePatchView:focus .github-HunkView.is-selected.is-hunkMode .github-HunkView-stageButton, .github-FilePatchView:focus .github-HunkView.is-selected.is-hunkMode .github-HunkView-discardButton {
+  border-color: darken(@accent, 10%);
 }

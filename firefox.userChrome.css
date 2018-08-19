@@ -87,6 +87,18 @@
   border: none !important;
 }
 
+/* Add a margin to the bottom of the last item in each section. It only needs to
+happen if there is more than one item (not including folders); if there is one
+item or less, the margin works as expected. It is needed because the margin that
+would usually be there is actually added by the 'open all in tabs' button, which
+is hidden. This is also why the second to last type needs to be selected, rather
+than the last */
+
+#BMB_bookmarksPopup > menu:nth-last-of-type(2),    /* The top level */
+#BMB_bookmarksPopup menuitem:nth-last-of-type(2) { /* All other levels */
+  margin-bottom: 5px !important;
+}
+
 /* Text links; for pop-ups etc */
 
 .text-link {
