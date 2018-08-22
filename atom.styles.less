@@ -1,4 +1,5 @@
-@import '/home/adam/.atom/packages/base16-syntax/styles/schemes/ocean.less';
+// @import '/home/adam/.atom/packages/base16-syntax/styles/schemes/ocean.less';
+@import '/home/adam/.dotfiles/themes/one-dark-syntax-arc/styles/syntax-variables';
 @import 'ui-variables';
 
 // Accent colour
@@ -16,7 +17,7 @@ atom-text-editor {
 
 .bracket-matcher .region {
   background-color: @background-color-selected;
-  border: 1px solid fade(@base16-color-base03, 50%);
+  border: 1px solid fade(@syntax-fg, 50%) !important;
   border-radius: 3px;
   position: absolute;
 }
@@ -138,7 +139,7 @@ atom-workspace .entries.list-tree .file .icon::before {
 // Linter tooltip
 
 #linter-tooltip linter-message {
-  border-radius: 0 4px 4px 4px;
+  // border-radius: 0 4px 4px 4px;
   padding: 7px;
 }
 
@@ -155,7 +156,7 @@ atom-workspace .entries.list-tree .file .icon::before {
 // Highlight/selection border
 
 atom-text-editor .highlights .highlight-selected .region {
-  border-color: @base16-color-base03;
+  border-color: fade(@syntax-fg, 50%);
 }
 
 // Bracket matcher non-cursor line
@@ -205,7 +206,7 @@ atom-text-editor .gutter {
 // Current line highlight
 
 atom-text-editor .line.highlight-line {
-  background: rgba(100, 100, 100, 0.15) !important;
+  background: fade(@syntax-selection-color, 35%) !important;
 }
 
 // Bracket match gutter
@@ -213,6 +214,24 @@ atom-text-editor .line.highlight-line {
 .line-number.bracket-matcher.bracket-matcher {
   // background: rgba(100, 100, 100, 0.4);
   // background: none !important;
+}
+
+// Hide first indent guide
+
+.syntax--source .leading-whitespace.indent-guide:first-of-type {
+  visibility: hidden !important;
+}
+
+// Cursor
+
+atom-text-editor.editor .cursor {
+  // border-color: @accent;
+}
+
+// Gutter
+
+.gutter.line-numbers {
+  background: fade(@syntax-selection-color, 15%) !important;
 }
 
 // Accent colour overrides
