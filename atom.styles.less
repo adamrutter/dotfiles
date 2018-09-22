@@ -218,7 +218,7 @@ atom-text-editor .line.highlight-line {
 
 // Hide first indent guide
 
-.syntax--source .leading-whitespace.indent-guide:first-of-type {
+.line .indent-guide:first-of-type {
   visibility: hidden !important;
 }
 
@@ -382,4 +382,8 @@ atom-text-editor.is-focused {
 
 .github-FilePatchView:focus .github-HunkView.is-selected.is-hunkMode .github-HunkView-stageButton, .github-FilePatchView:focus .github-HunkView.is-selected.is-hunkMode .github-HunkView-discardButton {
   border-color: darken(@accent, 10%);
+}
+
+.highlight-info {
+  background-color: @accent !important;
 }
