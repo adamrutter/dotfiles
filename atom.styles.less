@@ -398,12 +398,12 @@ atom-text-editor.is-focused {
   border-color: @accent !important;
 }
 
-atom-text-editor::shadow .highlight.find-result .region {
+atom-text-editor.editor .highlight.find-result .region {
   background-color: fadeout(@accent, 85%) !important;
 }
 
-atom-text-editor::shadow .highlight.current-result .region,
-atom-text-editor::shadow .highlight.current-result ~ .highlight.selection .region {
+atom-text-editor.editor .highlight.current-result .region,
+atom-text-editor.editor .highlight.current-result ~ .highlight.selection .region {
   background-color: fadeout(@accent, 85%) !important;
   border-color: @accent;
 }
