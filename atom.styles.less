@@ -234,6 +234,12 @@ atom-text-editor.editor .cursor {
   background: fade(@syntax-selection-color, 15%) !important;
 }
 
+// Status bar linter icons
+.status-bar a.icon-info::before {
+  position: relative;
+  top: 1px;
+}
+
 // Accent colour overrides
 
 .tooltip .tooltip-inner {
@@ -255,7 +261,7 @@ atom-text-editor.editor .cursor {
 .tooltip.bottom .tooltip-arrow {
   border-bottom-color: @accent;
 }
-
+title
 .tree-view:focus .selected:before {
   background-color: @accent;
 }
@@ -386,4 +392,22 @@ atom-text-editor.is-focused {
 
 .highlight-info {
   background-color: @accent !important;
+}
+
+.cursor {
+  border-color: @accent !important;
+}
+
+atom-text-editor::shadow .highlight.find-result .region {
+  background-color: fadeout(@accent, 85%) !important;
+}
+
+atom-text-editor::shadow .highlight.current-result .region,
+atom-text-editor::shadow .highlight.current-result ~ .highlight.selection .region {
+  background-color: fadeout(@accent, 85%) !important;
+  border-color: @accent;
+}
+
+atom-text-editor .flash.selection .region {
+  animation-name: none // Disable flash on find/replace
 }
