@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/home/adam/bin/set-resolution                     # Add and set resolution using xrandr
+/home/adam/bin/set-resolution                     # Add and set resolution using xrandr; only needed when using nouveau drivers
 setxkbmap -layout gb                              # Set keyboard layout
 xbindkeys                                         # Run xbindkeys; set keyboard bindings
 sh ~/.fehbg &                                     # Set wallpaper
@@ -9,12 +9,13 @@ numlockx on                                       # Set Num Lock
 nvidia-settings --load-config-only                # Load Nvidia driver settings
 xrdb ~/.Xresources                                # Set xresources
 xsetroot -cursor_name left_ptr                    # Set root window cursor
-redshift -l geoclue2 &		                      # Start redshift; blue light filter
+redshift -l manual &                              # Start redshift; blue light filter
 /opt/urserver/urserver-start &                    # Start Unified Remote; for controlling computer from phone
 /home/adam/bin/mount-phone &                      # Run script to automatically mount phone
 nemo -n &                                         # Start Nemo daemon
 compton --config ~/.config/compton/compton.conf & # Start Compton; compositing manager
 export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0         # Fix for fullscreen games in i3; Allows workspaces to be changed without the game disappearing
 xset b off                                        # Turn terminal bong off for X
+export QT_STYLE_OVERRIDE=gtk2                     # Force Qt applications to use the GTK theme
 
 exec i3						                      # Load i3; window manager

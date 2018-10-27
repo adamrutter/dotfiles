@@ -3,8 +3,9 @@
 /* Accent colour */
 
 :root {
-  --accent-color: #55b166;
+  /* --accent-color: #55b166; */
   /* --accent-color: #d99f21; */
+  --accent-color: #dc5d3a;
 }
 
 /* Toolbar buttons */
@@ -78,9 +79,7 @@
 #BMB_unsortedBookmarks,
 #BMB_bookmarksToolbar,
 #BMB_bookmarksPopup > menu[label="Recent Tags"],
-#BMB_bookmarksPopup menuitem[simulated-places-node="true"],
-#BMB_bookmarksShowAll,
-#BMB_bookmarksPopup .openintabs-menuitem {
+#BMB_bookmarksPopup menuitem[simulated-places-node="true"] {
   display: none !important;
 }
 
@@ -89,15 +88,15 @@
   border: none !important;
 }
 
-/* Add a margin to the bottom of the last item in each section.
-It only needs to happen if there is more than one item (not folder), 
-if there is only one item (or none with one or more folders), the margin works as expected. 
-It is need because the margin that would usually be there is actually added by the 'open all in tabs' button, which is hidden. 
-This is also why the second to last type needs to be selected, rather than the last */
+/* Add a margin to the bottom of the last item in each section. It only needs to
+happen if there is more than one item (not including folders); if there is one
+item or less, the margin works as expected. It is needed because the margin that
+would usually be there is actually added by the 'open all in tabs' button, which
+is hidden. This is also why the second to last type needs to be selected, rather
+than the last */
 
-#BMB_bookmarksPopup > menu:nth-last-of-type(2), 
-#BMB_bookmarksPopup menuitem:nth-last-of-type(2) {
-/*   background: red !important; */
+#BMB_bookmarksPopup > menu:nth-last-of-type(2),    /* The top level */
+#BMB_bookmarksPopup menuitem:nth-last-of-type(2) { /* All other levels */
   margin-bottom: 5px !important;
 }
 
@@ -166,4 +165,11 @@ This is also why the second to last type needs to be selected, rather than the l
 
 :root {
   --toolbar-non-lwt-bgimage: !important;
+}
+
+/* Dev tools font size */
+
+.devtools-monospace {
+  font-family: "Ubuntu Mono", monospace !important;
+  font-size: 18px !important;
 }

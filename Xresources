@@ -25,8 +25,9 @@
 *background-alt: #404552
 *cursorColor:    base05
 
-*accent         : #55b166
+!*accent        : #55b166
 !*accent        : #d99f21
+*accent         : #dc5d3a
 
 *color0:       base00
 *color1:       base08

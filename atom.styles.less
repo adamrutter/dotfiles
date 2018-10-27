@@ -4,8 +4,9 @@
 
 // Accent colour
 
-@accent: #55b166;
+// @accent: #55b166;
 // @accent: #d99f21;
+@accent: #dc5d3a;
 
 // Letter spacing
 
@@ -234,6 +235,10 @@ atom-text-editor.editor .cursor {
   background: fade(@syntax-selection-color, 15%) !important;
 }
 
+.line-number.folded {
+  filter: brightness(1.25);
+}
+
 // Status bar linter icons
 .status-bar a.icon-info::before {
   position: relative;
@@ -261,9 +266,10 @@ atom-text-editor.editor .cursor {
 .tooltip.bottom .tooltip-arrow {
   border-bottom-color: @accent;
 }
-title
-.tree-view:focus .selected:before {
-  background-color: @accent;
+// title
+
+.tree-view:focus .selected::before {
+  background-color: @accent !important;
 }
 
 .tab-bar .tab .close-icon:hover {
@@ -299,6 +305,10 @@ title
 atom-text-editor[mini].is-focused {
   border-color: @accent;
   box-shadow: 0 0 0 1px @accent
+}
+
+.find-and-replace.has-no-results .find-container atom-text-editor[mini].is-focused {
+  border-color: #ff6347 !important;
 }
 
 .tab-bar .placeholder:before {
@@ -410,4 +420,18 @@ atom-text-editor.editor .highlight.current-result ~ .highlight.selection .region
 
 atom-text-editor .flash.selection .region {
   animation-name: none // Disable flash on find/replace
+}
+
+.github-BranchMenuView-item.github-BranchMenuView-select.input-select.hidden:focus {
+  border-color: @accent;
+}
+
+.btn:focus,
+.btn:active:focus {
+  outline: 2px auto @accent;
+}
+
+.text-info,
+.text-primary {
+  color: @accent !important;
 }

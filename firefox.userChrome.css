@@ -3,8 +3,9 @@
 /* Accent colour */
 
 :root {
-  --accent-color: #55b166;
+  /* --accent-color: #55b166; */
   /* --accent-color: #d99f21; */
+  --accent-color: #dc5d3a;
 }
 
 /* Toolbar buttons */
@@ -165,3 +166,4 @@ than the last */
 :root {
   --toolbar-non-lwt-bgimage: !important;
 }
+
