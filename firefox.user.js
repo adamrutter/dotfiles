@@ -14,3 +14,6 @@ user_pref("media.block-autoplay-until-in-foreground", true);
 
 // What to do upon starting a new session; 0: Blank page, 1: Homepage, 2: Last page visited, 3: Previous session
 user_pref("browser.startup.page", 0);
+
+// Allow @-moz-document domain() syntax in userContent.css
+user_pref("layout.css.moz-document.content.enabled", true);
