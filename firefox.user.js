@@ -17,3 +17,6 @@ user_pref("browser.startup.page", 0);
 
 // Allow @-moz-document domain() syntax in userContent.css
 user_pref("layout.css.moz-document.content.enabled", true);
+
+// Hide suggested search engines in the search bar dropdown
+user_pref("browser.urlbar.oneOffSearches", false)

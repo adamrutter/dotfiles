@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # /home/adam/bin/set-resolution                   # Add and set resolution using xrandr; only needed when using nouveau drivers
-setxkbmap -layout gb                              # Set keyboard layout
+setxkbmap -layout us                              # Set keyboard layout
 xbindkeys                                         # Run xbindkeys; set keyboard bindings
 sh ~/.fehbg &                                     # Set wallpaper
 xset s off; xset -dpms                            # Turn off screensaver and power saving
@@ -17,5 +17,7 @@ compton --config ~/.config/compton/compton.conf & # Start Compton; compositing m
 export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0         # Fix for fullscreen games in i3; Allows workspaces to be changed without the game disappearing
 xset b off                                        # Turn terminal bong off for X
 export QT_STYLE_OVERRIDE=gtk2                     # Force Qt applications to use the GTK theme
+/usr/lib/x86_64-linux-gnu/libexec/kdeconnectd &   # Start KDE Connect
+dunst &                                           # Start dunst; notification server
 
-exec i3						                                # Load i3; window manager
+exec i3						                      # Load i3; window manager

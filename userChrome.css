@@ -69,6 +69,10 @@
   color: white !important;
 }
 
+.autocomplete-richlistitem[selected=true]:hover {
+  background: var(--accent-color) !important;
+}
+
 /* Bookmarks menu */
 
 #BMB_bookmarksPopup menuseparator,
@@ -167,9 +171,13 @@ than the last */
   --toolbar-non-lwt-bgimage: !important;
 }
 
-/* Dev tools font size */
-
-.devtools-monospace {
-  font-family: "Ubuntu Mono", monospace !important;
-  font-size: 18px !important;
+/* Style the chosen search engine in the address bar */
+.anonymous-div {
+  color: red !important; 
 }
+
+.autocomplete-richlistitem:hover {
+  background: none !important;
+}
+
+

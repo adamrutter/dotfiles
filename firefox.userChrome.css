@@ -5,7 +5,8 @@
 :root {
   /* --accent-color: #55b166; */
   /* --accent-color: #d99f21; */
-  --accent-color: #dc5d3a;
+  /* --accent-color: #dc5d3a; */
+  --accent-color: #4d78cc;
 }
 
 /* Toolbar buttons */
@@ -67,6 +68,10 @@
 .ac-action-text[selected=true],
 .ac-separator[selected=true] {
   color: white !important;
+}
+
+.autocomplete-richlistitem[selected=true]:hover {
+  background: var(--accent-color) !important;
 }
 
 /* Bookmarks menu */
@@ -167,3 +172,11 @@ than the last */
   --toolbar-non-lwt-bgimage: !important;
 }
 
+/* Style the chosen search engine in the address bar */
+.anonymous-div {
+  color: red !important;
+}
+
+.autocomplete-richlistitem:hover {
+  background: none !important;
+}

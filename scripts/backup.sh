@@ -3,10 +3,15 @@
 # A script to deal with backups
 
 # It would be good practice to keep a list of installed packages
+
+# All installed
 dpkg -l | awk '/^[hi]i/{print $2}' > ~/.installed-packages
 
+# Manually installed (no dependencies, includes packages from installing the OS)
+apt-mark showmanual > ~/.installed-packages-user
+
 # Backup important files from root
-rsync --archive --delete --verbose /etc/apt /etc/fstab /etc/X11 ~/.etc\~
+rsync --archive --delete --verbose /etc/apt /etc/fstab /etc/X11 /etc/ssh ~/.etc\~
 
 # We only want to start the backup if the backup media is mounted
 if [ $(ls /mnt/backup/* &> /dev/null; echo $?) -eq 0 ]; then

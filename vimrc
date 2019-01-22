@@ -50,10 +50,15 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-set number
 "set background=dark
 colorscheme base16-ocean
 
 set tabstop=4
 
 highlight clear LineNr
+
+" Enable line numbers
+set number
+
+" Set line number colour
+highlight LineNr ctermfg=08

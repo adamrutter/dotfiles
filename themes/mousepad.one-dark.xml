@@ -37,7 +37,7 @@
 
   <!-- Comments -->
   <style name="def:comment"                 foreground="gray"/>
-  <style name="def:shebang"                 foreground="gray" bold="true"/>
+  <style name="def:shebang"                 foreground="gray" bold="false"/>
   <style name="def:doc-comment-element"     italic="true"/>
 
   <!-- Constants -->
@@ -48,16 +48,16 @@
   <style name="def:identifier"              foreground="cyan"/>
 
   <!-- Statements -->
-  <style name="def:statement"               foreground="bordeaux" bold="true"/>
+  <style name="def:statement"               foreground="bordeaux" bold="false"/>
 
   <!-- Types -->
-  <style name="def:type"                    foreground="green" bold="true"/>
+  <style name="def:type"                    foreground="green" bold="false"/>
 
   <!-- Others -->
   <style name="def:preprocessor"            foreground="purple"/>
   <style name="def:error"                   background="red" bold="true"/>
   <style name="def:warning"                 foreground="red" background="yellow" bold="true"/>
-  <style name="def:note"                    foreground="blue" background="yellow" bold="true"/>
+  <style name="def:note"                    foreground="blue" background="yellow" bold="false"/>
   <style name="def:underlined"              italic="true" underline="single"/>
 
   <!-- Heading styles, uncomment to enable -->
@@ -81,19 +81,19 @@
 
   <style name="xml:tags"                    foreground="cyan"/>
   <style name="xml:attribute-name"          foreground="violet"/>
-  <style name="xml:namespace"               foreground="green" bold="true"/>
+  <style name="xml:namespace"               foreground="green" bold="false"/>
 
-  <style name="js:object"                   foreground="#2E8B57" bold="true"/>
+  <style name="js:object"                   foreground="#2E8B57" bold="false"/>
   <style name="js:constructors"             foreground="#008B8B"/>
 
   <style name="latex:display-math"          foreground="#6A5ACD"/>
-  <style name="latex:command"               foreground="#2E8B57" bold="true"/>
+  <style name="latex:command"               foreground="#2E8B57" bold="false"/>
   <style name="latex:include"               use-style="def:preprocessor"/>
 
   <style name="sh:variable"                 foreground="#6A5ACD"/>
 
   <!-- legacy styles for old lang files -->
-  <style name="Others"                      foreground="#2E8B57" bold="true"/>
+  <style name="Others"                      foreground="#2E8B57" bold="false"/>
   <style name="Others 2"                    foreground="#008B8B"/>
   <style name="Others 3"                    foreground="#6A5ACD"/>
 
