@@ -173,10 +173,17 @@ than the last */
 }
 
 /* Style the chosen search engine in the address bar */
+
 .anonymous-div {
   color: red !important;
 }
 
 .autocomplete-richlistitem:hover {
   background: none !important;
+}
+
+/* New tab button */
+
+.tabs-newtab-button.toolbarbutton-1 {
+  display: none;
 }
