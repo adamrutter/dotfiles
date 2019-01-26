@@ -11,7 +11,7 @@ xrdb ~/.Xresources                                # Set xresources
 xsetroot -cursor_name left_ptr                    # Set root window cursor
 redshift -l manual &                              # Start redshift; blue light filter
 # /opt/urserver/urserver-start &                  # Start Unified Remote; for controlling computer from phone
-/home/adam/bin/mount-phone &                      # Run script to automatically mount phone
+/home/adam/bin/mount-phone.sh &                   # Run script to automatically mount phone
 nemo -n &                                         # Start Nemo daemon
 compton --config ~/.config/compton/compton.conf & # Start Compton; compositing manager
 export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0         # Fix for fullscreen games in i3; Allows workspaces to be changed without the game disappearing
