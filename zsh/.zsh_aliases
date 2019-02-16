@@ -1,0 +1,11 @@
+# Ensure the current and parent directories don't appear
+alias "ls -a"="ls -A"
+
+# Print info about wine variables
+alias wine-env="printenv | grep WINE"
+
+# Format the output of du
+alias du="du --max-depth=1 --human-readable --all | sort -h"i
+
+# Make rm always verbose
+alias rm="rm -v"

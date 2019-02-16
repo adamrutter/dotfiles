@@ -62,7 +62,7 @@ ZSH_THEME="adamrutter"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-syntax-highlighting history-substring-search)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting history-substring-search zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,3 +101,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Change the history search colours
 typeset -g HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=white,fg=black'
+
+# Source .zsh_aliases
+. ~/.zsh_aliases
