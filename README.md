@@ -18,6 +18,7 @@ My dotfiles for Linux. Includes custom configuration for:
 * Vim  
 * VLC  
 * X
+* zsh
 
 ## Installation
 
