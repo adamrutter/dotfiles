@@ -104,3 +104,6 @@ typeset -g HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=white,fg=black'
 
 # Source .zsh_aliases
 . ~/.zsh_aliases
+
+# Set path
+export PATH=/home/adam/bin:$PATH
