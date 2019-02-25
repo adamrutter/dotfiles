@@ -19,39 +19,39 @@
 
 [global]
 
-  # Geometry  
-  geometry = "300x0-17-41"      
+  # Geometry
+  geometry = "300x0-17-41"
   padding = 14
   horizontal_padding = 12
   notification_height = 0
   shrink = no
-  
+
   # Border
-  frame_color = "#4d78cc"
+  frame_color = "#55b166"
   frame_width = 2
   separator_height = 2
   separator_color = frame
-  
+
 	# Display
   sort = yes
-  idle_threshold = 0   
+  idle_threshold = 0
   indicate_hidden = yes
   show_age_threshold = -1
   stack_duplicates = true
   hide_duplicate_count = false
-  show_indicators = no 
-  
+  show_indicators = no
+
   # Text
   font = Ubuntu Mono 11
   line_height = 3
   alignment = left
-  
+
   # Format
   markup = full
   format = "<b>%s</b>\n%b"
   word_wrap = yes
   ignore_newline = no
-   
+
   # Icons
   icon_position = off
   max_icon_size = 0

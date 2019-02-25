@@ -25,10 +25,10 @@
 *background-alt: #404552
 *cursorColor:    base05
 
-!*accent        : #55b166
+*accent        : #55b166
 !*accent        : #d99f21
 !*accent        : #dc5d3a
-*accent          : #4d78cc
+!*accent          : #4d78cc
 
 
 *color0:       base00
