@@ -70,4 +70,4 @@ The system tray also contains an indicator that reports whether the filesystem o
 
 ### Rofi
 
-A clickable button for Rofi is at the extreme left of my Polybar. Click it, or use the keybinding, and it will _extend_ from the left hand side. In reality, Rofi is just overlayed on top of Polybar, but I like the effect!
+A clickable button for Rofi is at the left of my Polybar. Click it, or use the keybinding, and Rofi is overlayed on top of Polybar.
