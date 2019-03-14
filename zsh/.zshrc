@@ -122,3 +122,6 @@ function gitall() {
   fi
   git push
 }
+
+# Default editor
+export EDITOR=/usr/bin/vim
