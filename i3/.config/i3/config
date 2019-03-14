@@ -82,7 +82,7 @@ assign [class="^net-minecraft-bootstrap-Bootstrap$"] $ws6
 assign [class="Minecraft"] $ws6
 assign [class="^factorio$"] $ws6
 assign [class="^Steam$"] $ws6
-assing [class="^figma$"] $ws4
+assign [class="figma"] $ws4
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
