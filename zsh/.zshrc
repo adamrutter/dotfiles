@@ -110,3 +110,15 @@ export PATH=/home/adam/bin:$PATH
 
 # Don't check for new mail
 MAILCHECK=0
+
+# Function to shorten 'git add; git commit; git push'
+function gitall() {
+  git add .
+  if [ -n "$1" ]
+  then 
+    git commit -m "$1"
+  else
+    git commit -m "Update"
+  fi
+  git push
+}
