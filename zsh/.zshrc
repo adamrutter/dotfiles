@@ -107,3 +107,6 @@ typeset -g HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=white,fg=black'
 
 # Set path
 export PATH=/home/adam/bin:$PATH
+
+# Don't check for new mail
+MAILCHECK=0
