@@ -43,7 +43,7 @@
 
 /* Find dialog */
 
-.findbar-button:-moz-any([checked="true"], :hover:active):not([disabled="true"]) > .toolbarbutton-text {
+.findbar-button:-moz-any([checked="true"], :hover:active):not([disabled="true"]) {
   background-color: var(--accent-color) !important;
   color: white !important;
 }
