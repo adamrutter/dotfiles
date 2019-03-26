@@ -127,11 +127,11 @@ function gitall() {
 export EDITOR=/usr/bin/vim
 
 # Environment variables for tldr
-export TLDR_HEADER='green bold underline'
+export TLDR_HEADER='green bold'
 export TLDR_QUOTE='italic'
 export TLDR_DESCRIPTION='default'
 export TLDR_CODE='green'
-export TLDR_PARAM='italic'
+export TLDR_PARAM='underline'
 
 # Function to send tldr results to less
 function tldr() {
