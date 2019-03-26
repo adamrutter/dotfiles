@@ -135,5 +135,5 @@ export TLDR_PARAM='underline'
 
 # Function to send tldr results to less
 function tldr() {
-  ~/bin/tldr-script $1 | less
+  ~/bin/tldr-script $@ | less
 }
