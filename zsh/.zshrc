@@ -132,3 +132,8 @@ export TLDR_QUOTE='italic'
 export TLDR_DESCRIPTION='default'
 export TLDR_CODE='green'
 export TLDR_PARAM='italic'
+
+# Function to send tldr results to less
+function tldr() {
+  ~/bin/tldr-script $1 | less
+}
