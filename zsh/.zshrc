@@ -125,3 +125,10 @@ function gitall() {
 
 # Default editor
 export EDITOR=/usr/bin/vim
+
+# Environment variables for tldr
+export TLDR_HEADER='green bold underline'
+export TLDR_QUOTE='italic'
+export TLDR_DESCRIPTION='default'
+export TLDR_CODE='green'
+export TLDR_PARAM='italic'
