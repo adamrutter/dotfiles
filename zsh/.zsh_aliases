@@ -5,7 +5,7 @@ alias "ls -a"="ls -A"
 alias wine-env="printenv | grep WINE"
 
 # Format the output of du
-alias du="du --max-depth=1 --human-readable --all | sort -h"i
+alias du="du --max-depth=1 --human-readable --all | sort -h"
 
 # Make rm always verbose
 alias rm="rm -v"
