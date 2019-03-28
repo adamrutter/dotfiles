@@ -137,3 +137,8 @@ export TLDR_PARAM='underline'
 function tldr() {
   ~/bin/tldr-script $@ | less
 }
+
+# Function to sort results from du
+function duh() {
+  du --max-depth=1 --human-readable --all $@ | sort -h
+} 
