@@ -4,5 +4,5 @@ alias "ls -a"="ls -A"
 # Print info about wine variables
 alias wine-env="printenv | grep WINE"
 
-# Make rm always verbose
-alias rm="rm -v"
+# Make rm always verbose and recursive
+alias rm="rm -v -r"
