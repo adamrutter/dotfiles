@@ -62,3 +62,6 @@ set number
 
 " Set line number colour
 highlight LineNr ctermfg=08
+
+" Allow middle click copy/paste
+:set t_BE=
