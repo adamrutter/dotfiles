@@ -11,13 +11,13 @@ plugins=(zsh-autosuggestions zsh-syntax-highlighting history-substring-search zs
 source $ZSH/oh-my-zsh.sh
 
 # Command auto-correction
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Display red dots whilst waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Command execution time format for history
-# HIST_STAMPS="dd.mm.yyyy"
+HIST_STAMPS="dd.mm.yyyy"
 
 # Change the history search colours
 typeset -g HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=white,fg=black'
