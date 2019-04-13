@@ -24,7 +24,7 @@ padding-right = 1
 wm-restack = i3
 
 modules-left = rofi i3
-modules-right = openweathermap-detailed phone volume time powermenu
+modules-right = openweathermap phone volume time powermenu
 
 [module/volume]
 type = internal/pulseaudio
@@ -92,7 +92,7 @@ menu-0-2-exec = ~/bin/lock.sh && systemctl suspend
 menu-0-3 = 
 menu-0-3-exec = ~/bin/lock.sh
 
-[module/openweathermap-detailed]
+[module/openweathermap]
 type = custom/script
 exec = ~/bin/openweathermap-detailed.sh
 interval = 600
