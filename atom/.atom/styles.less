@@ -323,7 +323,7 @@ atom-text-editor[mini].is-focused {
 .editor.mini .cursors .cursor {
   border-color: @accent;
 }
-
+atom-text-editor[mini].is-focused
 .btn:focus,
 .btn.btn-default:focus {
   border-color: @accent !important;
@@ -448,4 +448,21 @@ atom-text-editor .flash.selection .region {
 
 .github-CommitDetailView-sha a {
   color: @accent !important;
+}
+
+.github-FilePatchView:focus-within .github-HunkHeaderView--isSelected {
+  background: @accent !important;
+}
+
+.github-FilePatchView:focus-within .github-HunkHeaderView--isSelected .github-HunkHeaderView-title:hover {
+  background: lighten(@accent, 5%) !important;
+}
+
+.github-FilePatchView:focus-within .gutter.old .line-number.github-FilePatchView-line--selected,
+.github-FilePatchView:focus-within .gutter.new .line-number.github-FilePatchView-line--selected {
+  background: @accent !important;
+}
+
+atom-text-editor[mini].is-focused {
+  background: fadeout(@accent, 100%) !important;
 }
