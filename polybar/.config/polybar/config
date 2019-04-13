@@ -87,7 +87,7 @@ menu-0-0 = 
 menu-0-0-exec = sudo shutdown --poweroff now
 menu-0-1 = 賈
 menu-0-1-exec = ~/bin/lock.sh && systemctl suspend
-menu-0-2 = 
+menu-0-2 = 
 menu-0-2-exec = ~/bin/lock.sh
 
 [module/openweathermap-detailed]
