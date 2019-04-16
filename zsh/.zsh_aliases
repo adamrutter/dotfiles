@@ -6,3 +6,6 @@ alias wine-env="printenv | grep WINE"
 
 # Make rm always verbose and recursive
 alias rm="rm -v -r"
+
+# Auto-scale feh
+alias feh="feh --scale-down --auto-zoom"
