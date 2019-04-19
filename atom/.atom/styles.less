@@ -157,7 +157,8 @@ atom-workspace .entries.list-tree .file .icon::before {
 
 // Highlight/selection border
 
-atom-text-editor .highlights .highlight-selected .region {
+atom-text-editor .highlights .highlight-selected .region,
+.highlight-selected {
   border-color: fade(@syntax-fg, 50%);
 }
 
@@ -323,7 +324,7 @@ atom-text-editor[mini].is-focused {
 .editor.mini .cursors .cursor {
   border-color: @accent;
 }
-atom-text-editor[mini].is-focused
+atom-text-editor[mini].is-focused,
 .btn:focus,
 .btn.btn-default:focus {
   border-color: @accent !important;
@@ -465,4 +466,14 @@ atom-text-editor .flash.selection .region {
 
 atom-text-editor[mini].is-focused {
   background: fadeout(@accent, 100%) !important;
+}
+
+.github-HunkHeaderView-stageButton:hover,
+.github-HunkHeaderView-discardButton:hover {
+  background: fadeout(black, 95%) !important;
+}
+
+.github-FilePatchView:focus-within .github-HunkHeaderView--isSelected .github-HunkHeaderView-title:active,
+.github-FilePatchView:focus-within .github-HunkHeaderView--isSelected .github-HunkHeaderView-stageButton:active, .github-FilePatchView:focus-within .github-HunkHeaderView--isSelected .github-HunkHeaderView-discardButton:active {
+  background: darken(@accent, 10%) !important;
 }
