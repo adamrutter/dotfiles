@@ -83,6 +83,7 @@ assign [class="Minecraft"] $ws6
 assign [class="^factorio$"] $ws6
 assign [class="^Steam$"] $ws6
 assign [class="figma"] $ws4
+assign [class="^fw.x86_64$"] $ws6
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
