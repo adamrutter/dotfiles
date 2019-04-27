@@ -78,6 +78,7 @@ assign [class="^VisualBoyAdvance$"] $ws6
 assign [class="^Gvba$"] $ws6
 assign [class="^KSP.x86_64$"] $ws6
 assign [instance="^nocashgba.exe$"] $ws6
+for_window [instance="^nocashgba.exe$"] floating enable
 assign [class="^Pcsxr$"] $ws6
 assign [class="^net-minecraft-bootstrap-Bootstrap$"] $ws6
 assign [class="Minecraft"] $ws6
