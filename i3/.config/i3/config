@@ -142,6 +142,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Tab workspace next
 bindsym $mod+shift+Tab workspace prev
 bindsym --release button2 kill
+bindsym $mod+c move position center
 
 #
 # Status bar
