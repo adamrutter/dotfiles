@@ -9,3 +9,6 @@ alias rm="rm -v -r"
 
 # Auto-scale feh
 alias feh="feh --scale-down --auto-zoom"
+
+# CKAN; KSP package manager
+alias ckan="~/games/kerbal-space-program/ckan/ckan.exe"
