@@ -12,7 +12,7 @@
 // Letter spacing
 
 atom-text-editor {
-  // letter-spacing: 0.015em;
+  // letter-spacing: 0.015em;date
 }
 
 // Bracket matcher
@@ -480,4 +480,13 @@ atom-text-editor[mini].is-focused {
 
 .fuzzy-finder .list-group .character-match {
   color: @accent;
+}
+
+.input-checkbox:focus, .input-text:focus, .input-search:focus, .input-number:focus, .input-textarea:focus, .input-select:focus, .input-color:focus {
+  border-color: @accent;
+  box-shadow: 0 0 0 1px @accent;
+}
+
+scopename.key-binding {
+  background-color: @accent !important;
 }
