@@ -24,3 +24,6 @@ user_pref("browser.urlbar.oneOffSearches", false);
 // Allow installation of unsigned addons/extensions
 user_pref("xpinstall.signatures.required", false);
 
+// Enabled browser console
+user_pref("devtools.chrome.enabled", true);
+
