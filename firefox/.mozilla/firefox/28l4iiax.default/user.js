@@ -19,4 +19,5 @@ user_pref("browser.startup.page", 3);
 user_pref("layout.css.moz-document.content.enabled", true);
 
 // Hide suggested search engines in the search bar dropdown
-user_pref("browser.urlbar.oneOffSearches", false)
+user_pref("browser.urlbar.oneOffSearches", false);
+
