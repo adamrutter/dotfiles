@@ -21,3 +21,6 @@ user_pref("layout.css.moz-document.content.enabled", true);
 // Hide suggested search engines in the search bar dropdown
 user_pref("browser.urlbar.oneOffSearches", false);
 
+// Allow installation of unsigned addons/extensions
+user_pref("xpinstall.signatures.required", false);
+
