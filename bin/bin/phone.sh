@@ -34,19 +34,19 @@ batteryLevel() {
 # Return a color tag if the battery is below the defined level
 batteryLow() {
 	if [[ "$(batteryLevel)" -le "$lowLevel" ]]; then
-		echo "%{B"$red"}"
+		echo "%{F"$red"}"
 	fi
 }
 
 # Return a color tag if the device is charging
 batteryCharging() {
 	if [[ "$($device.battery.isCharging)" == 'true' ]]; then
-		echo "%{B- F-}%{B"$green"}"
+		echo "%{B- F-}%{F"$green"}"
 	fi
 }
 
 # Return an icon showing whether the phone is mounted or not
-phoneMounted() {
+icon() {
   if [[ $( ls $mountPoint* &> /dev/null; echo $? ) -eq 2 ]]; then
   	echo " "
   else
@@ -60,7 +60,7 @@ phoneMounted() {
 
 # Print the results as a string for Polybar
 if [[ "$($device.isReachable)" == 'true' ]]; then
-  echo "$(batteryLow)$(batteryCharging)$(phoneMounted) $(batteryLevel)% %{B- F-}"
+  echo "$(icon) $(batteryLow)$(batteryCharging)$(batteryLevel)% %{B- F-}"
 else
-  echo "$(phoneMounted)"
+  echo "$(icon)"
 fi
