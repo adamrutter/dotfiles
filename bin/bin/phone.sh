@@ -48,7 +48,7 @@ batteryCharging() {
 # Return an icon showing whether the phone is mounted or not
 icon() {
   if [[ $( ls $mountPoint* &> /dev/null; echo $? ) -eq 2 ]]; then
-  	echo " "
+  	echo " "
   else
   	echo " "
   fi
