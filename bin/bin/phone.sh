@@ -62,5 +62,5 @@ icon() {
 if [[ "$($device.isReachable)" == 'true' ]]; then
   echo " $(icon) $(batteryLow)$(batteryCharging)$(batteryLevel)% %{B- F-}"
 else
-  echo " $(icon)"
+  echo " $(icon) "
 fi
