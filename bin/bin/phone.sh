@@ -48,9 +48,9 @@ batteryCharging() {
 # Return an icon showing whether the phone is mounted or not
 icon() {
   if [[ $( ls $mountPoint* &> /dev/null; echo $? ) -eq 2 ]]; then
-  	echo " "
+  	echo ""
   else
-  	echo " "
+  	echo ""
   fi
 }
 
@@ -60,7 +60,7 @@ icon() {
 
 # Print the results as a string for Polybar
 if [[ "$($device.isReachable)" == 'true' ]]; then
-  echo "$(icon) $(batteryLow)$(batteryCharging)$(batteryLevel)% %{B- F-}"
+  echo " $(icon) $(batteryLow)$(batteryCharging)$(batteryLevel)% %{B- F-}"
 else
-  echo "$(icon)"
+  echo " $(icon)"
 fi
