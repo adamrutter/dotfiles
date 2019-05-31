@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # /home/adam/bin/set-resolution                   # Add and set resolution using xrandr; only needed when using nouveau drivers
-setxkbmap -layout us                              # Set keyboard layout
+# setxkbmap -layout us                            # Set keyboard layout
 xbindkeys                                         # Run xbindkeys; set keyboard bindings
 sh ~/.fehbg &                                     # Set wallpaper
 xset s off; xset -dpms                            # Turn off screensaver and power saving
