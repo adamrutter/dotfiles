@@ -62,3 +62,6 @@ function tldr() {
 function duh() {
   du --max-depth=1 --human-readable --all $@ | sort -h
 } 
+
+# Remove '%' from the end of partial lines
+export PROMPT_EOL_MARK=''
