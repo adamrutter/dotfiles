@@ -127,8 +127,8 @@ mountedIcon() {
 #
 
 # Print the results as a string for Polybar
-# if [[ "$($device.isReachable)" == 'true' ]]; then
-  # echo " $(mountedIcon) $(batteryLow)$(batteryCharging) $(batteryIcon) $(batteryLevel)% %{B- F-}"
-# else
+if [[ "$($device.isReachable)" == 'true' ]]; then
+  echo " $(mountedIcon) $(batteryLow)$(batteryCharging) $(batteryIcon) $(batteryLevel)% %{B- F-}"
+else
   echo " $(mountedIcon)  %{F"$inactive"}%{B- F-} "
-# fi
+fi
