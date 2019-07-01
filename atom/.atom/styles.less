@@ -490,3 +490,20 @@ atom-text-editor[mini].is-focused {
 scopename.key-binding {
   background-color: @accent !important;
 }
+
+.github-CommitView-coAuthorToggleIcon.focused {
+  fill: @accent;
+}
+
+.github-CommitView-coAuthorEditor.is-focused {
+  border-color: @accent;
+  box-shadow: 0 0 0 1px @accent;
+
+  .Select-menu-outer {
+    border-color: @accent;
+
+    *.is-focused {
+      background: @accent;
+    }
+  }
+}
