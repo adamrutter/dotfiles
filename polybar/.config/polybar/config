@@ -102,7 +102,7 @@ format-padding = 1
 
 [module/phone]
 type = custom/script
-exec = ~/bin/phone.sh
+exec = ~/.config/polybar/scripts/phone.sh
 label = %output%
 format-padding = 0
 
