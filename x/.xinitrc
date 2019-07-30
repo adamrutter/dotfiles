@@ -1,5 +1,6 @@
 #!/bin/bash
 
+source /etc/X11/Xsession.d/*                        # Source all files in Xsession.d
 # /home/adam/bin/set-resolution                     # Add and set resolution using xrandr; only needed when using nouveau drivers
 # setxkbmap -layout us                              # Set keyboard layout
 xbindkeys                                           # Run xbindkeys; set keyboard bindings
@@ -21,4 +22,4 @@ dunst &                                             # Start dunst; notification 
 /home/adam/bin/mouse-acceleration.sh off            # Turn mouse acceleration off
 /home/adam/bin/mouse-sensitivity.sh -0.2            # Set mouse sensitivity
 /home/adam/bin/spotify-notify.sh                    # Notification daemon for Spotify
-exec dbus-launch --autolaunch=$(cat /var/lib/dbus/machine-id) i3  # Load i3; dbus command needed for playerctl
+exec i3                                             # Load i3
