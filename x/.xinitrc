@@ -21,5 +21,5 @@ export QT_STYLE_OVERRIDE=gtk2                       # Force Qt applications to u
 dunst &                                             # Start dunst; notification server
 /home/adam/bin/mouse-acceleration.sh off            # Turn mouse acceleration off
 /home/adam/bin/mouse-sensitivity.sh -0.2            # Set mouse sensitivity
-/home/adam/bin/spotify-notify.sh                    # Notification daemon for Spotify
+/home/adam/bin/spotify-notify.sh &                  # Notification daemon for Spotify
 exec i3                                             # Load i3
