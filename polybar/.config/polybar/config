@@ -24,7 +24,7 @@ padding-right = 1
 wm-restack = i3
 
 modules-left = rofi i3
-modules-right = openweathermap phone volume time powermenu
+modules-right = previous playpause next openweathermap phone volume time powermenu
 
 [module/volume]
 type = internal/pulseaudio
@@ -96,6 +96,7 @@ menu-0-3-exec = ~/bin/lock.sh
 type = custom/script
 exec = ~/bin/openweathermap-detailed.sh
 interval = 600
+label = " %output%"
 label-font = 0
 format-padding = 1
 
@@ -111,3 +112,28 @@ content = 
 click-left = rofi -show drun -theme theme -modi drun -display-drun "Run "
 content-background = ${colors.background-alt}
 content-padding = 1
+
+[module/next]
+type = custom/script
+tail = true
+format-background = ${colors.background-alt}
+format-padding = 1
+exec = ~/.config/polybar/scripts/spotify/next.sh
+click-left = "playerctl next"
+
+[module/previous]
+type = custom/script
+tail = true
+format-background = ${colors.background-alt}
+format-padding = 1
+exec = ~/.config/polybar/scripts/spotify/prev.sh
+click-left = "playerctl previous"
+
+[module/playpause]
+type = custom/script
+exec = ~/.config/polybar/scripts/spotify/play-pause.sh
+format-background = ${colors.background-alt}
+format-padding = 1
+tail = true
+click-left = "playerctl --player=spotify play-pause"
+
