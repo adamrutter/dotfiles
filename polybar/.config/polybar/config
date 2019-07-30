@@ -94,7 +94,7 @@ menu-0-3-exec = ~/bin/lock.sh
 
 [module/openweathermap]
 type = custom/script
-exec = ~/bin/openweathermap-detailed.sh
+exec = ~/.config/polybar/scripts/openweathermap.sh
 interval = 600
 label = " %output%"
 label-font = 0
