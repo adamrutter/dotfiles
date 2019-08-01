@@ -88,7 +88,7 @@ assign [class="figma"] $ws4
 assign [class="^fw.x86_64$"] $ws6
 assign [class="^Desmume$"] $ws6
 for_window [class="^Desmume$"] floating enable
-for_window [class="Spotify"] move to workspace $ws10
+#for_window [class="Spotify"] move to workspace $ws10
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
