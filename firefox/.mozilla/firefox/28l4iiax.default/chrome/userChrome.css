@@ -187,3 +187,9 @@ than the last */
 .tabs-newtab-button.toolbarbutton-1 {
   display: none;
 }
+
+/* Dropdown menu that appears when lots of tabs are open */
+
+#TabsToolbar .toolbarbutton-1 {
+  display: none;
+}
