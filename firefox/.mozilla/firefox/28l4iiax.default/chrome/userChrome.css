@@ -150,7 +150,7 @@ than the last */
 
 /* Hide close tab button until hover, and style it slightly */
 
-.tabbrowser-tab:not([pinned]):not(:hover) .tab-close-button {
+/* .tabbrowser-tab:not([pinned]):not(:hover) .tab-close-button {
   visibility: collapse !important;
 }
 
@@ -158,7 +158,7 @@ than the last */
   border-radius: 2px;
   display: block !important;
   visibility: visible !important;
-}
+} */
 
 /* Active tab indicator; the line on top of the active tab */
 
@@ -192,4 +192,9 @@ than the last */
 
 #TabsToolbar .toolbarbutton-1 {
   display: none;
+}
+
+/* Hide tab-close button */
+.tab-close-button {
+  display: none !important;
 }
