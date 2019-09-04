@@ -5,10 +5,10 @@
 #
 
 # ID of the device; 'kdeconnect-cli -l' to find out
-deviceId="ccfe4b69f4dba72f"
+deviceId="b428cea5cb991bf0"
 
 # Where the phone is mounted
-mountPoint="/mnt/sma520f/"
+mountPoint="/mnt/8B2X129GV/"
 
 # The point at which the battery level should be considered low
 lowLevel=30
