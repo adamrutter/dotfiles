@@ -118,22 +118,21 @@ type = custom/script
 tail = true
 format-background = ${colors.background-alt}
 format-padding = 1
-exec = ~/.config/polybar/scripts/spotify/next.sh
-click-left = "playerctl next"
+exec = ~/.config/polybar/scripts/playerctl/next-icon.sh
+click-left = "~/.config/polybar/scripts/playerctl/next-action.sh"
 
 [module/previous]
 type = custom/script
 tail = true
 format-background = ${colors.background-alt}
 format-padding = 1
-exec = ~/.config/polybar/scripts/spotify/prev.sh
-click-left = "playerctl previous"
+exec = ~/.config/polybar/scripts/playerctl/prev-icon.sh
+click-left = "~/.config/polybar/scripts/playerctl/prev-action.sh"
 
 [module/playpause]
 type = custom/script
-exec = ~/.config/polybar/scripts/spotify/play-pause.sh
+exec = ~/.config/polybar/scripts/playerctl/play-pause-icon.sh
 format-background = ${colors.background-alt}
 format-padding = 1
 tail = true
-click-left = "playerctl --player=spotify play-pause"
-
+click-left = "playerctl --player=rhythmbox,spotify play-pause"
