@@ -15,8 +15,9 @@ lowLevel=30
 
 # Colours
 red=$(xrdb -query | grep -w color1 | awk '{print $2}')
-#green=$(xrdb -query | grep -w color2 | awk '{print $2}')
-green=$(cat ~/.Xresources | grep -w 'accent' | grep -v '!' | tail -c 8)
+# green=$(xrdb -query | grep -w color2 | awk '{print $2}')
+# green=$(cat ~/.Xresources | grep -w 'accent' | grep -v '!' | tail -c 8)
+green="#55b166"
 inactive=$(cat ~/.Xresources | grep -w '#define base04' | tail -c 8)
 
 # Call kdeconnect (Keeps following code much more DRY)
