@@ -55,6 +55,7 @@ The accent colour is kept uniform across all programs. This requires editing:
 * The custom fish prompt in `fish/.config/fish/functions/fish_prompt.fish`
 * The custom bash prompt in `bash/.bashrc`
 * `frame_color` in `dunst/.config/dunst/dunstrc` (Note: edit the one under the `[global]` heading, not under `[urgency_critical]`)
+* The folder colour (see [here](https://github.com/PapirusDevelopmentTeam/papirus-folders)) 
 
 This is probably something I will automate in future with a script.
 
