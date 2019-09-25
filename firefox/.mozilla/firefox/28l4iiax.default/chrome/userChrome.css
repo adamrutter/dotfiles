@@ -3,9 +3,9 @@
 /* Accent colour */
 
 :root {
-  --accent-color: #55b166;
+  /* --accent-color: #55b166; */
   /* --accent-color: #d99f21; */
-  /* --accent-color: #dc5d3a; */
+  --accent-color: #dc5d3a;
   /* --accent-color: #4d78cc; */
 }
 

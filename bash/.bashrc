@@ -117,5 +117,5 @@ if ! shopt -oq posix; then
 fi
 
 # Custom Prompt
-PS1="\[\033[1;32m\]<\u \w> \[\033[1;32m\]\s\[\033[0m\] "
+PS1="\[\033[1;31m\]<\u \w> \[\033[1;31m\]\s\[\033[0m\] "
 export PS1
