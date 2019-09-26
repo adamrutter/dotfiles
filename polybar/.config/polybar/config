@@ -115,24 +115,27 @@ content-padding = 1
 
 [module/next]
 type = custom/script
-tail = true
+exec-if=pgrep "rhythmbox|spotify"
+interval=2.5
 format-background = ${colors.background-alt}
 format-padding = 1
 exec = ~/.config/polybar/scripts/playerctl/next-icon.sh
-click-left = "~/.config/polybar/scripts/playerctl/next-action.sh"
+click-left = "~/.config/polybar/scripts/playerctl/next-action.sh &"
 
 [module/previous]
 type = custom/script
-tail = true
+exec-if=pgrep "rhythmbox|spotify"
+interval=2.5
 format-background = ${colors.background-alt}
 format-padding = 1
 exec = ~/.config/polybar/scripts/playerctl/prev-icon.sh
-click-left = "~/.config/polybar/scripts/playerctl/prev-action.sh"
+click-left = "~/.config/polybar/scripts/playerctl/prev-action.sh &"
 
 [module/playpause]
 type = custom/script
+exec-if=pgrep "rhythmbox|spotify"
 exec = ~/.config/polybar/scripts/playerctl/play-pause-icon.sh
 format-background = ${colors.background-alt}
 format-padding = 1
-tail = true
-click-left = "playerctl --player=rhythmbox,spotify play-pause"
+interval=0.5
+click-left = "playerctl --player=rhythmbox,spotify play-pause &"

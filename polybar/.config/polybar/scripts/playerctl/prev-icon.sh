@@ -1,23 +1,18 @@
 #!/bin/bash
 
-while true; do
-	status=$(playerctl --player=rhythmbox,spotify status 2> /dev/null)
-	if [[ "$status" = "Playing" ]] || [[ "$status" = "Paused" ]] || [ "$status" = "Stopped" ]; then
+status=$(playerctl --player=rhythmbox,spotify status 2> /dev/null)
+if [[ "$status" = "Playing" ]] || [[ "$status" = "Paused" ]] || [ "$status" = "Stopped" ]; then
 
-		# Podcast specific
-		genre=$(playerctl metadata | grep genre)
-		if [[ "$genre" == *"Podcast"* ]]; then
-			echo ""
+	# Podcast specific
+	genre=$(playerctl metadata | grep genre)
+	if [[ "$genre" == *"Podcast"* ]]; then
+		echo ""
 
-		# Everything else
-		else
-		  echo ""
-		fi
-
+	# Everything else
 	else
-		echo ""
+	  echo ""
 	fi
-	
-	sleep .1 &
-	wait
-done
+
+else
+	echo ""
+fi
