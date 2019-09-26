@@ -11,7 +11,7 @@
   children: [horibox];
   height: 24px;
   location: south west;
-  width: 1000px;
+  width: 750px;
   x-offset: 33px;
 }
 
