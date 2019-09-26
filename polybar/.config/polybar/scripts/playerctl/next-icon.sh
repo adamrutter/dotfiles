@@ -1,7 +1,7 @@
 #!/bin/bash
 
 status=$(playerctl --player=rhythmbox,spotify status 2> /dev/null)
-if [[ "$status" == "Playing" ]] || [[ "$status" == "Paused" ]] || [ "$status" = "Stopped" ]; then
+if [[ "$status" == "Playing" ]] || [[ "$status" == "Paused" ]] || [[ "$status" == "Stopped" ]]; then
 
 	# Podcast specific
 	genre=$(playerctl metadata | grep genre)
