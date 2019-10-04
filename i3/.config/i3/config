@@ -87,7 +87,7 @@ assign [class="^Steam$"] $ws6
 assign [class="figma"] $ws4
 assign [class="^fw.x86_64$"] $ws6
 assign [class="^Desmume$"] $ws6
-for_window [class="^Desmume$"] floating enable
+for_window [title="^DeSmuME - Running$"] floating enable
 #for_window [class="Spotify"] move to workspace $ws10
 assign [class="^Rhythmbox$"] $ws10
 
