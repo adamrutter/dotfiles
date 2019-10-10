@@ -90,6 +90,8 @@ assign [class="^Desmume$"] $ws6
 for_window [title="^DeSmuME - Running$"] floating enable
 #for_window [class="Spotify"] move to workspace $ws10
 assign [class="^Rhythmbox$"] $ws10
+assign [class="^retroarch$"] $ws6
+for_window [class="^retroarch$"] floating enable
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
