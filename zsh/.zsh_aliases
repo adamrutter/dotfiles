@@ -15,3 +15,6 @@ alias ckan="~/games/kerbal-space-program/ckan/ckan.exe"
 
 # Show currently used graphics driver
 alias graphics-driver="lspci -nnk | grep -i vga -A3 | grep 'in use' | cut -d ':' -f 2 | cut -c 1 --complement"
+
+# No header for watch
+alias watch="watch --no-title"
