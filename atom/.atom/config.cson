@@ -1,0 +1,77 @@
+"*":
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+    enableBuiltinProvider: false
+    fileBlacklist: [
+      "*.html"
+      "*.md"
+      "*.txt"
+    ]
+  "bracket-matcher":
+    highlightMatchingLineNumber: true
+  core:
+    autoHideMenuBar: true
+    automaticallyUpdate: false
+    closeDeletedFileTabs: true
+    disabledPackages: [
+      "theme-switcher"
+      "tag"
+      "atom-wrap-in-tag"
+      "less-than-slash"
+      "autocomplete-html"
+      "autoclose-html"
+      "background-tips"
+      "pigments"
+      "atom-beautify"
+    ]
+    telemetryConsent: "no"
+  editor:
+    fontFamily: "Ubuntu Mono, Material Design Icons"
+    fontSize: 16
+    lineHeight: 1.6
+    preferredLineLength: 100
+    scrollPastEnd: true
+    showIndentGuide: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+  "exception-reporting":
+    userId: "83cf1fd0-7393-4d18-8ef2-69ec2f36f38f"
+  "highlight-line":
+    hideHighlightOnSelect: true
+  "linter-stylelint": {}
+  "linter-ui-default":
+    panelHeight: 280
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      isDisabledIfNoConfigFile: true
+    useEslint: true
+  "seti-icons":
+    noColor: true
+  "status-bar": {}
+  welcome:
+    showOnStartup: false
+".basic.html.text":
+  editor:
+    softWrap: false
+".css.less.source":
+  editor:
+    softWrap: false
+".css.scss.source":
+  editor:
+    softWrap: false
+".css.source":
+  editor:
+    softWrap: false
+".js.source":
+  editor:
+    softWrap: false
+".json.source":
+  editor:
+    softWrap: false
+".shell.source":
+  editor:
+    softWrap: false
+".text.xml.xsl":
+  editor:
+    softWrap: false
