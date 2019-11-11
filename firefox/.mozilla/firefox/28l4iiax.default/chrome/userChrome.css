@@ -145,7 +145,7 @@ than the last */
 /* URL bar */
 
 #urlbar {
-  margin: 5px !important;
+/*   margin: 5px !important; */
 }
 
 /* Hide close tab button until hover, and style it slightly */
@@ -198,6 +198,60 @@ than the last */
 .tab-close-button {
   display: none !important;
 }
+
+/* One liner (originally from https://github.com/khuedoan98/one-line-firefox/blob/master/userChrome.css) */
+
+#TabsToolbar {
+  margin-left: 38vw !important;
+}
+
+#tabbrowser-tabs {
+  height: 37px !important;
+}
+
+.tabbrowser-tab {
+  border: 1px solid hsla(0, 0%, 0%, 0) !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+  border-bottom-color: var(--toolbar-bgcolor) !important;
+  border-left-color: hsla(240,5%,5%,.15) !important;
+  border-right-color: hsla(240,5%,5%,.15) !important;
+}
+
+#nav-bar {
+  --tabs-border-color: none;
+  background: transparent !important;
+  margin-right: 62vw !important;
+  margin-top: -36px !important;
+}
+
+#urlbar-container {
+  min-width: 0 !important;
+  padding: 3px;
+}
+
+#urlbar {
+/*   border: none !important; */
+}
+
+#stop-reload-button,
+#bookmarks-menu-button,
+#PanelUI-button,
+#nav-bar-overflow-button {
+  display: none;
+}
+
+.tabbrowser-arrowscrollbox .scrollbutton-up,
+.tabbrowser-arrowscrollbox .scrollbutton-down {
+  display: none;
+}
+
+.arrowscrollbox-overflow-start-indicator,
+.arrowscrollbox-overflow-end-indicator {
+  display: none;
+}
+
 /* Hide URL bar action buttons */
 #page-action-buttons,
 .urlbar-history-dropmarker {
