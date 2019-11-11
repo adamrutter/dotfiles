@@ -27,3 +27,5 @@ user_pref("xpinstall.signatures.required", false);
 // Enabled browser console
 user_pref("devtools.chrome.enabled", true);
 
+// Enable userChrome.css
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
