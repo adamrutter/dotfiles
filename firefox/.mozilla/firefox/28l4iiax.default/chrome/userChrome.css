@@ -206,6 +206,7 @@ than the last */
 }
 
 #tabbrowser-tabs {
+/*   border-left: 1px solid hsla(240,5%,5%,.15) !important; */
   height: 37px !important;
 }
 
