@@ -198,6 +198,26 @@ than the last */
 .tab-close-button {
   display: none !important;
 }
+/* Hide URL bar action buttons */
+#page-action-buttons,
+.urlbar-history-dropmarker {
+  display: none !important;
+}
+
+#urlbar-container:hover #page-action-buttons,
+#urlbar-container:hover .urlbar-history-dropmarker{
+  display: inherit !important;
+}
+
+.urlbar-input-box {
+  padding-right: 7px;
+  transition-duration: 0;
+}
+
+#urlbar-container:hover .urlbar-input-box {
+  padding-right: 0;
+}
+
 /* Hide top border on selected tab */
 :root:not([tabsintitlebar]) .tab-background {
   border-top-style: none !important;
