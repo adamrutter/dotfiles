@@ -227,7 +227,7 @@ than the last */
 
 #urlbar-container {
   min-width: 0 !important;
-  padding: 3px;
+  padding: 6px 7px !important;
 }
 
 #urlbar {
@@ -237,7 +237,8 @@ than the last */
 #stop-reload-button,
 #bookmarks-menu-button,
 #PanelUI-button,
-#nav-bar-overflow-button {
+#nav-bar-overflow-button,
+#fxa-toolbar-menu-button {
   display: none;
 }
 
