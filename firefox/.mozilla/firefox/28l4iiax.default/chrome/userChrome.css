@@ -198,3 +198,8 @@ than the last */
 .tab-close-button {
   display: none !important;
 }
+/* Hide top border on selected tab */
+:root:not([tabsintitlebar]) .tab-background {
+  border-top-style: none !important;
+}
+
