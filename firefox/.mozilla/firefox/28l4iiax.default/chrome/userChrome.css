@@ -210,13 +210,12 @@ than the last */
 }
 
 .tabbrowser-tab {
-  border: 1px solid hsla(0, 0%, 0%, 0) !important;
+  border-bottom: 1px solid hsla(240,5%,5%,.2) !important;
 }
 
 .tabbrowser-tab[selected="true"] {
   border-bottom-color: var(--toolbar-bgcolor) !important;
-  border-left-color: hsla(240,5%,5%,.15) !important;
-  border-right-color: hsla(240,5%,5%,.15) !important;
+  box-shadow: 0 0 0 1px hsla(240,5%,5%,.2);
 }
 
 #nav-bar {
