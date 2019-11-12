@@ -29,3 +29,6 @@ user_pref("devtools.chrome.enabled", true);
 
 // Enable userChrome.css
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+
+// Enable video auto-play
+user_pref("media.autoplay.default, 0");
