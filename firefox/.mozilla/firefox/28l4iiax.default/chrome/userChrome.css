@@ -162,8 +162,10 @@ than the last */
 
 /* Active tab indicator; the line on top of the active tab */
 
-#tabbrowser-tabs {
-  --tab-line-color: var(--accent-color) !important;
+.tab-line {
+/*   --tab-line-color: var(--accent-color) !important; */
+/*   --tab-line-color: none !important; */
+  display: none;
 }
 
 /* Override the toolbar color */
