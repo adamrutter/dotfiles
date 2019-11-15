@@ -77,3 +77,12 @@
   close_all = ctrl+shift+space
   history = ctrl+grave
   context = ctrl+shift+period
+
+[phone-battery]
+
+  summary = Tasker
+  body = *Battery*
+  frame_color = "#98c379"
+  format = "<b>Phone Charged</b>\n%b"
+  urgency = critical
+  timeout = 0
