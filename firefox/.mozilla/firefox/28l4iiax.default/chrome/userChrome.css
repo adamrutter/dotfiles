@@ -201,40 +201,89 @@ than the last */
   display: none !important;
 }
 
-/* One liner (originally from https://github.com/khuedoan98/one-line-firefox/blob/master/userChrome.css) */
-
-#TabsToolbar {
-  margin-left: 38vw !important;
-}
-
-#tabbrowser-tabs {
-/*   border-left: 1px solid hsla(240,5%,5%,.15) !important; */
-  height: 37px !important;
-}
-
-.tabbrowser-tab {
-  border-bottom: 1px solid hsla(240,5%,5%,.2) !important;
-}
-
-.tabbrowser-tab[selected="true"] {
-  border-bottom-color: var(--toolbar-bgcolor) !important;
-  box-shadow: 0 0 0 1px hsla(240,5%,5%,.2);
+/* One liner */
+#navigator-toolbox {
+  display: flex !important;
 }
 
 #nav-bar {
-  --tabs-border-color: none;
-  background: transparent !important;
-  margin-right: 62vw !important;
-  margin-top: -36px !important;
+  order: 1 !important;
+  width: 38vw !important;
+}
+
+#nav-bar-customization-target {
+  width: 100% !important;
 }
 
 #urlbar-container {
-  min-width: 0 !important;
-  padding: 6px 7px !important;
+  min-width: unset !important;
+  padding: 6px !important;
 }
 
 #urlbar {
-/*   border: none !important; */
+  border-color: hsla(240,5%,5%,.15) !important;
+  width: 100% !important;
+}
+
+#titlebar {
+  order: 2 !important;
+  width: 62vw !important;
+}
+
+#toolbar-menubar {
+  height: 100% !important;
+  left: 0 !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 38vw !important;
+  z-index: -1 !important;
+}
+
+#toolbar-menubar:not([inactive="true"]) {
+  z-index: 99 !important;
+}
+
+#menubar-items {
+  background: var(--toolbar-non-lwt-bgcolor) !important;
+  height: 100% !important;
+  position: absolute;
+  width: 100% !important;
+}
+
+#main-menubar {
+  height: 100% !important;
+}
+
+@media (max-width: 900px) {
+  #toolbar-menubar {
+    width: 100vw !important;
+  }
+}
+
+#TabsToolbar {
+  height: 100% !important;
+  position: absolute !important;
+}
+
+#TabsToolbar .toolbar-items {
+  display: block !important;
+  height: 100% !important;
+}
+
+#TabsToolbar-customization-target {
+  height: 100% !important;
+  width: 62vw !important;
+}
+
+.tabbrowser-arrowscrollbox .scrollbutton-up,
+.tabbrowser-arrowscrollbox .scrollbutton-down,
+.arrowscrollbox-overflow-start-indicator,
+.arrowscrollbox-overflow-end-indicator {
+  display: none !important;
+}
+
+.tab-content[selected="true"] {
+  box-shadow: 0 0 0 1px hsla(240,5%,5%,.2) !important;
 }
 
 #stop-reload-button,
@@ -242,17 +291,7 @@ than the last */
 #PanelUI-button,
 #nav-bar-overflow-button,
 #fxa-toolbar-menu-button {
-  display: none;
-}
-
-.tabbrowser-arrowscrollbox .scrollbutton-up,
-.tabbrowser-arrowscrollbox .scrollbutton-down {
-  display: none;
-}
-
-.arrowscrollbox-overflow-start-indicator,
-.arrowscrollbox-overflow-end-indicator {
-  display: none;
+  display: none !important;
 }
 
 /* Hide URL bar action buttons */
