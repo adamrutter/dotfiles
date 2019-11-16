@@ -261,18 +261,21 @@ than the last */
 }
 
 #TabsToolbar {
+  display: flex !important;
   height: 100% !important;
   position: absolute !important;
+  width: 62vw !important;
 }
 
 #TabsToolbar .toolbar-items {
   display: block !important;
   height: 100% !important;
+  width: 100% !important;
 }
 
 #TabsToolbar-customization-target {
   height: 100% !important;
-  width: 62vw !important;
+  width: 100% !important;
 }
 
 .tabbrowser-arrowscrollbox .scrollbutton-up,
@@ -292,6 +295,10 @@ than the last */
 #nav-bar-overflow-button,
 #fxa-toolbar-menu-button {
   display: none !important;
+}
+
+.private-browsing-indicator {
+  height: 100% !important;
 }
 
 /* Hide URL bar action buttons */
