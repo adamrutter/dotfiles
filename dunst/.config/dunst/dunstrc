@@ -12,9 +12,9 @@
 
 [urgency_critical]
 
-  background = "#e06c75"
-  foreground = "#eff1f5"
-  frame_color = "#eff1f5"
+  background = "#ff0000"
+  foreground = "#ffffff"
+  frame_color = "#ffffff"
   timeout = 0
 
 [global]
