@@ -225,3 +225,11 @@ than the last */
 :root:not([tabsintitlebar]) .tab-background {
   border-top-style: none !important;
 }
+
+/* Hide some buttons on navbar */
+#bookmarks-menu-button,
+#fxa-toolbar-menu-button,
+#PanelUI-button,
+#reload-button {
+  display: none;
+}
