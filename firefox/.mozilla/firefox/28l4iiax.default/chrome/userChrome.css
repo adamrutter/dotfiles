@@ -202,7 +202,7 @@ than the last */
 }
 
 /* Hide URL bar action buttons */
-#page-action-buttons,
+/* #page-action-buttons,
 .urlbar-history-dropmarker {
   display: none !important;
 }
@@ -215,7 +215,7 @@ than the last */
 .urlbar-input-box {
   padding-right: 7px;
   transition-duration: 0;
-}
+} */
 
 #urlbar-container:hover .urlbar-input-box {
   padding-right: 0;
@@ -225,4 +225,3 @@ than the last */
 :root:not([tabsintitlebar]) .tab-background {
   border-top-style: none !important;
 }
-
