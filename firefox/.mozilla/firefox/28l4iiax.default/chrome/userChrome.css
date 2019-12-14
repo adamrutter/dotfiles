@@ -230,7 +230,7 @@ than the last */
 #bookmarks-menu-button,
 #fxa-toolbar-menu-button,
 #PanelUI-button,
-#reload-button {
+#stop-reload-button {
   display: none;
 }
 
