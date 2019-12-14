@@ -238,3 +238,8 @@ than the last */
 .tab-content[selected="true"] {
   box-shadow: 0 0 1px hsla(240,5%,5%,.25);
 }
+
+/* URL bar container padding */
+#urlbar-container {
+  padding-block: 5px !important;
+}
