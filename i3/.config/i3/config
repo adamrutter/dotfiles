@@ -28,7 +28,7 @@ client.background       $background
 
 # Gaps and borders
 gaps inner 35
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 
 # Window title bar
 # Set the title font smaller than the font defined above, so there is padding
