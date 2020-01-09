@@ -1,1 +1,1 @@
-PROMPT="%F{red}<%n %1~> %f"
+PROMPT="%F{blue}<%n %1~> %f"
