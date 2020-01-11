@@ -95,6 +95,8 @@ assign [class="^Rhythmbox$"] $ws10
 assign [class="^retroarch$"] $ws6
 for_window [class="^retroarch$"] floating enable
 assign [title="^Windows 7" title="- Oracle VM VirtualBox$"] $ws11
+assign [class="^Lutris$"] $ws6
+assign [title="^Banished$"] $ws6
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
