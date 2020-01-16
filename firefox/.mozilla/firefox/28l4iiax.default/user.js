@@ -32,3 +32,6 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // Enable video auto-play
 user_pref("media.autoplay.default, 0");
+
+// Enable search suggestions in the address bar
+user_pref("browser.search.suggest.enabled, 1");
