@@ -18,10 +18,6 @@
   color: white !important;
 }
 
-.browserContainer > findbar .findbar-textbox[focused="true"] {
-  box-shadow: inset 0 1px var(--accent-color), inset -1px 0 var(--accent-color), inset 0 -1px var(--accent-color), inset 1px 0 var(--accent-color) !important;
-}
-
 .browserContainer > findbar .findbar-find-previous:active:not([disabled]), .browserContainer > findbar .findbar-find-next:active:not([disabled]) {
   background-color: var(--accent-color) !important;
 }
