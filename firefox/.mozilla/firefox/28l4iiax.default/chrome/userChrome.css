@@ -73,8 +73,9 @@ toolbarbutton.scrollbutton-down {
   display: none !important;
 }
 
-/* Hide top border on selected tab */
+/* Top border tabs */
 :root:not([tabsintitlebar]) .tab-background {
+  border-top-color: -moz-dialog !important;
 }
 
 /* Hide some buttons on navbar */
