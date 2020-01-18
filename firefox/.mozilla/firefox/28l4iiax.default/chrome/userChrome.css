@@ -57,9 +57,14 @@ findbar toolbarbutton.tabbable:-moz-focusring {
   display: none !important;
 }
 
+/* Dropdown menu that appears when lots of tabs are open */
+#TabsToolbar .toolbarbutton-1 {
   display: none;
 }
 
+/* Scroll buttons that appear when lots of tabs are open */
+toolbarbutton.scrollbutton-up,
+toolbarbutton.scrollbutton-down {
   display: none;
 }
 
