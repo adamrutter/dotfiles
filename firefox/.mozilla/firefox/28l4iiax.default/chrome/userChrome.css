@@ -26,8 +26,13 @@
   background-color: var(--accent-color) !important;
 }
 
+.findbar-textbox:focus {
+  background-color: -moz-Field !important;
+  color: var(--lwt-toolbar-field-color) !important;
 }
 
+findbar toolbarbutton.tabbable:-moz-focusring {
+  outline: none !important;
 }
 
 /* Text links; for pop-ups etc */
