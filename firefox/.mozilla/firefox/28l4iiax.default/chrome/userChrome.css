@@ -1,4 +1,7 @@
-/* Accent colour */
+/* -------------- */  
+/* Root variables */
+/* -------------- */  
+
 :root {
   /* --accent-color: #55b166; */
   /* --accent-color: #d99f21; */
@@ -7,43 +10,61 @@
   --toolbar-non-lwt-bgimage: !important;
 }
 
+/* ------- */  
+/* Nav bar */
+/* ------- */ 
+
+/* Forward/back buttons */
+#forward-button,
+#back-button {
+  display: none !important;
+}
+
+/* Account button */
+#fxa-toolbar-menu-button {
+  display: none !important;
+}
+
+/* Bookmarks button */
+#bookmarks-menu-button {
+  display: none !important;
+}
+
+/* Reload button */
+#stop-reload-button {
+  display: none !important;
+}
+
+/* Container for some buttons on the far right of the bar */
+#PanelUI-button {
+  display: none !important;
+}
+
+/* URL bar container */
+#urlbar-container {
+  padding-block: 5px !important;
+}
+
+/* ------- */
+/* URL bar */
+/* ------- */
+
+/* Actions button */
+#pageActionButton {
+  display: none !important;
+}
+
+/* ---- */
+/* Tabs */
+/* ---- */
+
 /*  Tab loading animation in tab */
 .tab-throbber {
   filter: grayscale(100%);
 }
 
-/* Find dialog */
-.findbar-button:-moz-any([checked="true"], :hover:active):not([disabled="true"]) {
-  background-color: var(--accent-color) !important;
-  color: white !important;
-}
-
-.browserContainer > findbar .findbar-find-previous:active:not([disabled]), .browserContainer > findbar .findbar-find-next:active:not([disabled]) {
-  background-color: var(--accent-color) !important;
-}
-
-.findbar-textbox:focus {
-  background-color: -moz-Field !important;
-  color: var(--lwt-toolbar-field-color) !important;
-}
-
-findbar toolbarbutton.tabbable:-moz-focusring {
-  outline: none !important;
-}
-
-/* Text links; for pop-ups etc */
-.text-link {
-  color: var(--accent-color) !important;
-}
-
 /* Tab loading burst animation */
 .tab-loading-burst {
-  display: none !important;
-}
-
-/* Forward and back buttons */
-#forward-button,
-#back-button {
   display: none !important;
 }
 
@@ -64,7 +85,7 @@ toolbarbutton.scrollbutton-down {
   display: none;
 }
 
-/* Hide tab-close button */
+/* Tab-close button */
 .tab-close-button {
   display: none !important;
 }
@@ -74,16 +95,37 @@ toolbarbutton.scrollbutton-down {
   border-top-color: -moz-dialog !important;
 }
 
-/* Hide some buttons on navbar */
-#bookmarks-menu-button,
-#fxa-toolbar-menu-button,
-#PanelUI-button,
-#stop-reload-button,
-#pageActionButton {
-  display: none;
+/* ----------- */
+/* Find dialog */
+/* ----------- */
+
+/* Highlight all, match case, whole words buttons */
+.findbar-button:-moz-any([checked="true"], :hover:active):not([disabled="true"]) {
+  background-color: var(--accent-color) !important;
+  color: white !important;
 }
 
-/* URL bar container padding */
-#urlbar-container {
-  padding-block: 5px !important;
+/* Next/previous buttons */
+.browserContainer > findbar .findbar-find-previous:active:not([disabled]), .browserContainer > findbar .findbar-find-next:active:not([disabled]) {
+  background-color: var(--accent-color) !important;
+}
+
+/* Text box */
+.findbar-textbox:focus {
+  background-color: -moz-Field !important;
+  color: var(--lwt-toolbar-field-color) !important;
+}
+
+/* Outline when button has been clicked */
+findbar toolbarbutton.tabbable:-moz-focusring {
+  outline: none !important;
+}
+
+/* ------------- */
+/* Miscellaneous */
+/* ------------- */
+
+/* Text links; for pop-ups etc */
+.text-link {
+  color: var(--accent-color) !important;
 }
