@@ -7,12 +7,19 @@
   /* --accent-color: #d99f21; */
   /* --accent-color: #dc5d3a; */
   --accent-color: #4d78cc;
+  --one-line-size: 40px;
+  --one-line-padding: 3px;
   --toolbar-non-lwt-bgimage: !important;
 }
 
 /* ------- */  
 /* Nav bar */
 /* ------- */ 
+
+#nav-bar {
+  background: --toolbar-bgcolor !important;
+  box-shadow: none !important;
+}
 
 /* Forward/back buttons */
 #forward-button,
@@ -35,19 +42,26 @@
   display: none !important;
 }
 
+/* Overflow button */
+#nav-bar-overflow-button {
+  display: none !important;
+}
+
 /* Container for some buttons on the far right of the bar */
 #PanelUI-button {
   display: none !important;
 }
 
-/* URL bar container */
-#urlbar-container {
-  padding-block: 5px !important;
-}
-
 /* ------- */
 /* URL bar */
 /* ------- */
+
+/* URL bar container */
+#urlbar-container {
+  margin-inline-end: 0px !important;
+  margin-inline-start: 0px !important;
+  padding-block: 0px !important;
+}
 
 /* Actions button */
 #pageActionButton {
@@ -90,9 +104,18 @@ toolbarbutton.scrollbutton-down {
   display: none !important;
 }
 
-/* Top border tabs */
-:root:not([tabsintitlebar]) .tab-background {
-  border-top-color: -moz-dialog !important;
+/* -------- */
+/* Menu bar */
+/* -------- */
+
+/* Dropdown menu headers */
+#main-menubar {
+  background: -moz-dialog !important;
+}
+
+/* The free space on the right of the bar */
+#toolbar-menubar spacer {
+  background: -moz-dialog !important;
 }
 
 /* ----------- */
@@ -128,4 +151,43 @@ findbar toolbarbutton.tabbable:-moz-focusring {
 /* Text links; for pop-ups etc */
 .text-link {
   color: var(--accent-color) !important;
+}
+
+/* -------------- */
+/* One line theme */
+/* -------------- */
+
+#TabsToolbar {
+  margin-left: 38vw !important;
+}
+
+#nav-bar {
+  margin-right: 62vw !important;
+  margin-top: calc(-1 * var(--one-line-size)) !important;
+  padding: var(--one-line-padding) !important;
+} 
+
+#urlbar-container {
+  min-width: 1px !important;
+}
+
+#urlbar {
+  height: calc(var(--one-line-size) - calc(var(--one-line-padding) * 2)) !important;
+}
+
+#tabbrowser-tabs {
+  min-height: 1px !important;
+}
+
+.tabbrowser-arrowscrollbox {
+  min-height: 1px !important;
+}
+
+.tab-stack {
+  height: var(--one-line-size) !important;  
+} 
+
+/* Ensure icons are the full height of the URL bar */
+.urlbar-icon {
+  height: 999px !important;
 }
