@@ -35,3 +35,6 @@ user_pref("media.autoplay.default, 0");
 
 // Enable search suggestions in the address bar
 user_pref("browser.search.suggest.enabled, 1");
+
+// Disable recommendations
+user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
