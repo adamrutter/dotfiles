@@ -99,6 +99,11 @@ toolbarbutton.scrollbutton-down {
   display: none;
 }
 
+/* Tab top border */
+:root:not([tabsintitlebar]) .tab-background {
+  border-top-style: none !important;
+}
+
 /* Tab-close button */
 .tab-close-button {
   display: none !important;
