@@ -139,7 +139,7 @@ toolbarbutton.scrollbutton-down {
 }
 
 /* Text box */
-.findbar-textbox:focus {
+.findbar-textbox:focus:not([status="notfound"]) {
   background-color: -moz-Field !important;
   color: var(--lwt-toolbar-field-color) !important;
 }
