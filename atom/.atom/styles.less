@@ -304,7 +304,7 @@ atom-text-editor.editor .cursor {
   color: @accent;
 }
 
-atom-text-editor[mini].is-focused {
+:not(.find-and-replace.has-no-results) atom-text-editor[mini].is-focused {
   border-color: @accent;
   box-shadow: 0 0 0 1px @accent
 }
@@ -324,7 +324,7 @@ atom-text-editor[mini].is-focused {
 .editor.mini .cursors .cursor {
   border-color: @accent;
 }
-atom-text-editor[mini].is-focused,
+:not(.find-and-replace.has-no-results) atom-text-editor[mini].is-focused,
 .btn:focus,
 .btn.btn-default:focus {
   border-color: @accent !important;
@@ -381,7 +381,7 @@ atom-text-editor[mini].is-focused,
   background: @accent;
 }
 
-atom-text-editor.is-focused {
+:not(.find-and-replace.has-no-results) atom-text-editor.is-focused {
   border-color: @accent !important;
 }
 
