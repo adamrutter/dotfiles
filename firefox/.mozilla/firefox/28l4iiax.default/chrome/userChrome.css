@@ -7,8 +7,9 @@
   /* --accent-color: #d99f21; */
   /* --accent-color: #dc5d3a; */
   --accent-color: #4d78cc;
+  --border-radius: 4px;
   --one-line-size: 40px;
-  --one-line-padding: 3px;
+  --one-line-padding: 4px;
   --toolbar-non-lwt-bgimage: !important;
 }
 
@@ -61,6 +62,16 @@
   margin-inline-end: 0px !important;
   margin-inline-start: 0px !important;
   padding-block: 0px !important;
+}
+
+/* URL bar */
+#urlbar {
+  border-radius: var(--border-radius) 0 0 0 !important;
+}
+
+/* Inner URL bar container */
+#urlbar-input-container {
+  border-radius: var(--border-radius) 0 0 0 !important;
 }
 
 /* Actions button */
