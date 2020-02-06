@@ -7,8 +7,8 @@ source /etc/X11/Xsession.d/*                      # Source all files in Xsession
 xbindkeys                                         # Run xbindkeys; set keyboard bindings
 sh ~/.fehbg &                                     # Set wallpaper
 xset s off; xset -dpms                            # Turn off screensaver and power saving
-numlockx on                                       # Set Num Lock
 nvidia-settings --load-config-only                # Load Nvidia driver settings
+# numlockx on                                       # Set Num Lock
 xrdb ~/.Xresources                                # Set xresources
 xsetroot -cursor_name left_ptr                    # Set root window cursor
 redshift -l manual &                              # Start redshift; blue light filter
