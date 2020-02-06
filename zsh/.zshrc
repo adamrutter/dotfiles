@@ -65,3 +65,8 @@ function duh() {
 
 # Remove '%' from the end of partial lines
 export PROMPT_EOL_MARK=''
+
+# Rsync cp replacement
+function cpr() {
+  rsync --archive -hh --partial --info=stats1 --info=progress2 --modify-window=1 "$@"
+}
