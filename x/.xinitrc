@@ -1,7 +1,6 @@
 #!/bin/bash
 
 xgamma -rgamma 0.9 -ggamma 0.85 -bgamma 0.95      # Colour calibration; must be run before redshift
-# setxkbmap -layout us                            # Set keyboard layout
 xbindkeys                                         # Run xbindkeys; set keyboard bindings
 sh ~/.fehbg &                                     # Set wallpaper
 xset s off; xset -dpms                            # Turn off screensaver and power saving
