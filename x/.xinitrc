@@ -1,7 +1,6 @@
 #!/bin/bash
 
 xgamma -rgamma 0.9 -ggamma 0.85 -bgamma 0.95      # Colour calibration; must be run before redshift
-source /etc/X11/Xsession.d/*                      # Source all files in Xsession.d
 # /home/adam/bin/set-resolution                   # Add and set resolution using xrandr; only needed when using nouveau drivers
 # setxkbmap -layout us                            # Set keyboard layout
 xbindkeys                                         # Run xbindkeys; set keyboard bindings
