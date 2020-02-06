@@ -9,8 +9,6 @@ xrdb ~/.Xresources                                # Set xresources
 # xsetroot -cursor_name left_ptr                    # Set root window cursor
 redshift -l manual &                              # Start redshift; blue light filter
 /home/adam/bin/mount-phone.sh &                   # Run script to automatically mount phone
-nemo -n &                                         # Start Nemo daemon
-# nemo -n &                                         # Start Nemo daemon
 ~/bin/picom --config ~/.config/picom/picom.conf & # Start picom; compositing manager
 export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0         # Fix for fullscreen games in i3; Allows workspaces to be changed without the game disappearing
 xset b off                                        # Turn terminal bong off for X
