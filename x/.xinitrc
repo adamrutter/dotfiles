@@ -10,7 +10,7 @@ xset s off; xset -dpms                            # Turn off screensaver and pow
 nvidia-settings --load-config-only                # Load Nvidia driver settings
 # numlockx on                                       # Set Num Lock
 xrdb ~/.Xresources                                # Set xresources
-xsetroot -cursor_name left_ptr                    # Set root window cursor
+# xsetroot -cursor_name left_ptr                    # Set root window cursor
 redshift -l manual &                              # Start redshift; blue light filter
 /home/adam/bin/mount-phone.sh &                   # Run script to automatically mount phone
 nemo -n &                                         # Start Nemo daemon
