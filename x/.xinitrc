@@ -4,7 +4,6 @@ xgamma -rgamma 0.9 -ggamma 0.85 -bgamma 0.95      # Colour calibration; must be 
 xbindkeys                                         # Run xbindkeys; set keyboard bindings
 sh ~/.fehbg &                                     # Set wallpaper
 xset s off; xset -dpms                            # Turn off screensaver and power saving
-nvidia-settings --load-config-only                # Load Nvidia driver settings
 # numlockx on                                       # Set Num Lock
 xrdb ~/.Xresources                                # Set xresources
 # xsetroot -cursor_name left_ptr                    # Set root window cursor
