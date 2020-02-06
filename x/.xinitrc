@@ -1,7 +1,6 @@
 #!/bin/bash
 
 xgamma -rgamma 0.9 -ggamma 0.85 -bgamma 0.95      # Colour calibration; must be run before redshift
-# /home/adam/bin/set-resolution                   # Add and set resolution using xrandr; only needed when using nouveau drivers
 # setxkbmap -layout us                            # Set keyboard layout
 xbindkeys                                         # Run xbindkeys; set keyboard bindings
 sh ~/.fehbg &                                     # Set wallpaper
