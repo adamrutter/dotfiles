@@ -21,7 +21,6 @@
       "autocomplete-html"
       "autoclose-html"
       "background-tips"
-      "pigments"
       "atom-beautify"
     ]
     telemetryConsent: "no"
