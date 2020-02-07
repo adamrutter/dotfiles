@@ -139,3 +139,47 @@ format-background = ${colors.background-alt}
 format-padding = 1
 interval=0.5
 click-left = "playerctl --player=rhythmbox,spotify play-pause &"
+
+[module/temperature-cpu]
+type = internal/temperature
+interval = 5
+thermal-zone = 0
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input
+warn-temperature = 80
+label = %temperature-c%
+
+[module/temperature-gpu]
+type = internal/temperature
+interval = 5
+thermal-zone = 0
+hwmon-path = /sys/devices/pci0000:00/0000:00:03.1/0000:09:00.0/hwmon/hwmon1/temp1_input
+warn-temperature = 80
+label =  %temperature-c%
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /home
+interval = 30
+label-mounted =  %percentage_used%%
+
+[module/memory]
+type = internal/memory
+interval = 5
+label =  %percentage_used%%
+
+[module/cpu-load-avg]
+type = custom/script
+exec = ~/.config/polybar/scripts/cpu-load-avg.sh
+interval = 5
+label =  %output%
+
+[module/cpu-freq]
+type = custom/script
+exec = ~/.config/polybar/scripts/cpu-freq.sh
+interval = 5
+
+[module/fan-speed]
+type = custom/script
+exec = ~/.config/polybar/scripts/fan-speed.sh
+interval = 5
+label =  %output%
