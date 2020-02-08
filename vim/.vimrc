@@ -51,7 +51,7 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 "set background=dark
-"colorscheme base16-ocean
+colorscheme base16-ocean
 
 set tabstop=4
 
