@@ -18,3 +18,6 @@ alias graphics-driver="lspci -nnk | grep -i vga -A3 | grep 'in use' | cut -d ':'
 
 # No header for watch
 alias watch="watch --no-title"
+
+# cp replacement
+alias cpr="rsync --archive -hh --partial --info=stats1 --info=progress2 --modify-window=1"

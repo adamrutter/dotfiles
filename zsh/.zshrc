@@ -35,7 +35,7 @@ MAILCHECK=0
 function gitall() {
   git add .
   if [ -n "$1" ]
-  then 
+  then
     git commit -m "$1"
   else
     git commit -m "Update"
@@ -61,12 +61,7 @@ function tldr() {
 # Function to sort results from du
 function duh() {
   du --max-depth=1 --human-readable --all $@ | sort -h
-} 
+}
 
 # Remove '%' from the end of partial lines
 export PROMPT_EOL_MARK=''
-
-# Rsync cp replacement
-function cpr() {
-  rsync --archive -hh --partial --info=stats1 --info=progress2 --modify-window=1 "$@"
-}
