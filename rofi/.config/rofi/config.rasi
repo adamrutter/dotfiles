@@ -1,0 +1,61 @@
+configuration {
+	cycle: false;
+	fixed-num-lines: false;
+	location: 2;
+	show-match: false;
+	yoffset: 45;
+}
+
+* {
+	background-color: #4f5b66;
+	background-input: #65737e;
+	background-selected: #343d46;
+	highlight-selected: #ff0000;
+	text-color: #dfe1e8;
+	font: "sans-serif 12";
+}
+
+window {
+	border: none;
+	padding: 5;
+	width: 400;
+}
+
+mainbox {
+	border-radius: 3;
+	children: [ inputbar, listview ];
+}
+
+inputbar {
+	background-color: @background-input;
+	children: [ textbox, entry ];
+	margin: 0 0 -2 0;
+	padding: 5;
+}
+
+textbox {
+	background-color: @background-input;
+	expand: false;
+	font: "Material Design Icons 14";
+	margin: 0 2 0 0;
+  str: "";
+}
+
+entry {
+	background-color: @background-input;
+}
+
+listview {
+	lines: 5;
+	margin: 6 0 0 0;
+}
+
+element {
+	padding: 5;
+}
+
+element selected {
+	background-color: @background-selected;
+	border: 0 3 0 0;
+	border-color: @highlight-selected;
+}

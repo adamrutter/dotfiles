@@ -108,7 +108,7 @@ for_window [window_role="task_dialog"] floating enable
 
 set $mod Mod4
 bindsym $mod+Return exec urxvt
-bindsym $mod+space exec rofi -show drun -theme theme -modi drun -display-drun "Run " -terminal urxvt
+bindsym $mod+space exec rofi -show drun -modi drun
 bindsym $mod+q kill
 bindsym $mod+Shift+f fullscreen toggle
 floating_modifier $mod
