@@ -24,9 +24,12 @@
       "atom-beautify"
     ]
     telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "my-theme-syntax"
+    ]
   editor:
-    fontFamily: "Ubuntu Mono, Material Design Icons"
-    fontSize: 16
+    fontFamily: "Monaco"
     lineHeight: 1.6
     preferredLineLength: 100
     scrollPastEnd: true

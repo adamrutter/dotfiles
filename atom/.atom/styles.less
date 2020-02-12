@@ -1,4 +1,4 @@
-@import '/home/adam/.atom/packages/base16-syntax/styles/schemes/ocean.less';
+// @import '/home/adam/.atom/packages/base16-syntax/styles/schemes/ocean.less';
 // @import '/home/adam/.dotfiles/themes/one-dark-syntax-arc/styles/syntax-variables';
 @import 'ui-variables';
 
@@ -7,7 +7,8 @@
 // @accent: #55b166;
 // @accent: #d99f21;
 // @accent: #dc5d3a;
-@accent: #4d78cc;
+// @accent: #4d78cc;
+@accent: #70b8ff;
 
 // Letter spacing
 
@@ -19,7 +20,8 @@ atom-text-editor {
 
 .bracket-matcher .region {
   background-color: @background-color-selected;
-  border: 1px solid fade(@syntax-fg, 50%) !important;
+  border: 1px solid fade(@text-color, 50%) !important;
+
   border-radius: 3px;
   position: absolute;
 }
@@ -159,7 +161,7 @@ atom-workspace .entries.list-tree .file .icon::before {
 
 atom-text-editor .highlights .highlight-selected .region,
 .highlight-selected {
-  border-color: fade(@syntax-fg, 50%);
+  border-color: fade(@text-color, 50%);
 }
 
 // Bracket matcher non-cursor line
@@ -209,7 +211,7 @@ atom-text-editor .gutter {
 // Current line highlight
 
 atom-text-editor .line.highlight-line {
-  background: fade(@syntax-selection-color, 35%) !important;
+  // background: fade(@syntax-selection-color, 35%) !important;
 }
 
 // Bracket match gutter
@@ -229,6 +231,7 @@ atom-text-editor .line.highlight-line {
 
 atom-text-editor.editor .cursor {
   // border-color: @accent;
+  border-width: 2px;
 }
 
 // Gutter
@@ -245,6 +248,17 @@ atom-text-editor.editor .cursor {
 .status-bar a.icon-info::before {
   position: relative;
   top: 1px;
+}
+
+// Indent guide colour
+atom-text-editor .indent-guide {
+  color: fade(@text-color, 25%);
+}
+
+// Comments
+.syntax--comment {
+  // color: @text-color-subtle;
+  // font-style: italic;
 }
 
 // Accent colour overrides
