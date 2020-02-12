@@ -20,17 +20,17 @@
 [global]
 
   # Geometry
-  geometry = "300x0-17-41"
-  padding = 14
+  geometry = "300x0-17+49"
+  padding = 16
   horizontal_padding = 12
   notification_height = 0
   shrink = no
 
   # Border
   frame_color = "#4d78cc"
-  frame_width = 2
+  frame_width = 0
   separator_height = 2
-  separator_color = frame
+  separator_color = "#4d78cc"
 
 	# Display
   sort = yes
@@ -42,7 +42,7 @@
   show_indicators = no
 
   # Text
-  font = Ubuntu Mono 11
+  font = Ubuntu 10
   line_height = 3
   alignment = left
 
@@ -82,7 +82,6 @@
 
   summary = Tasker
   body = *Battery*
-  frame_color = "#98c379"
   format = "<b>Phone Charged</b>\n%b"
   urgency = critical
   timeout = 0
