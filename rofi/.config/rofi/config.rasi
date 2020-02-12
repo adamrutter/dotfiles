@@ -3,31 +3,34 @@ configuration {
 	fixed-num-lines: false;
 	location: 2;
 	show-match: false;
-	yoffset: 45;
+	yoffset: 32;
 }
 
 * {
-	background-color: #4f5b66;
-	background-input: #65737e;
-	background-selected: #343d46;
-	highlight-selected: #ff0000;
+	background-color: #2b303b;
+	background-input: #404552;
+	background-selected: #4f5b66;
+	border-color: #262930;
+	highlight-selected: #70b8ff;
 	text-color: #dfe1e8;
-	font: "sans-serif 12";
+	font: "sans-serif 11";
 }
 
 window {
 	border: none;
+	border-radius: 0 0 5 5;
 	padding: 5;
 	width: 400;
 }
 
 mainbox {
-	border-radius: 3;
 	children: [ inputbar, listview ];
 }
 
 inputbar {
 	background-color: @background-input;
+	border: 1;
+	border-radius: 2;
 	children: [ textbox, entry ];
 	margin: 0 0 -2 0;
 	padding: 5;
@@ -43,9 +46,11 @@ textbox {
 
 entry {
 	background-color: @background-input;
+	margin: 1 0 0 0;
 }
 
 listview {
+	border-radius: 0 0 3 3;
 	lines: 5;
 	margin: 6 0 0 0;
 }
@@ -56,6 +61,6 @@ element {
 
 element selected {
 	background-color: @background-selected;
-	border: 0 3 0 0;
+	border: 0 2 0 0;
 	border-color: @highlight-selected;
 }
