@@ -39,25 +39,25 @@ for_window [class="^.*"] title_format "<span font='10'>  %title</span>"
 #
 
 # Browser
-set $ws1 "1: "
+set $ws1 "1: "
 # Code
-set $ws2 "2: "
+set $ws2 "2: "
 # Files
-set $ws3 "3: "
+set $ws3 "3: "
 # Graphics
-set $ws4 "4: "
+set $ws4 "4: "
 # Media
-set $ws5 "5: "
+set $ws5 "5: "
 # Games
-set $ws6 "6: "
+set $ws6 "6: "
 # Other
-set $ws7 "7: "
+set $ws7 "7: "
 # Other
-set $ws8 "8: "
+set $ws8 "8: "
 # Torrents
-set $ws9 "9: "
+set $ws9 "9: "
 # Audio
-set $ws10 "10: "
+set $ws10 "10: "
 
 workspace_auto_back_and_forth yes
 
