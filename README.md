@@ -50,6 +50,7 @@ The accent colour is kept uniform across all programs. This requires editing:
 * The `*accent` variable in `x/.Xresources`
 * The `--accent-color` variable in `firefox/.mozilla/firefox/$YOUR_PROFILE/chrome/userChrome.css`
 * The `@accent` variable in `atom/.atom/styles.less` for Atom
+* The `@accent-color` variable in `atom/.atom/packages/my-one-dark-ui/styles/ui-variables-custom.less`
 * The custom zsh prompt in `zsh/.oh-my-zsh/themes/adamrutter.zsh-theme`
 * The custom fish prompt in `fish/.config/fish/functions/fish_prompt.fish`
 * The custom bash prompt in `bash/.bashrc`
