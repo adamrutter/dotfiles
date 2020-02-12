@@ -1,5 +1,5 @@
 # Screenshot
-"scrot ~/Pictures/screenshots/%Y-%m-%d-%H-%M-%S.png"
+"scrot ~/pictures/screenshots/%Y-%m-%d-%H-%M-%S.png"
   m:0x10 + c:107
   Mod2 + Print
 
