@@ -27,71 +27,13 @@ device="qdbus org.kde.kdeconnect /modules/kdeconnect/devices/"$deviceId" org.kde
 # Functions
 #
 
-# Return a battery icon
-batteryIcon() {
-	# if [[ "$($device.battery.isCharging)" == 'true' ]]; then
-	# 	echo ""
-	if [[ "$($device.battery.charge)" -le 10 ]]; then
-		if [[ "$($device.battery.isCharging)" == 'true' ]]; then
-			echo ""
-		else
-			echo ""
-		fi
-	elif [[ "$($device.battery.charge)" -le 20 ]] && [[ "$($device.battery.charge)" -gt 10 ]]; then
-		if [[ "$($device.battery.isCharging)" == 'true' ]]; then
-			echo ""
-		else
-			echo ""
-		fi
-	elif [[ "$($device.battery.charge)" -le 30 ]] && [[ "$($device.battery.charge)" -gt 20 ]]; then
-		if [[ "$($device.battery.isCharging)" == 'true' ]]; then
-			echo ""
-		else
-			echo ""
-		fi
-	elif [[ "$($device.battery.charge)" -le 40 ]] && [[ "$($device.battery.charge)" -gt 30 ]]; then
-		if [[ "$($device.battery.isCharging)" == 'true' ]]; then
-			echo ""
-		else
-			echo ""
-		fi
-	elif [[ "$($device.battery.charge)" -le 50 ]] && [[ "$($device.battery.charge)" -gt 40 ]]; then
-		if [[ "$($device.battery.isCharging)" == 'true' ]]; then
-			echo ""
-		else
-			echo ""
-		fi
-	elif [[ "$($device.battery.charge)" -le 60 ]] && [[ "$($device.battery.charge)" -gt 50 ]]; then
-		if [[ "$($device.battery.isCharging)" == 'true' ]]; then
-			echo ""
-		else
-			echo ""
-		fi
-	elif [[ "$($device.battery.charge)" -le 70 ]] && [[ "$($device.battery.charge)" -gt 60 ]]; then
-		if [[ "$($device.battery.isCharging)" == 'true' ]]; then
-			echo ""
-		else
-			echo ""
-		fi
-	elif [[ "$($device.battery.charge)" -le 80 ]] && [[ "$($device.battery.charge)" -gt 70 ]]; then
-		if [[ "$($device.battery.isCharging)" == 'true' ]]; then
-			echo ""
-		else
-			echo ""
-		fi
-	elif [[ "$($device.battery.charge)" -le 90 ]] && [[ "$($device.battery.charge)" -gt 80 ]]; then
-		if [[ "$($device.battery.isCharging)" == 'true' ]]; then
-			echo ""
-		else
-			echo ""
-		fi
-	elif [[ "$($device.battery.charge)" -le 100 ]] && [[ "$($device.battery.charge)" -gt 90 ]]; then
-		if [[ "$($device.battery.isCharging)" == 'true' ]]; then
-			echo ""
-		else
-			echo ""
-		fi
-	fi
+# Return an icon showing whether the phone is mounted or not
+mountIcon() {
+ if [[ $( ls $mountPoint* &> /dev/null; echo $? ) -eq 2 ]]; then
+ 	echo "%{T3}累%{T-}"
+ else
+ 	echo "%{T3}ﺭ%{T-}"
+ fi
 }
 
 # Return the battery level of the device
@@ -99,42 +41,13 @@ batteryLevel() {
 	echo "$($device.battery.charge)"
 }
 
-
-# Return a color tag if the battery is below the defined level
-batteryLow() {
-	if [[ "$(batteryLevel)" -le "$lowLevel" ]]; then
-		echo "%{F"$red"}"
-	fi
-}
-
-# Return a color tag if the device is charging
-batteryCharging() {
-	if [[ "$($device.battery.isCharging)" == 'true' ]]; then
-		echo "%{B- F-}%{F"$green"}"
-	fi
-}
-
-# Return an icon showing whether the phone is mounted or not
-mountedIcon() {
-  if [[ $( ls $mountPoint* &> /dev/null; echo $? ) -eq 2 ]]; then
-  	echo "%{F"$inactive"}%{B- F-}"
-  else
-  	echo ""
-  fi
-}
-
-# Return battery information
-batteryInfo() {
+# Return the battery level of the device
+batteryPercentage() {
 	if [[ "$($device.isReachable)" == 'true' ]]; then
-		echo " $(batteryLow)$(batteryCharging)$(batteryIcon) $(batteryLevel)% "
+		echo "$(batteryLevel)%"
 	else
-		echo " %{F"$inactive"}%{B- F-} "
+		echo "??%"
 	fi
-}
-
-# Return mount info
-mountInfo() {
-	echo " $(mountedIcon) "
 }
 
 #
@@ -142,4 +55,4 @@ mountInfo() {
 #
 
 # Print the results as a string for Polybar
-echo "$(mountInfo)$(batteryInfo)"
+echo "%{F#a7adba}$(mountIcon)%{F-} $(batteryPercentage)"
