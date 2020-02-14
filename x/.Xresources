@@ -13,8 +13,8 @@
 #define base08 #f76969
 #define base09 #fb9851
 #define base0A #ffda6b
-#define base0B #baee87
-#define base0C #53c6bc
+#define base0B #b3f075
+#define base0C #6bc7bf
 #define base0D #70b8ff
 #define base0E #cc9efa
 #define base0F #ff80d4
