@@ -18,4 +18,5 @@ export QT_STYLE_OVERRIDE=gtk2                     # Force Qt applications to use
 /home/adam/bin/mouse-acceleration.sh off          # Turn mouse acceleration off
 /home/adam/bin/mouse-sensitivity.sh -0.2          # Set mouse sensitivity
 /home/adam/bin/playerctl-notify.sh &              # Notification daemon for Spotify
+flashfocus --flash-on-focus &                     # Window focus animations
 exec i3                                           # Load i3

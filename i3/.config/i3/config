@@ -155,6 +155,7 @@ bindsym $mod+Tab workspace next
 bindsym $mod+shift+Tab workspace prev
 bindsym --release button2 kill
 bindsym $mod+c move position center
+bindsym Scroll_Lock exec --no-startup-id flash_window
 
 #
 # Status bar
