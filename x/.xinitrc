@@ -19,4 +19,5 @@ export QT_STYLE_OVERRIDE=gtk2                     # Force Qt applications to use
 /home/adam/bin/mouse-sensitivity.sh -0.2          # Set mouse sensitivity
 /home/adam/bin/playerctl-notify.sh &              # Notification daemon for Spotify
 flashfocus --flash-on-focus &                     # Window focus animations
+export TERMINAL=kitty                             # Set default terminal for i3
 exec i3                                           # Load i3
