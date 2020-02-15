@@ -102,8 +102,10 @@ precmd () {
         wmctrl -b add,demands_attention -i -r "$WINDOW_ID"
         if [[ $EXIT_STATUS -eq 0 ]]; then
           notify-send "$CMD" "Completed in $CMD_ELAPSED_TIME seconds."
+          canberra-gtk-play -i complete
         else
           notify-send -u critical "$CMD" "Failed after $CMD_ELAPSED_TIME seconds with an exit status of $EXIT_STATUS."
+          canberra-gtk-play -i dialog-error
         fi
       fi
     fi
