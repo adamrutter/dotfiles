@@ -17,7 +17,7 @@ export QT_STYLE_OVERRIDE=gtk2                     # Force Qt applications to use
 /usr/bin/dunst &                                  # Start dunst; notification server
 /home/adam/bin/mouse-acceleration.sh off          # Turn mouse acceleration off
 /home/adam/bin/mouse-sensitivity.sh -0.2          # Set mouse sensitivity
-/home/adam/bin/playerctl-notify.sh &              # Notification daemon for Spotify
+/home/adam/bin/audio-notify.sh &                  # Notification daemon for audio players
 flashfocus --flash-on-focus &                     # Window focus animations
 export TERMINAL=kitty                             # Set default terminal for i3
 exec i3                                           # Load i3
