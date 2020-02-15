@@ -86,3 +86,8 @@
   format = "<b>Phone Charged</b>\n%b"
   urgency = critical
   timeout = 0
+
+[sounds]
+
+  summary = "*"
+  script = /home/adam/bin/notification-sounds.sh
