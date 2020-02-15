@@ -50,9 +50,38 @@ batteryPercentage() {
 	fi
 }
 
+# For notifications
+updateMountStatus() {
+  if [[ -f /tmp/phone-current-mount-status ]]; then
+    mv /tmp/phone-current-mount-status /tmp/phone-prev-mount-status
+  fi
+  if [[ $(ls $mountPoint* &> /dev/null; echo $?) -eq 0 ]]; then
+    echo 1 > /tmp/phone-current-mount-status
+  else
+    echo 0 > /tmp/phone-current-mount-status
+  fi
+}
+
+currentMountStatus=$(cat /tmp/phone-current-mount-status)
+prevMountStatus=$(cat /tmp/phone-prev-mount-status)
+
+notification() {
+  if [[ $currentMountStatus -eq 1 ]] && [[ $prevMountStatus -eq 0 ]]; then
+    notify-send "Phone connected" "Mounted to $mountPoint"
+    canberra-gtk-play -i device-added
+  elif [[ $currentMountStatus -eq 0 ]] && [[ $prevMountStatus -eq 1 ]]; then
+    notify-send "Phone not connected" "No longer mounted at $mountPoint"
+    canberra-gtk-play -i device-removed
+  fi
+}
+
 #
 # Output
 #
 
 # Print the results as a string for Polybar
 echo "%{F#a7adba}$(mountIcon)%{F-} $(batteryPercentage)"
+
+# Run notification functions
+updateMountStatus
+notification
