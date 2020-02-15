@@ -108,19 +108,15 @@ label = %output%
 type = custom/script
 
 [module/volume]
-format-volume = <ramp-volume><label-volume>
-format-volume-background = ${variables.background-alt}
-format-muted-background = ${variables.background-alt}
-format-volume-padding = ${variables.padding}
-interval = 2
-label-muted = %{F#a7adba}%{F-}  0%
-label-muted-padding = ${variables.padding}
-ramp-volume-0 ="%{F#a7adba}%{F-}  "
-ramp-volume-1 ="%{F#a7adba}%{F-}  "
-ramp-volume-2 ="%{F#a7adba}%{F-}  "
-ramp-volume-3 ="%{F#a7adba}%{F-} "
-type = internal/pulseaudio
-use-ui-max = false
+click-left = ~/bin/volume.sh --mute &
+exec = ~/bin/volume.sh
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+label = %output%
+scroll-down = ~/bin/volume.sh --down &
+scroll-up = ~/bin/volume.sh --up &
+tail = true
+type = custom/script
 
 [module/time]
 format-background = ${variables.background-alt}
