@@ -37,8 +37,6 @@ do
 
 		# A message if mounting successful
 		if [ $? = 0 ]; then
-			notify-send "Phone connected" "Mounted to $mountPoint"
-			canberra-gtk-play -i device-added
 			echo $(date +%k:%M) "Phone mounted to $mountPoint"
 
 			# Backup the files on the phone
