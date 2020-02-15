@@ -23,7 +23,7 @@ do
 
   # Is the phone mounted? Returns 0 if yes, 2 if no
 	if [ $( ls $mountPoint* &> /dev/null; echo $? ) -eq 2 ]; then
-	
+
     # If phone is not mounted, ping the phone to determine whether it is connected to the network. If not, continue until it is
 		ping -c 1 $phoneIP &>/dev/null
 		until [ $? -eq 0 ]; do
@@ -31,17 +31,19 @@ do
 			ping -c 1 $phoneIP &>/dev/null
 		done
 		echo $(date +%k:%M) "Phone found on network... Attempting to mount"
-		
+
 		# Mount the phone
 		sshfs $phoneUser@$phoneIP:$phoneDirectory -p $phonePort $mountPoint -o ServerAliveInterval=5,ServerAliveCountMax=3 &>/dev/null
-		
-		# An error message if mounting successful
-		if [ $? = 0 ]; then 
+
+		# A message if mounting successful
+		if [ $? = 0 ]; then
+			notify-send "Phone connected" "Mounted to $mountPoint"
+			canberra-gtk-play -i device-added
 			echo $(date +%k:%M) "Phone mounted to $mountPoint"
-			
+
 			# Backup the files on the phone
 			echo $(date +%k:%M) "Starting back ups..."
-			
+
 			# Main backup of all files; exclude photos as they are stored at full resolution on Google Photos and are backed up seperately locally
 			rsync --recursive --archive --human-readable --compress $mountPoint $backupLocation --exclude "DCIM" &&\
 			# Sync these folders, possibly deleting files locally if necessary
@@ -50,29 +52,29 @@ do
 			rsync --recursive --archive --human-readable --compress "$mountPoint"DCIM/ /home/adam/Pictures/photos --exclude "Camera" --exclude "Screenshots" --exclude "Video trimmer" &&\
 			rsync --recursive --archive --human-readable --compress "$mountPoint"S\ Health/GPX/ /home/adam/Documents/outdoors/gps-tracks &&\
 			rsync --recursive --archive --human-readable --compress "$mountPoint"Pictures/ /home/adam/Pictures/8B2X129GV
-			
+
 			# Print messages dictating the success or failure of the backups
 			if [ $? -gt 0 ]; then
 				echo $(date +%k:%M) "Backups failed"
 			else
 				echo $(date +%k:%M) "Backups successful"
 			fi
-			
+
 # Other tasks to perform after mounting and backups are complete
 
 # Delete any duplicate photos after they have been moved to an album
 		/home/adam/bin/delete-duplicate-photos.sh
-		
+
 # An error message if mounting failed
 		else
 			echo $(date +%k:%M) "Error mounting phone to $mountPoint, try running \"sshfs $phoneUser@$phoneIP:$phoneDirectory -p $phonePort $mountPoint -d -o sshfs_debug\" for more details"
 		fi
-		
+
 # If the phone is already mounted, print a message saying this
 	else
 		echo $(date +%k:%M) "Phone already mounted at $mountPoint"
 	fi
-	
+
 sleep 30
 
 done
