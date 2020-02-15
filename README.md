@@ -8,9 +8,11 @@ My dotfiles for Linux. Includes custom configuration for:
 * Dunst
 * Firefox
 * Fish
+* flashfocus
 * Fonts
 * GTK
 * i3
+* kitty
 * Mousepad
 * Polybar
 * Redshift
