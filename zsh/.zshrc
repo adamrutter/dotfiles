@@ -67,6 +67,7 @@ function duh() {
 export PROMPT_EOL_MARK=''
 
 # Send a notification for completed commands
+# Adapted from https://www.reddit.com/r/linux/comments/1pooe6/zsh_tip_notify_after_long_processes/
 preexec () {
   CMD=$1
   CMD_START_DATE=$(date +%s)
@@ -75,6 +76,7 @@ preexec () {
 
 precmd () {
   EXIT_STATUS=$?
+  # Proceed only if we've ran a command in the current shell.
   if ! [[ -z $CMD_START_DATE ]]; then
     CMD_NOTIFY_THRESHOLD=5
     SPLIT_CMD=(`echo ${CMD}`)
