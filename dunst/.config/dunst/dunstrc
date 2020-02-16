@@ -91,3 +91,13 @@
 
   summary = "*"
   script = /home/adam/bin/notification-sounds.sh
+
+[volume]
+
+  appname = "dunstify"
+  category = ""
+  format = "<span font_family="unifont" font_size='small' letter_spacing='-492'>%b</span>"
+  history_ignore = yes
+  summary = "Volume notification"
+  timeout = 2
+  urgency = "low"

@@ -108,13 +108,13 @@ label = %output%
 type = custom/script
 
 [module/volume]
-click-left = ~/bin/volume.sh --mute &
-exec = ~/bin/volume.sh
+click-left = ~/.config/polybar/scripts/volume.sh --mute &
+exec = ~/.config/polybar/scripts/volume.sh
 format-background = ${variables.background-alt}
 format-padding = ${variables.padding}
 label = %output%
-scroll-down = ~/bin/volume.sh --down &
-scroll-up = ~/bin/volume.sh --up &
+scroll-down = ~/.config/polybar/scripts/volume.sh --down &
+scroll-up = ~/.config/polybar/scripts/volume.sh --up &
 tail = true
 type = custom/script
 

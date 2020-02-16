@@ -3,13 +3,39 @@
 # Updated to add notifications and sounds, and some other modifications which have been noted
 
 # My added functions/variable
+volume() {
+  local VOLUME=$(pamixer --get-volume --sink $sink)
+  echo $VOLUME
+}
+
 play_sound() {
   canberra-gtk-play -i audio-volume-change
 }
 
-volume() {
-  local VOLUME=$(pamixer --get-volume --sink $sink)
-  echo $VOLUME
+# From https://github.com/Fabian-G/dotfiles/blob/master/scripts/bin/getProgressString
+# Usage: progress_bar <TOTAL ITEMS> <FILLED LOOK> <NOT FILLED LOOK> <STATUS>
+progress_bar() {
+  ITEMS="$1" # The total number of items(the width of the bar)
+  FILLED_ITEM="$2" # The look of a filled item
+  NOT_FILLED_ITEM="$3" # The look of a not filled item
+  STATUS="$4" # The current progress status in percent
+
+  # calculate how many items need to be filled and not filled
+  FILLED_ITEMS=$(echo "((${ITEMS} * ${STATUS})/100 + 0.5) / 1" | bc)
+  NOT_FILLED_ITEMS=$(echo "$ITEMS - $FILLED_ITEMS" | bc)
+
+  # Assemble the bar string
+  msg=$(printf "%${FILLED_ITEMS}s" | sed "s| |${FILLED_ITEM}|g")
+  msg=${msg}$(printf "%${NOT_FILLED_ITEMS}s" | sed "s| |${NOT_FILLED_ITEM}|g")
+  echo "$msg"
+}
+
+bar_color_filled="#dfe1e8"
+bar_color_not_filled="#2b303b"
+bar_glyph="▌"
+
+notification() {
+  dunstify "Volume notification" "$(progress_bar 50 "<span foreground='$bar_color_filled'>$bar_glyph</span>" "<span foreground='$bar_color_not_filled'>$bar_glyph</span>" $(volume))" -r 54902 -u low
 }
 
 ICON_COLOUR="#a7adba"
@@ -28,17 +54,26 @@ update_sink() {
 
 volume_up() {
     update_sink
-    pactl set-sink-volume "$sink" +$AMOUNT% # Added own increment variable
+    # Use an if statment so the sound doesn't play when already at 100%
+    if [[ $(volume) -lt 100 ]]; then
+      pamixer --sink "$sink" --increase $AMOUNT # Added own increment variable/changed to pamixer
+      play_sound
+    fi
 }
 
 volume_down() {
     update_sink
-    pactl set-sink-volume "$sink" -$AMOUNT% # Added own increment variable
+    # Use an if statment so the sound doesn't play when already at 0%
+    if [[ $(volume) -gt 0 ]]; then
+      pamixer --sink "$sink" --decrease $AMOUNT # Added own increment variable/changed to pamixer
+      play_sound
+    fi
 }
 
 volume_mute() {
     update_sink
-    pactl set-sink-mute "$sink" toggle
+    pamixer --sink "$sink" --toggle-mute # Changed to pamixer
+    play_sound
 }
 
 volume_print() {
@@ -89,15 +124,14 @@ listen() {
 case "$1" in
     --up)
         volume_up
-        play_sound
+        notification
         ;;
     --down)
         volume_down
-        play_sound
+        notification
         ;;
     --mute)
         volume_mute
-        play_sound
         ;;
     *)
         listen
