@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Update mount status
+if [[ -f /tmp/phone-current-mount-status ]]; then
+  mv /tmp/phone-current-mount-status /tmp/phone-prev-mount-status
+fi
+if [[ $(ls $mountPoint* &> /dev/null; echo $?) -eq 0 ]]; then
+  echo 1 > /tmp/phone-current-mount-status
+else
+  echo 0 > /tmp/phone-current-mount-status
+fi
+
 #
 # Variables
 #
@@ -25,23 +35,13 @@ device="qdbus org.kde.kdeconnect /modules/kdeconnect/devices/"$deviceId" org.kde
 
 # Whether the phone is currently and was previously mounted
 currentMountStatus=$(cat /tmp/phone-current-mount-status)
-prevMountStatus=$(cat /tmp/phone-prev-mount-status)
+if [[ -f /tmp/phone-prev-mount-status ]]; then
+  prevMountStatus=$(cat /tmp/phone-prev-mount-status)
+fi
 
 #
 # Functions
 #
-
-# Save status to temp files so it can be accessed next time
-updateMountStatus() {
-  if [[ -f /tmp/phone-current-mount-status ]]; then
-    mv /tmp/phone-current-mount-status /tmp/phone-prev-mount-status
-  fi
-  if [[ $(ls $mountPoint* &> /dev/null; echo $?) -eq 0 ]]; then
-    echo 1 > /tmp/phone-current-mount-status
-  else
-    echo 0 > /tmp/phone-current-mount-status
-  fi
-}
 
 # Return an icon showing whether the phone is mounted or not
 mountIcon() {
@@ -80,9 +80,6 @@ notification() {
 #
 # Output
 #
-
-# Update status
-updateMountStatus
 
 # Print the results as a string for Polybar
 echo "%{F#a7adba}$(mountIcon)%{F-} $(batteryPercentage)"
