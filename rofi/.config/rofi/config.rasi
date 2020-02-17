@@ -11,7 +11,7 @@ configuration {
 	background-input: #404552;
 	background-selected: #4f5b66;
 	border-color: #262930;
-	highlight-selected: #4d78cc;
+	highlight-selected: #5a69e2;
 	text-color: #dfe1e8;
 	font: "sans-serif 11";
 }
@@ -61,6 +61,6 @@ element {
 
 element selected {
 	background-color: @background-selected;
-	border: 0 2 0 0;
+	border: 0 3 0 0;
 	border-color: @highlight-selected;
 }
