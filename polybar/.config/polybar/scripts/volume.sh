@@ -44,6 +44,9 @@ ICON_2=
 ICON_3=
 ICON_4=
 ICON_MUTED=
+icon() {
+  echo "%{F$ICON_COLOUR}$(eval echo \$ICON_$1)%{F-}"
+}
 
 AMOUNT=2 # The amount to increment volume by
 
@@ -99,15 +102,15 @@ volume_print() {
 
     # My own logic for setting the output
     if [[ $(pamixer --get-volume-human --sink $sink) == "muted" ]]; then
-      echo "%{F$ICON_COLOUR}$ICON_MUTED%{F-}  0%"
+      echo "$(icon "MUTED")  0%"
     elif [[ $(volume) -ge 0 && $(volume) -le 24 ]]; then
-      echo "%{F$ICON_COLOUR}$ICON_1%{F-}  $(volume)%"
+      echo "$(icon "1")  $(volume)%"
     elif [[ $(volume) -ge 25 && $(volume) -le 49 ]]; then
-      echo "%{F$ICON_COLOUR}$ICON_2%{F-}  $(volume)%"
+      echo "$(icon "2")  $(volume)%"
     elif [[ $(volume) -ge 50 && $(volume) -le 74 ]]; then
-      echo "%{F$ICON_COLOUR}$ICON_3%{F-}  $(volume)%"
+      echo "$(icon "3")  $(volume)%"
     elif [[ $(volume) -ge 75 && $(volume) -le 100 ]]; then
-      echo "%{F$ICON_COLOUR}$ICON_4%{F-}  $(volume)%"
+      echo "$(icon "4")  $(volume)%"
     fi
 }
 
