@@ -1,183 +1,129 @@
-[colors]
-foreground = ${xrdb:color15}
-foreground-alt = ${xrdb:foreground-alt}
-background = ${xrdb:background-alt}
-background-alt = ${xrdb:background}
+[variables]
 accent = ${xrdb:accent}
 alert = ${xrdb:color1}
+background = ${xrdb:background}
+background-alt = ${xrdb:background}
+foreground = ${xrdb:color15}
+foreground-bright = #ffffff
+foreground-dim = ${xrdb:foreground-alt-2}
+foreground-dark = ${xrdb:foreground-alt}
 transparent = #00000000
+padding = 3
 
 [base]
-background = ${colors.background}
-foreground = ${colors.foreground}
-font-0 = Ubuntu Mono:size=12;2
-font-1= Material Design Icons:size=13;3
-font-2 = Weather Icons:size=13;1
-
-module-margin = 0
+background = ${variables.background}
 enable-ipc = true
+font-0 = Ubuntu:size=11;1
+font-1= FontAwesome5ProSolid:size=9;2
+font-2= Material Design Icons:size=12;2
+font-3= FontAwesome5ProSolid:size=13;3
+font-4= FontAwesome5ProSolid:size=11;2
+font-5= FontAwesome5ProSolid:size=10;1
+foreground = ${variables.foreground}
+height = 30
+module-margin-right = 1
+padding = 1
 
-[bar/bottom]
+[bar/top]
+border-top-size = 2
+border-top-color = ${variables.accent}
 inherit = base
-bottom = true
-padding-right = 1
+modules-center = i3
+modules-left = temperature-cpu temperature-gpu memory filesystem
+modules-right = player-mpris-tail phone openweathermap volume time
 wm-restack = i3
 
-modules-left = rofi i3
-modules-right = previous playpause next openweathermap phone volume time powermenu
-
-[module/volume]
-type = internal/pulseaudio
-use-ui-max = false
-format-volume = <ramp-volume> <label-volume>
-label-muted = 0%
-ramp-volume-0 =
-ramp-volume-1 =
-ramp-volume-2 =
-label-muted-margin-left = 0
-label-muted-margin-right = 0
-ramp-volume-margin-left = 0
-ramp-volume-padding-right = 0
-interval = 2
-
-ramp-volume-padding = 1
-label-volume-padding-right = 1
-label-muted-padding = 1
-
-[module/i3]
-type = internal/i3
-enable-scroll = false
-reverse-scroll = false
-wrapping-scroll = false
-strip-wsnumbers = true
-
-label-focused = %name%
-label-focused-foreground = #ffffff
-label-focused-background = ${colors.accent}
-label-focused-padding = 1
-
-label-unfocused = %name%
-label-unfocused-foreground = ${colors.foreground-alt}
-label-unfocused-padding = 1
-
-label-urgent = %name%
-label-urgent-foreground = #ffffff
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
-
-[module/time]
-type = internal/date
-interval = 5
-time = %H:%M
-label = %time%
-format-offset = 0
-format-background = ${colors.background-alt}
-format-padding = 1
-format-margin = 1
-
-[module/powermenu]
-type = custom/menu
-expand-right = false
-label-open = 
-label-close = 
-label-separator = " "
-label-separator-padding = 0
-label-separator-foreground = ${colors.foreground-alt}
-menu-0-0 = 
-menu-0-0-exec = systemctl poweroff
-menu-0-1 = 
-menu-0-1-exec = systemctl reboot
-menu-0-2 = 
-menu-0-2-exec = ~/bin/lock.sh
-
-[module/openweathermap]
-type = custom/script
-exec = ~/.config/polybar/scripts/openweathermap.sh
-interval = 600
-label = " %output%"
-label-font = 0
-format-padding = 1
-
-[module/phone]
-type = custom/script
-exec = ~/.config/polybar/scripts/phone.sh
-label = %output%
-format-padding = 0
-
-[module/rofi]
-type = custom/text
-content = 
-click-left = rofi -show drun -theme theme -modi drun -display-drun "Run "
-content-background = ${colors.background-alt}
-content-padding = 1
-
-[module/next]
-type = custom/script
-exec-if=pgrep "rhythmbox|spotify"
-interval=2.5
-format-background = ${colors.background-alt}
-format-padding = 1
-exec = ~/.config/polybar/scripts/playerctl/next-icon.sh
-click-left = "~/.config/polybar/scripts/playerctl/next-action.sh &"
-
-[module/previous]
-type = custom/script
-exec-if=pgrep "rhythmbox|spotify"
-interval=2.5
-format-background = ${colors.background-alt}
-format-padding = 1
-exec = ~/.config/polybar/scripts/playerctl/prev-icon.sh
-click-left = "~/.config/polybar/scripts/playerctl/prev-action.sh &"
-
-[module/playpause]
-type = custom/script
-exec-if=pgrep "rhythmbox|spotify"
-exec = ~/.config/polybar/scripts/playerctl/play-pause-icon.sh
-format-background = ${colors.background-alt}
-format-padding = 1
-interval=0.5
-click-left = "playerctl --player=rhythmbox,spotify play-pause &"
-
 [module/temperature-cpu]
-type = internal/temperature
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
 interval = 5
-thermal-zone = 0
 hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input
-warn-temperature = 80
-label = %temperature-c%
+label = %{F#a7adba}﻽%{F-}  %temperature-c%°
+thermal-zone = 0
+type = internal/temperature
+units = false
+warn-temperature = 999
 
 [module/temperature-gpu]
-type = internal/temperature
+exec = ~/.config/polybar/scripts/gpu-temp.sh
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
 interval = 5
-thermal-zone = 0
-hwmon-path = /sys/devices/pci0000:00/0000:00:03.1/0000:09:00.0/hwmon/hwmon1/temp1_input
-warn-temperature = 80
-label =  %temperature-c%
-
-[module/filesystem]
-type = internal/fs
-mount-0 = /home
-interval = 30
-label-mounted =  %percentage_used%%
+label = %{F#a7adba}%{T3}%{T-}%{F-}  %output%°
+type = custom/script
+units = false
 
 [module/memory]
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+interval = 5
+label = %{F#a7adba}%{F-}  %percentage_used%%
 type = internal/memory
-interval = 5
-label =  %percentage_used%%
 
-[module/cpu-load-avg]
-type = custom/script
-exec = ~/.config/polybar/scripts/cpu-load-avg.sh
-interval = 5
-label =  %output%
+[module/filesystem]
+format-mounted-background = ${variables.background-alt}
+format-mounted-padding = ${variables.padding}
+interval = 30
+label-mounted = %{F#a7adba}%{F-}  %percentage_used%%
+mount-0 = /home
+type = internal/fs
 
-[module/cpu-freq]
-type = custom/script
-exec = ~/.config/polybar/scripts/cpu-freq.sh
-interval = 5
+[module/i3]
+enable-scroll = false
+label = %{T4}%name%%{T-}
+label-focused = ${self.label}
+label-focused-foreground = ${variables.foreground-bright}
+label-focused-padding = ${variables.padding}
+label-unfocused = ${self.label}
+label-unfocused-foreground = ${variables.foreground-dark}
+label-unfocused-padding = ${variables.padding}
+label-urgent = ${self.label}
+label-urgent-background = ${variables.alert}
+label-urgent-foreground = ${variables.foreground-bright}
+label-urgent-padding = ${variables.padding}
+strip-wsnumbers = true
+type = internal/i3
 
-[module/fan-speed]
+[module/player-mpris-tail]
+click-left = ~/.config/polybar/scripts/player-mpris-tail.py play-pause &
+click-middle = ~/.config/polybar/scripts/player-mpris-tail.py previous &
+click-right = ~/.config/polybar/scripts/player-mpris-tail.py next &
+exec = ~/.config/polybar/scripts/player-mpris-tail.py --icon-playing '' --icon-paused '' --truncate-text '...' -f '%{F#a7adba}{icon}%{F-}  {:artist:t12:{artist} -:}{:artist: :}{:t20:{title}:}'
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+tail = true
 type = custom/script
-exec = ~/.config/polybar/scripts/fan-speed.sh
+
+[module/phone]
+exec = ~/.config/polybar/scripts/phone.sh
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+label = %output%
+type = custom/script
+
+[module/openweathermap]
+exec = ~/.config/polybar/scripts/openweathermap.sh
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+interval = 600
+label = %output%
+type = custom/script
+
+[module/volume]
+click-left = ~/.config/polybar/scripts/volume.sh --mute &
+exec = ~/.config/polybar/scripts/volume.sh
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+label = %output%
+scroll-down = ~/.config/polybar/scripts/volume.sh --down &
+scroll-up = ~/.config/polybar/scripts/volume.sh --up &
+tail = true
+type = custom/script
+
+[module/time]
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
 interval = 5
-label =  %output%
+label =%{F#a7adba} %{F-}  %time%
+time = %H:%M
+type = internal/date

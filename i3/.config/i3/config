@@ -39,27 +39,25 @@ for_window [class="^.*"] title_format "<span font='10'>  %title</span>"
 #
 
 # Browser
-set $ws1 "1: "
+set $ws1 "1: "
 # Code
-set $ws2 "2: "
+set $ws2 "2: "
 # Files
-set $ws3 "3: "
+set $ws3 "3: "
 # Graphics
-set $ws4 "4: "
+set $ws4 "4: "
 # Media
-set $ws5 "5: "
+set $ws5 "5: "
 # Games
-set $ws6 "6: "
+set $ws6 "6: "
 # Other
-set $ws7 "7: "
+set $ws7 "7: "
 # Other
-set $ws8 "8: "
+set $ws8 "8: "
 # Torrents
-set $ws9 "9: "
+set $ws9 "9: "
 # Audio
-set $ws10 "10: "
-# Windows virtual machine
-set $ws11 "11: "
+set $ws10 "10: "
 
 workspace_auto_back_and_forth yes
 
@@ -94,7 +92,6 @@ for_window [title="^DeSmuME - Running$"] floating enable
 assign [class="^Rhythmbox$"] $ws10
 assign [class="^retroarch$"] $ws6
 for_window [class="^retroarch$"] floating enable
-assign [title="^Windows 7" title="- Oracle VM VirtualBox$"] $ws11
 assign [class="^Lutris$"] $ws6
 assign [title="^Banished$"] $ws6
 assign [class="^dolphin-emu$"] $ws6
@@ -107,8 +104,8 @@ for_window [window_role="task_dialog"] floating enable
 #
 
 set $mod Mod4
-bindsym $mod+Return exec urxvt
-bindsym $mod+space exec rofi -show drun -theme theme -modi drun -display-drun "Run " -terminal urxvt
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+space exec rofi -show drun -modi drun
 bindsym $mod+q kill
 bindsym $mod+Shift+f fullscreen toggle
 floating_modifier $mod
@@ -158,6 +155,7 @@ bindsym $mod+Tab workspace next
 bindsym $mod+shift+Tab workspace prev
 bindsym --release button2 kill
 bindsym $mod+c move position center
+bindsym Scroll_Lock exec --no-startup-id flash_window
 
 #
 # Status bar

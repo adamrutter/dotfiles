@@ -10,26 +10,23 @@
 #define base05 #c0c5ce
 #define base06 #dfe1e8
 #define base07 #eff1f5
-#define base08 #e06c75
-#define base09 #d19a66
-#define base0A #e5c07b
-#define base0B #98c379
-#define base0C #56b6c2
-#define base0D #61afef
-#define base0E #c678dd
-#define base0F #be5046
+#define base08 #f76969
+#define base09 #fb9851
+#define base0A #ffda6b
+#define base0B #7ee787
+#define base0C #6bc7bf
+#define base0D #70b8ff
+#define base0E #cc9efa
+#define base0F #ff80d4
 
 *foreground:     base05
-*foreground-alt: base04
+*foreground-alt: base03
+*foreground-alt-2: base04
 *background:     base00
 *background-alt: #404552
 *cursorColor:    base05
-
-!*accent        : #55b166
-!*accent        : #d99f21
-!*accent        : #dc5d3a
-*accent         : #4d78cc
-
+*accent         : #5a69e2
+!*accent         : base0D
 
 *color0:       base00
 *color1:       base08
@@ -52,6 +49,7 @@
 !---------------------
 !urxvt
 !---------------------
+
 URxvt.scrollBar: false
 URxvt.font: xft:ubuntu mono:size=13:antialias=true
 URxvt.boldFont:
@@ -64,4 +62,5 @@ URxvt.urgentOnBell: true
 !---------------------
 !Cursor theme
 !---------------------
+
 Xcursor.theme: DMZ-White

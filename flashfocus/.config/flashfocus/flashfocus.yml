@@ -1,0 +1,8 @@
+default-opacity: 1
+flash-fullscreen: false
+flash-lone-windows: 'never'
+flash-on-focus: true
+flash-opacity: 0.7
+ntimepoints: 10
+simple: false
+time: 300

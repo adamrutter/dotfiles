@@ -12,7 +12,7 @@
 
 [urgency_critical]
 
-  background = "#ff0000"
+  background = "#f76969"
   foreground = "#ffffff"
   frame_color = "#ffffff"
   timeout = 0
@@ -20,17 +20,17 @@
 [global]
 
   # Geometry
-  geometry = "300x0-17-41"
-  padding = 14
+  geometry = "300x0-17+49"
+  padding = 16
   horizontal_padding = 12
   notification_height = 0
   shrink = no
 
   # Border
-  frame_color = "#4d78cc"
-  frame_width = 2
+  frame_color = "#45a69e2"
+  frame_width = 0
   separator_height = 2
-  separator_color = frame
+  separator_color = "#5a69e2"
 
 	# Display
   sort = yes
@@ -42,15 +42,16 @@
   show_indicators = no
 
   # Text
-  font = Ubuntu Mono 11
+  font = Ubuntu 10
   line_height = 3
   alignment = left
 
   # Format
   markup = full
   format = "<b>%s</b>\n%b"
-  word_wrap = yes
+  word_wrap = no
   ignore_newline = no
+  ellipsize = end
 
   # Icons
   icon_position = off
@@ -82,7 +83,21 @@
 
   summary = Tasker
   body = *Battery*
-  frame_color = "#98c379"
   format = "<b>Phone Charged</b>\n%b"
   urgency = critical
   timeout = 0
+
+[sounds]
+
+  summary = "*"
+  script = /home/adam/bin/notification-sounds.sh
+
+[volume]
+
+  appname = "dunstify"
+  category = ""
+  format = "<span font_family="unifont" font_size='small' letter_spacing='-492'>%b</span>"
+  history_ignore = yes
+  summary = "Volume notification"
+  timeout = 2
+  urgency = "low"

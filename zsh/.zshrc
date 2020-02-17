@@ -65,3 +65,51 @@ function duh() {
 
 # Remove '%' from the end of partial lines
 export PROMPT_EOL_MARK=''
+
+# Send a notification for completed commands
+# Adapted from https://www.reddit.com/r/linux/comments/1pooe6/zsh_tip_notify_after_long_processes/
+preexec () {
+  CMD=$1
+  CMD_START_DATE=$(date +%s)
+  WINDOW_ID=$(sed -zn < /proc/$$/environ 's/^WINDOWID=\(.*\)/\1/p')
+}
+
+precmd () {
+  EXIT_STATUS=$?
+  # Proceed only if we've ran a command in the current shell.
+  if ! [[ -z $CMD_START_DATE ]]; then
+    CMD_NOTIFY_THRESHOLD=5
+    SPLIT_CMD=(`echo ${CMD}`)
+    BLACKLIST=(
+      'vim'
+      'man'
+      'tldr'
+      'less'
+      'htop'
+    )
+    CMD_END_DATE=$(date +%s)
+    CMD_ELAPSED_TIME=$(($CMD_END_DATE - $CMD_START_DATE))
+
+    if [[ $CMD_ELAPSED_TIME -gt $CMD_NOTIFY_THRESHOLD ]]; then
+      # Check whether the command contains a blacklisted word...
+      BLACKLISTED=0
+      for i in ${SPLIT_CMD[@]}; do
+        if [[ ${BLACKLIST[@]} =~ $i ]]; then
+          BLACKLISTED=1
+        fi
+      done
+      # ... And if it doesn't, send a notification
+      if [[ $BLACKLISTED -eq 0 ]]; then
+        # Set window as urgent
+        wmctrl -b add,demands_attention -i -r "$WINDOW_ID"
+        if [[ $EXIT_STATUS -eq 0 ]]; then
+          notify-send "$CMD" "Completed in $CMD_ELAPSED_TIME seconds."
+          canberra-gtk-play -i complete
+        else
+          notify-send -u critical "$CMD" "Failed after $CMD_ELAPSED_TIME seconds with an exit status of $EXIT_STATUS."
+          canberra-gtk-play -i dialog-error
+        fi
+      fi
+    fi
+  fi
+}
