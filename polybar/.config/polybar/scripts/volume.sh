@@ -117,10 +117,16 @@ volume_print() {
 listen() {
     volume_print
 
-    pactl subscribe | while read -r event; do
-        if echo "$event" | grep -qv "Client"; then
-            volume_print
-        fi
+    # pactl subscribe | while read -r event; do
+    #     if echo "$event" | grep -qv "Client"; then
+    #         volume_print
+    #     fi
+    # done
+
+    # From https://github.com/polybar/polybar-scripts/issues/27
+    # For improved performance
+    pactl subscribe | grep --line-buffered "sink" | while read -r e; do
+        volume_print;
     done
 }
 
