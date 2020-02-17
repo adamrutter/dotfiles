@@ -8,8 +8,6 @@
       "*.txt"
     ]
   "bracket-matcher":
-    highlightMatchingLineNumber: true
-  core:
     autoHideMenuBar: true
     automaticallyUpdate: false
     closeDeletedFileTabs: true
@@ -23,6 +21,14 @@
       "background-tips"
       "atom-beautify"
     ]
+    highlightMatchingLineNumber: true
+    telemetryConsent: "no"
+    themes: [
+      "my-one-dark-ui"
+      "my-theme-syntax"
+    ]
+  core:
+    autoHideMenuBar: true
     telemetryConsent: "no"
     themes: [
       "my-one-dark-ui"
