@@ -45,7 +45,7 @@ ICON_3=
 ICON_4=
 ICON_MUTED=
 icon() {
-  echo "%{F$ICON_COLOUR}$(eval echo \$ICON_$1)%{F-}"
+  echo "%{F$ICON_COLOUR}%{T6}$(eval echo \$ICON_$1)%{T-}%{F-}"
 }
 
 AMOUNT=2 # The amount to increment volume by
