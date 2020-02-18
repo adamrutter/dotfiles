@@ -27,10 +27,10 @@
   shrink = no
 
   # Border
-  frame_color = "#45a69e2"
+  frame_color = "#6575ff"
   frame_width = 0
   separator_height = 2
-  separator_color = "#5a69e2"
+  separator_color = "#6575ff"
 
 	# Display
   sort = yes

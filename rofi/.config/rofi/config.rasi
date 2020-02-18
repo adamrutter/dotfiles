@@ -11,7 +11,7 @@ configuration {
 	background-input: #404552;
 	background-selected: #4f5b66;
 	border-color: #262930;
-	highlight-selected: #5a69e2;
+	highlight-selected: #6575ff;
 	text-color: #dfe1e8;
 	font: "sans-serif 11";
 }
