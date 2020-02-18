@@ -113,3 +113,6 @@ precmd () {
     fi
   fi
 }
+
+# Search repos when an unknown command is used
+source /usr/share/doc/pkgfile/command-not-found.zsh
