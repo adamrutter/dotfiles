@@ -70,10 +70,10 @@ batteryPercentage() {
 notification() {
   if [[ $currentMountStatus -eq 1 ]] && [[ $prevMountStatus -eq 0 ]]; then
     notify-send "Phone connected" "Mounted to $mountPoint"
-    canberra-gtk-play -i device-added
+    # canberra-gtk-play -i device-added
   elif [[ $currentMountStatus -eq 0 ]] && [[ $prevMountStatus -eq 1 ]]; then
     notify-send "Phone not connected" "No longer mounted at $mountPoint"
-    canberra-gtk-play -i device-removed
+    # canberra-gtk-play -i device-removed
   fi
 }
 
