@@ -1,101 +1,90 @@
-[urgency_low]
-
-  background = "#404552"
-  foreground = "#eff1f5"
-  timeout = 10
-
-[urgency_normal]
-
-  background = "#404552"
-  foreground = "#eff1f5"
-  timeout = 10
-
-[urgency_critical]
-
-  background = "#f76969"
-  foreground = "#ffffff"
-  frame_color = "#ffffff"
-  timeout = 0
-
+# Global config
 [global]
-
   # Geometry
   geometry = "300x0-17+49"
-  padding = 16
   horizontal_padding = 12
   notification_height = 0
+  padding = 16
   shrink = no
 
   # Border
   frame_color = "#6575ff"
   frame_width = 0
+  separator_color = frame
   separator_height = 2
-  separator_color = "#6575ff"
 
 	# Display
-  sort = yes
+  hide_duplicate_count = false
   idle_threshold = 0
   indicate_hidden = yes
   show_age_threshold = -1
-  stack_duplicates = true
-  hide_duplicate_count = false
   show_indicators = no
+  stack_duplicates = true
+  sort = yes
 
   # Text
-  font = Ubuntu 10
-  line_height = 3
   alignment = left
+  font = san-serif 10
+  line_height = 3
 
   # Format
-  markup = full
-  format = "<b>%s</b>\n%b"
-  word_wrap = no
-  ignore_newline = no
   ellipsize = end
+  format = "<b>%s</b>\n%b"
+  ignore_newline = no
+  markup = full
+  word_wrap = no
 
   # Icons
   icon_position = off
-  max_icon_size = 0
-  icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
   # History
-  sticky_history = no
   history_length = 20
+  sticky_history = no
 
   # Misc/Advanced
-  browser = /usr/bin/firefox -new-tab
   always_run_script = true
-  title = Dunst
+  browser = /usr/bin/firefox -new-tab
   class = Dunst
   startup_notification = false
+  title = Dunst
 
-  # Legacy
-  force_xinerama = false
+# Per-urgency config
+[urgency_low]
+  background = "#404552"
+  foreground = "#eff1f5"
+  timeout = 10
 
-[shortcuts]
+[urgency_normal]
+  background = "#404552"
+  foreground = "#eff1f5"
+  timeout = 10
 
-  close = ctrl+space
-  close_all = ctrl+shift+space
-  history = ctrl+grave
-  context = ctrl+shift+period
-
-[phone-battery]
-
-  summary = Tasker
-  body = *Battery*
-  format = "<b>Phone Charged</b>\n%b"
-  urgency = critical
+[urgency_critical]
+  background = "#f76969"
+  foreground = "#ffffff"
+  frame_color = "#ffffff"
   timeout = 0
 
-[sounds]
+# Shortcut keys
+[shortcuts]
+  close = ctrl+space
+  close_all = ctrl+shift+space
+  context = ctrl+shift+period
+  history = ctrl+grave
 
+# Per-notification config
+[phone-battery]
+  body = *Battery*
+  format = "<b>Phone Charged</b>\n%b"
+  summary = Tasker
+  timeout = 0
+  urgency = critical
+
+[sounds]
   summary = "*"
   script = /home/adam/bin/notification-sounds.sh
 
 [volume]
-
-  appname = "dunstify"
-  category = ""
   format = "<span font_family="unifont" font_size='small' letter_spacing='-492'>%b</span>"
   history_ignore = yes
   summary = "Volume notification"
