@@ -4,12 +4,14 @@ get_icon() {
     case $1 in
         01d) icon="";;
         01n) icon="";;
-        02d) icon="";;
-        02n) icon="";;
-        03*) icon="";;
-        04*) icon="";;
-        09d) icon="";;
-        09n) icon="";;
+        02d) icon="";;
+        02n) icon="";;
+        03d) icon="";;
+        03n) icon="";;
+        04d) icon="";;
+        04n) icon="";;
+        09d) icon="";;
+        09n) icon="";;
         10d) icon="";;
         10n) icon="";;
         11d) icon="";;
