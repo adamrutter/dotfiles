@@ -35,7 +35,7 @@ bar_color_not_filled="#2b303b"
 bar_glyph="▌"
 
 notification() {
-  dunstify "Volume notification" "$(progress_bar 50 "<span foreground='$bar_color_filled'>$bar_glyph</span>" "<span foreground='$bar_color_not_filled'>$bar_glyph</span>" $(volume))" -r 54902 -u low
+  dunstify -u low "Volume notification" "$(progress_bar 50 "<span foreground='$bar_color_filled'>$bar_glyph</span>" "<span foreground='$bar_color_not_filled'>$bar_glyph</span>" $(volume))" -r 54902 -u low
 }
 
 ICON_COLOUR="#a7adba"
