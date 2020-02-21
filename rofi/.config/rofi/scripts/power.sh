@@ -17,7 +17,7 @@ else
   case "$1" in
     Lock)
       pkill rofi
-      sleep 1
+      sleep 0.5
       /home/adam/bin/lock.sh
       ;;
     Reboot)
