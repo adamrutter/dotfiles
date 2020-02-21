@@ -105,8 +105,7 @@ for_window [window_role="task_dialog"] floating enable
 
 set $mod Mod4
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+space exec rofi -show drun -modi drun
-bindsym $mod+BackSpace exec ~/.config/rofi/scripts/power-menu.sh
+bindsym $mod+space exec ~/bin/launch-rofi.sh
 bindsym $mod+q kill
 bindsym $mod+Shift+f fullscreen toggle
 floating_modifier $mod

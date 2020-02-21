@@ -24,7 +24,7 @@ window {
 }
 
 mainbox {
-	children: [ inputbar, listview ];
+	children: [ mode-switcher, inputbar, listview ];
 }
 
 inputbar {
@@ -53,6 +53,7 @@ listview {
 	border-radius: 0 0 3 3;
 	lines: 5;
 	margin: 6 0 0 0;
+	padding: 0 1;
 }
 
 element {
@@ -63,4 +64,17 @@ element selected {
 	background-color: @background-selected;
 	border: 0 3 0 0;
 	border-color: @highlight-selected;
+}
+
+mode-switcher {
+	margin: 0 0 4 0;
+	padding: 0 1;
+}
+
+button {
+	padding: 5;
+}
+
+button selected {
+	background-color: @highlight-selected;
 }
