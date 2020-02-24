@@ -4,6 +4,7 @@
 options=(
   'Lock'
   'Reboot'
+  'Reboot (to Windows)'
   'Poweroff'
 )
 
@@ -22,6 +23,9 @@ else
       ;;
     Reboot)
       systemctl reboot
+      ;;
+    "Reboot (to Windows)")
+      sudo /home/adam/bin/reboot-to-windows.sh
       ;;
     Poweroff)
       systemctl poweroff
