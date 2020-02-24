@@ -1,15 +1,5 @@
 #!/bin/bash
 
-# Update mount status
-if [[ -f /tmp/phone-current-mount-status ]]; then
-  mv /tmp/phone-current-mount-status /tmp/phone-prev-mount-status
-fi
-if [[ $(ls $mountPoint* &> /dev/null; echo $?) -eq 0 ]]; then
-  echo 1 > /tmp/phone-current-mount-status
-else
-  echo 0 > /tmp/phone-current-mount-status
-fi
-
 #
 # Variables
 #
@@ -34,7 +24,7 @@ inactive=$(cat ~/.Xresources | grep -w '#define base04' | tail -c 8)
 device="qdbus org.kde.kdeconnect /modules/kdeconnect/devices/"$deviceId" org.kde.kdeconnect.device"
 
 # Whether the phone is currently and was previously mounted
-currentMountStatus=$(cat /tmp/phone-current-mount-status)
+mountStatus=$(ls $mountPoint* &> /dev/null; echo $?)
 if [[ -f /tmp/phone-prev-mount-status ]]; then
   prevMountStatus=$(cat /tmp/phone-prev-mount-status)
 fi
@@ -45,10 +35,10 @@ fi
 
 # Return an icon showing whether the phone is mounted or not
 mountIcon() {
- if [[ $currentMountStatus -eq 1 ]]; then
- 	echo "%{T3}累%{T-}"
- else
+ if [[ $mountStatus -eq 0 ]]; then
  	echo "%{T3}ﺭ%{T-}"
+ else
+ 	echo "%{T3}累%{T-}"
  fi
 }
 
@@ -68,10 +58,10 @@ batteryPercentage() {
 
 # Notifications
 notification() {
-  if [[ $currentMountStatus -eq 1 ]] && [[ $prevMountStatus -eq 0 ]]; then
+  if [[ $mountStatus -lt $prevMountStatus ]]; then
     notify-send "Phone connected" "Mounted to $mountPoint"
     # canberra-gtk-play -i device-added
-  elif [[ $currentMountStatus -eq 0 ]] && [[ $prevMountStatus -eq 1 ]]; then
+  elif [[ $mountStatus -gt $prevMountStatus ]]; then
     notify-send "Phone not connected" "No longer mounted at $mountPoint"
     # canberra-gtk-play -i device-removed
   fi
@@ -86,3 +76,6 @@ echo "%{F#a7adba}$(mountIcon)%{F-}  $(batteryPercentage)"
 
 # Run notification functions
 notification
+
+# Save mount status
+echo "$mountStatus" > /tmp/phone-prev-mount-status
