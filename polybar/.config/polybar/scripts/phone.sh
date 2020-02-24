@@ -82,7 +82,7 @@ notification() {
 #
 
 # Print the results as a string for Polybar
-echo "%{F#a7adba}$(mountIcon)%{F-} $(batteryPercentage)"
+echo "%{F#a7adba}$(mountIcon)%{F-}  $(batteryPercentage)"
 
 # Run notification functions
 notification
