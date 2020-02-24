@@ -45,7 +45,7 @@ fi
 
 # Return an icon showing whether the phone is mounted or not
 mountIcon() {
- if [[ $currentMountStatus -eq 0 ]]; then
+ if [[ $currentMountStatus -eq 1 ]]; then
  	echo "%{T3}累%{T-}"
  else
  	echo "%{T3}ﺭ%{T-}"
