@@ -86,6 +86,7 @@ precmd () {
       'tldr'
       'less'
       'htop'
+      'info'
     )
     CMD_END_DATE=$(date +%s)
     CMD_ELAPSED_TIME=$(($CMD_END_DATE - $CMD_START_DATE))
