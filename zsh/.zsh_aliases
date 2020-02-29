@@ -21,3 +21,6 @@ alias watch="watch --no-title"
 
 # cp replacement
 alias cpr="rsync --archive -hh --partial --info=stats1 --info=progress2 --modify-window=1"
+
+# Analogous to apt autoremove
+alias autoremove="pacman -Qdtq | pacman -Rs -"
