@@ -1,6 +1,5 @@
 gtk-theme-name = "Arc-Blue-Dark"
 gtk-icon-theme-name = "Papirus-Dark"
-gtk-cursor-theme-name = "DMZ-White"
 gtk-font-name = "sans-serif 10"
 gtk-enable-event-sounds="true"
 gtk-enable-input-feedback-sounds="true"
