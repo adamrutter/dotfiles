@@ -43,13 +43,13 @@ do
 			echo $(date +%k:%M) "Starting back ups..."
 
 			# Main backup of all files; exclude photos as they are stored at full resolution on Google Photos and are backed up seperately locally
-			rsync --recursive --archive --human-readable --compress $mountPoint $backupLocation --exclude "DCIM" &&\
+			rsync --recursive --archive --human-readable -zz $mountPoint $backupLocation --exclude "DCIM" &&\
 			# Sync these folders, possibly deleting files locally if necessary
-			rsync --recursive --archive --human-readable --compress --delete $mountPoint $mirrorLocation --exclude "DCIM" &&\
-			rsync --recursive --archive --human-readable --compress "$mountPoint"DCIM/Camera/* /home/adam/Pictures/photos/.Camera &&\
-			rsync --recursive --archive --human-readable --compress "$mountPoint"DCIM/ /home/adam/Pictures/photos --exclude "Camera" --exclude "Screenshots" --exclude "Video trimmer" &&\
-			rsync --recursive --archive --human-readable --compress "$mountPoint"S\ Health/GPX/ /home/adam/Documents/outdoors/gps-tracks &&\
-			rsync --recursive --archive --human-readable --compress "$mountPoint"Pictures/ /home/adam/Pictures/8B2X129GV
+			rsync --recursive --archive --human-readable -zz --delete $mountPoint $mirrorLocation --exclude "DCIM" &&\
+			rsync --recursive --archive --human-readable -zz "$mountPoint"DCIM/Camera/* /home/adam/pictures/photos/.Camera &&\
+			rsync --recursive --archive --human-readable -zz "$mountPoint"DCIM/ /home/adam/pictures/photos --exclude "Camera" --exclude "Screenshots" --exclude "Video trimmer" &&\
+			rsync --recursive --archive --human-readable -zz "$mountPoint"S\ Health/GPX/ /home/adam/documents/outdoors/gps-tracks &&\
+			rsync --recursive --archive --human-readable -zz "$mountPoint"pictures/ /home/adam/pictures/8B2X129GV
 
 			# Print messages dictating the success or failure of the backups
 			if [ $? -gt 0 ]; then
