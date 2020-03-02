@@ -32,7 +32,7 @@
   format = "<b>%s</b>\n%b"
   ignore_newline = no
   markup = full
-  word_wrap = no
+  word_wrap = yes
 
   # Icons
   icon_position = off
