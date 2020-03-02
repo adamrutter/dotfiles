@@ -8,7 +8,7 @@
   shrink = no
 
   # Border
-  frame_color = "#6575ff"
+  frame_color = "#3ea870"
   frame_width = 0
   separator_color = frame
   separator_height = 2
