@@ -13,6 +13,7 @@ configuration {
 	border-color: #262930;
 	highlight-selected: #54a87b;
 	text-color: #dfe1e8;
+	text-selected: #ffffff;
 	font: "sans-serif 11";
 }
 
@@ -77,4 +78,5 @@ button {
 
 button selected {
 	background-color: @highlight-selected;
+	color: @text-selected;
 }
