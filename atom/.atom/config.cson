@@ -35,7 +35,8 @@
       "my-theme-syntax"
     ]
   editor:
-    fontFamily: "Monaco"
+    fontFamily: "consolas"
+    fontSize: 16
     lineHeight: 1.6
     preferredLineLength: 100
     scrollPastEnd: true
