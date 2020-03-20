@@ -17,9 +17,9 @@ font-0 = sans serif:size=10;1
 font-1= FontAwesome5ProSolid:size=9;1
 font-2= Material Design Icons:size=11;2
 font-3= FontAwesome5ProSolid:size=13;3
-font-4= FontAwesome5ProSolid:size=10;0
-font-5= FontAwesome5ProSolid:size=11;1
-font-6= Material Design Icons:size=12;2
+font-4= FontAwesome5ProSolid:size=10;1
+font-5= Material Design Icons:size=12;2
+font-6= FontAwesome5ProSolid:size=8;1
 foreground = ${variables.foreground}
 height = 30
 module-margin-right = 1
@@ -39,7 +39,7 @@ format-background = ${variables.background-alt}
 format-padding = ${variables.padding}
 interval = 5
 hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input
-label = %{T7}%{F#a7adba}﻽%{F-}%{T-}  %temperature-c%°
+label = %{T6}%{F#a7adba}﻽%{F-}%{T-}  %temperature-c%°
 thermal-zone = 0
 type = internal/temperature
 units = false
@@ -50,7 +50,7 @@ exec = ~/.config/polybar/scripts/gpu-temp.sh
 format-background = ${variables.background-alt}
 format-padding = ${variables.padding}
 interval = 5
-label = %{F#a7adba}%{T7}%{T-}%{F-}  %output%°
+label = %{F#a7adba}%{T6}%{T-}%{F-}  %output%°
 type = custom/script
 units = false
 
@@ -58,7 +58,7 @@ units = false
 format-background = ${variables.background-alt}
 format-padding = ${variables.padding}
 interval = 5
-label = %{F#a7adba}%{F-}  %percentage_used%%
+label = %{T7}%{F#a7adba}%{F-}%{T-}  %percentage_used%%
 type = internal/memory
 
 [module/filesystem]
