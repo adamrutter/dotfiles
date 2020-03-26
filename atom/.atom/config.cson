@@ -1,12 +1,15 @@
 "*":
   "autocomplete-plus":
-    confirmCompletion: "enter"
+    backspaceTriggersAutocomplete: true
+    confirmCompletion: "tab"
     enableBuiltinProvider: false
     fileBlacklist: [
       "*.html"
       "*.md"
       "*.txt"
     ]
+    similarSuggestionRemoval: "textOrSnippet"
+    strictMatching: true
   "bracket-matcher":
     autoHideMenuBar: true
     automaticallyUpdate: false
@@ -29,6 +32,16 @@
     ]
   core:
     autoHideMenuBar: true
+    disabledPackages: [
+      "autocomplete-html"
+      "es6-javascript"
+    ]
+    packagesWithKeymapsDisabled: [
+      "emmet"
+    ]
+    packagesWithSnippetsDisabled: [
+      "language-html"
+    ]
     telemetryConsent: "no"
     themes: [
       "my-one-dark-ui"
@@ -47,6 +60,8 @@
     userId: "83cf1fd0-7393-4d18-8ef2-69ec2f36f38f"
   "highlight-line":
     hideHighlightOnSelect: true
+  "ide-typescript":
+    diagnosticsEnabled: false
   "linter-stylelint": {}
   "linter-ui-default":
     panelHeight: 280
