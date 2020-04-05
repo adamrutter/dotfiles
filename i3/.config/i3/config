@@ -156,6 +156,7 @@ bindsym $mod+shift+Tab workspace prev
 bindsym --release button2 kill
 bindsym $mod+c move position center
 bindsym Scroll_Lock exec --no-startup-id flash_window
+bindsym $mod+plus exec ~/bin/toggle-i3-gaps.sh
 
 #
 # Status bar
