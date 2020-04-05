@@ -118,3 +118,23 @@ precmd () {
 
 # Search repos when an unknown command is used
 source /usr/share/doc/pkgfile/command-not-found.zsh
+
+# Create an empty executable file
+function touchx() {
+  touch $@ && chmod +x $@
+}
+
+# Create an empty executable file and open in vim
+function touchxv() {
+  touch $@ && chmod +x $@ && vim $@
+}
+
+# Create an empty executable file and open in mousepad
+function touchxm() {
+  touch $@ && chmod +x $@ && mousepad $@
+}
+
+# Create an empty executable file and open in atom
+function touchxa() {
+  touch $@ && chmod +x $@ && atom $@
+}
