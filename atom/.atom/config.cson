@@ -1,8 +1,10 @@
 "*":
+  "atom-ternjs":
+    useSnippets: true
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
     confirmCompletion: "tab"
-    enableBuiltinProvider: false
+    enableAutoConfirmSingleSuggestion: false
     fileBlacklist: [
       "*.html"
       "*.md"
@@ -10,6 +12,8 @@
     ]
     similarSuggestionRemoval: "textOrSnippet"
     strictMatching: true
+  "base16-syntax":
+    scheme: "Solarized"
   "bracket-matcher":
     autoHideMenuBar: true
     automaticallyUpdate: false
@@ -34,7 +38,6 @@
     autoHideMenuBar: true
     disabledPackages: [
       "autocomplete-html"
-      "es6-javascript"
     ]
     packagesWithKeymapsDisabled: [
       "emmet"
@@ -44,7 +47,7 @@
     ]
     telemetryConsent: "no"
     themes: [
-      "my-one-dark-ui"
+      "my-theme-ui"
       "my-theme-syntax"
     ]
   editor:
@@ -60,11 +63,13 @@
     userId: "83cf1fd0-7393-4d18-8ef2-69ec2f36f38f"
   "highlight-line":
     hideHighlightOnSelect: true
+  hyperclick:
+    linuxTriggerKeys: "altKey"
   "ide-typescript":
     diagnosticsEnabled: false
   "linter-stylelint": {}
   "linter-ui-default":
-    panelHeight: 280
+    panelHeight: 279
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
@@ -73,6 +78,11 @@
   "seti-icons":
     noColor: true
   "status-bar": {}
+  "tone-syntax":
+    color:
+      duo: "#8d8df0"
+      syncUI: false
+      tri: "#ff8d55"
   welcome:
     showOnStartup: false
 ".basic.html.text":
