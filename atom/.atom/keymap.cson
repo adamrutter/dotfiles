@@ -1,0 +1,4 @@
+'atom-text-editor[data-grammar="text html basic"]:not([mini])':
+    'shift-right': 'emmet:expand-abbreviation-with-tab'
+'atom-text-editor[data-grammar="source js"]:not([mini])':
+    'shift-right': 'emmet:expand-abbreviation-with-tab'
