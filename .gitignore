@@ -1,1 +1,3 @@
 mimeapps.list
+atom/.atom/packages/*
+!atom/.atom/packages/my*
