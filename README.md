@@ -24,7 +24,7 @@ My dotfiles for Linux. Includes custom configuration for:
 
 ## Installation
 
-The dotfiles are managed by [GNU Stow](https://www.gnu.org/software/stow/), so installion and management is simple!
+The dotfiles are managed by [GNU Stow](https://www.gnu.org/software/stow/), so installation and management is simple!
 
 ### Download
 
