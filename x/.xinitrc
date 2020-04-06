@@ -20,4 +20,5 @@ export QT_STYLE_OVERRIDE=gtk2                     # Force Qt applications to use
 /home/adam/bin/audio-notify.sh &                  # Notification daemon for audio players
 flashfocus --flash-on-focus &                     # Window focus animations
 export TERMINAL=kitty                             # Set default terminal for i3
+nemo -n &										  # Nemo daemon
 exec i3                                           # Load i3
