@@ -77,6 +77,12 @@
   display: none !important;
 }
 
+/* Stop bar elements resizing on focus */
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  padding-block: 0 !important;
+  padding-inline: 0 !important;
+}
+
 /* Dropdown */
 .urlbarView {
   background: -moz-field !important;
