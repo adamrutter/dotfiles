@@ -64,6 +64,7 @@
 /* URL bar */
 #urlbar {
   border-radius: var(--border-radius) 0 0 0 !important;
+  display: inherit !important;
 }
 
 /* Inner URL bar container */
