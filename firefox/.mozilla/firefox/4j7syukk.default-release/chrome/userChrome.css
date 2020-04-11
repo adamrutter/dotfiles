@@ -77,6 +77,20 @@
   display: none !important;
 }
 
+/* Dropdown */
+.urlbarView {
+  background: -moz-field !important;
+  left: -11px !important;
+  padding: 0 5px !important;
+  position: absolute !important;
+  top: calc(var(--urlbar-toolbar-height) - 1px);
+  width: 100vw !important;
+}
+
+.urlbarView.megabar .urlbarView-body-inner {
+  border-top: none !important;
+}
+
 /* URLs in the dropdown */
 .urlbarView-url:not([selected="true"]),
 .urlbarView-action:not([selected="true"]) {
