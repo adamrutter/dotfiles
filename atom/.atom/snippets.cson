@@ -1,0 +1,4 @@
+'.source.js':
+  'className':
+    'prefix': 'cln'
+    'body': 'className={classNames($1)$2}'
