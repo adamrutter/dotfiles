@@ -87,14 +87,18 @@
 .urlbarView {
   background: -moz-field !important;
   left: -11px !important;
-  padding: 0 5px !important;
   position: absolute !important;
-  top: calc(var(--urlbar-toolbar-height) - 1px);
+  top: calc(var(--urlbar-toolbar-height) - 2px);
   width: 100vw !important;
 }
 
 .urlbarView.megabar .urlbarView-body-inner {
   border-top: none !important;
+}
+
+/* URLs list container */
+#urlbar-results {
+  padding: 5px;
 }
 
 /* URLs in the dropdown */
