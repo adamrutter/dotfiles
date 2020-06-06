@@ -52,7 +52,7 @@
     ]
   editor:
     fontFamily: "consolas"
-    fontSize: 16
+    fontSize: 15
     lineHeight: 1.6
     preferredLineLength: 100
     scrollPastEnd: true
@@ -69,7 +69,7 @@
     diagnosticsEnabled: false
   "linter-stylelint": {}
   "linter-ui-default":
-    panelHeight: 279
+    panelHeight: 276
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true

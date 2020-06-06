@@ -2,3 +2,43 @@
   'className':
     'prefix': 'cln'
     'body': 'className={classNames($1)$2}'
+  'PropTypes':
+    'prefix': 'pt'
+    'body': '$1: PropTypes.$2.isRequired,$3'
+  'React fragment':
+    'prefix': 'frag'
+    'body': '<React.Fragment>$1</React.Fragment>'
+  'React function component':
+    'prefix': 'rfc'
+    'body': """
+      import React from "react"
+      import PropTypes from "prop-types"
+
+      const $1 = props => {
+        return (
+          <div></div>
+        )
+      }
+
+      $1.propTypes = {}
+
+      export default $1
+    """
+  'React class component':
+    'prefix': 'rcc'
+    'body': """
+      import React, { Component } from "react"
+      import PropTypes from "prop-types"
+
+      class $1 extends Component {
+        render() {
+          return (
+            <div></div>
+          )
+        }
+      }
+
+      $1.propTypes = {}
+
+      export default $1
+    """
