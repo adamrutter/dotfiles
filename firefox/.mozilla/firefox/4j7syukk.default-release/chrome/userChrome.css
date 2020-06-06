@@ -103,6 +103,11 @@
   color: var(--toolbar-non-lwt-textcolor) !important;
 }
 
+/* Hide search icons at bottom of dropdown */
+#urlbar .search-one-offs:not([hidden]) {
+  display: none !important;
+}
+
 /* ---- */
 /* Tabs */
 /* ---- */
