@@ -138,8 +138,8 @@
 }
 
 /* Scroll buttons that appear when lots of tabs are open */
-toolbarbutton.scrollbutton-up,
-toolbarbutton.scrollbutton-down {
+#scrollbutton-up,
+#scrollbutton-down {
   display: none;
 }
 
