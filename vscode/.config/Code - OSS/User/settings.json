@@ -1,0 +1,40 @@
+{
+  "window.zoomLevel": 0,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "none",
+  "editor.fontFamily": "monospace, 'Droid Sans Fallback'",
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.accessibilitySupport": "off",
+  "editor.accessibilityPageSize": 1,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "window.menuBarVisibility": "toggle",
+  "diffEditor.renderSideBySide": true,
+  "workbench.sideBar.location": "left",
+  "workbench.activityBar.visible": true,
+  "git.suggestSmartCommit": false,
+  "gitlens.views.repositories.files.layout": "tree",
+  "gitlens.views.fileHistory.location": "scm",
+  "gitlens.views.lineHistory.location": "scm",
+  "gitlens.views.compare.location": "scm",
+  "gitlens.views.search.location": "scm",
+  "gitlens.views.repositories.location": "scm",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false,
+  "eslint.lintTask.enable": true,
+  "bracket-pair-colorizer-2.highlightActiveScope": true,
+  "bracket-pair-colorizer-2.rulerPosition": "Full",
+  "bracket-pair-colorizer-2.showBracketsInRuler": true,
+  "bracket-pair-colorizer-2.showHorizontalScopeLine": false
+}
