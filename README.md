@@ -19,6 +19,7 @@ My dotfiles for Linux. Includes custom configuration for:
 * Rofi
 * Vim
 * VLC
+* Visual Studio Code
 * X
 * zsh
 
