@@ -21,4 +21,7 @@ export QT_STYLE_OVERRIDE=gtk2                     # Force Qt applications to use
 flashfocus --flash-on-focus &                     # Window focus animations
 export TERMINAL=kitty                             # Set default terminal for i3
 nemo -n &										  # Nemo daemon
+/usr/lib/gsd-xsettings &                          # For load/hot reload of GTK
+~/bin/theme.sh $(cat ~/.cache/theme_wallpaper) \
+$(cat ~/.cache/theme_accent_name)                 # Load the previously set theme
 exec i3                                           # Load i3
