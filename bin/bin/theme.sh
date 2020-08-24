@@ -41,11 +41,12 @@ perl -p -i -e "s/(?<=accent:)\s*(#[[:xdigit:]]{6})/ #$accent/" ~/.config/rofi/ac
 # In both cases, then set the new theme
 if [[ -d "$HOME"/.themes/Arc-Dark_"$accent" ]]; then
 	change_gtk.sh --theme="Arc-Dark_$accent"
-else
+# Check graphical environment available (stops hanging on startup)
+elif [[ $(ps aux | grep '[a]wesome') ]]; then
 	printf "\n"	
 	read -p "No GTK theme found for this wallpaper/accent combo. Generate one now? [y/N] " -n 1 -r -t 5
 	if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-		:	
+		:
 	else
 		# Arc theme build process
 		# https://github.com/jnsh/arc-theme/blob/master/INSTALL.md
@@ -66,7 +67,8 @@ fi
 # In both cases, then set the new theme
 if [[ -d "$HOME"/.icons/papirus_"$accent" ]]; then
 	change_gtk.sh --icons="papirus_$accent"
-else
+# Check graphical environment available (stops hanging on startup)
+elif [[ $(ps aux | grep '[a]wesome') ]]; then
 	printf "\n"
 	read -p "No icon theme found for this wallpaper/accent combo. Generate one now? [y/N] " -n 1 -r -t 5
 	if [[ ! $REPLY =~ ^[Yy]$ ]]; then
