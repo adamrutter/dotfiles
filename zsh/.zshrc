@@ -138,3 +138,6 @@ function touchxm() {
 function touchxa() {
   touch $@ && chmod +x $@ && atom $@
 }
+
+# Set pywal colours
+(cat ~/.cache/wal/sequences &)
