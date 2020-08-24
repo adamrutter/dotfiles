@@ -57,8 +57,7 @@ elif [[ $(ps aux | grep '[a]wesome') ]]; then
 		make ./install && \
 		mv "$theme"/build/share/themes/Arc-Dark "$HOME"/.themes/Arc-Dark_"$accent" && \
 		change_gtk.sh --theme=Arc-Dark_"$accent" && \
-		echo "Done!" || \
-		change_gtk.sh --theme=Arc-Dark
+		echo "Done!"
 	fi
 fi
 
@@ -79,7 +78,6 @@ elif [[ $(ps aux | grep '[a]wesome') ]]; then
 		export MENU_FG="bac3cf" # Fix symbolic action icons not getting coloured correctly
 		/opt/oomox/plugins/icons_papirus/change_color.sh -o papirus_"$accent" -c "#$accent" && \
 		change_gtk.sh --icons=papirus_"$accent" && \
-		echo "Done!" || \
-		change_gtk.sh --icons=Papirus
+		echo "Done!"
 	fi
 fi	
