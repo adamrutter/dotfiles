@@ -27,9 +27,11 @@ echo "$2" > "$HOME"/.cache/theme_accent_name
 echo "$accent" > "$HOME"/.cache/theme_accent_hex
 
 # Hot reload Awesome
-awesome-client "awesome.emit_signal('hot_reload::xresources')"
-awesome-client "beautiful.accent = beautiful.colors[\"$2\"]"
-awesome-client "awesome.emit_signal('hot_reload::colors')"
+if [[ $(ps aux | grep '[a]wesome') ]]; then 
+	awesome-client "awesome.emit_signal('hot_reload::xresources')"
+	awesome-client "beautiful.accent = beautiful.colors[\"$2\"]"
+	awesome-client "awesome.emit_signal('hot_reload::colors')"
+fi
 
 # Change rofi accent color
 perl -p -i -e "s/(?<=accent:)\s*(#[[:xdigit:]]{6})/ #$accent/" ~/.config/rofi/accent.rasi
