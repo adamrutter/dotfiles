@@ -26,6 +26,9 @@ echo "$HOME/pictures/wallpapers/$(basename $1)" > "$HOME"/.cache/theme_wallpaper
 echo "$2" > "$HOME"/.cache/theme_accent_name
 echo "$accent" > "$HOME"/.cache/theme_accent_hex
 
+# Change rofi accent color
+perl -p -i -e "s/(?<=accent:)\s*(#[[:xdigit:]]{6})/ #$accent/" ~/.config/rofi/accent.rasi
+
 # Check if there is already a GTK theme for this accent colour
 # Ask to create a new theme if not
 # In both cases, then set the new theme

@@ -1,0 +1,19 @@
+// Accent kept in a different file and gitignored to save making pointless
+// commits every time the theme changes
+@import "./accent.rasi"
+
+* {
+  border-color-light: #313441;
+  border-color-dark: #2b2e39;
+  background-dark: #2b303b;
+  background-light: #404552;
+  background-medium: #383c4a;
+  foreground-dark: #919295;
+  foreground-light: #ffffff;
+  foreground-medium: #c7c7c5;
+  scrollbar-handle: #676b78;
+
+  background-color: @background-medium;
+  foreground-color: @foreground-dark;
+  text-color: @foreground-medium;
+}

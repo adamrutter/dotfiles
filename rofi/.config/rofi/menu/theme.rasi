@@ -1,151 +1,85 @@
-/* Adaped from Aditya Shakya's (adi1090x) slingshot theme */
-/* https://github.com/adi1090x/rofi */
-
 configuration {
-    font:                           "Mono 11";
-    show-icons:                     false;
-	icon-theme: 					"Papirus";
-    display-drun: 					"";
-    drun-display-format:            "{name}";
-    threads:                        0;
-    scroll-method:                  0;
-    disable-history:                false;
-    fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+  display-drun: "";
+  drun-display-format: "{name} [<span alpha='50%' weight='light' size='small'><i>({generic})</i></span>]";
+  icon-theme: "Papirus";
+  show-icons: false;
 }
 
+// Import colours
+@import "../colors.rasi"
+
 * {
-    background:                     #3E4148FF;
-    background-alt:                 #3E4148FF;
-    foreground:                     #F5F5F5FF;
-    border:               			#00000066;
-    selected:               		#363A3FFF;
-    urgent:                         #DA4453FF;
-    radius: 3px; /* Have to set window border-radius explicitly below */
-    accent: #4CAF50;
+  border-size: 1px;
+  radius: 3px;
 }
 
 window {
-    transparency:                   "real";
-    background-color:               @background;
-    text-color:                     @foreground;
-    border-radius:                  0 5px 5px 0;
-    height:                         955;
-    height: 98%;
-    width:                          33%;
-    location:                       west;
-    anchor:                         west;
-    x-offset:                       0;
-    y-offset:                       0;
-}
-
-prompt {
-    enabled: 						true;
-	padding: 						6px;
-	background-color: 				@selected;
-	text-color: 					@foreground;
-	font:							"FantasqueSansMono Nerd Font 11";
-    vertical-align: 0.5;
-}
-
-
-inputbar {
-    background-color:               @selected;
-    text-color:                     @foreground;
-    expand:                         false;
-    border:                  		1px;
-    border-radius:                  @radius;
-    border-color:                  	@border;
-    margin:                         5px;
-    padding:                        6px 9px;
-    position:                       center;
-}
-
-entry {
-    background-color:               @selected;
-    text-color:                     @foreground;
-    placeholder-color:              @foreground;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Search Applications";
-    blink:                          true;
-    padding: 5px;
-    vertical-align: 0.5;
-    margin: 0 0 0 3px;
-}
-
-case-indicator {
-    background-color:               @selected;
-    text-color:                     @foreground;
-    spacing:                        0;
-}
-
-
-listview {
-    background-color:               @background;
-    columns:                        1;
-    spacing:                        2px;
-    cycle:                          false;
-    dynamic:                        true;
-    layout:                         vertical;
+  anchor: west;
+  border-radius: 0 5px 5px 0;
+  height: 98%;
+  location: west;
+  width: 25%;
+  x-offset: 0;
+  y-offset: 0;
 }
 
 mainbox {
-    background-color:               @background;
-    children:                       [ inputbar, listview ];
-    spacing:                       	10px;
-    padding:                        8px 8px 8px 8px;
+  children: [ inputbar, listview ];
+  padding: 8px;
+}
+
+inputbar {
+  children: [ prompt, entry ];
+  background-color: @background-light;
+  border: @border-size;
+  border-color: @border-color-dark;
+  border-radius: @radius;
+  margin: 0px;
+  padding: 4px;
+  position: center;
+}
+
+prompt {
+  background-color: @background-light;
+  enabled: true;
+  padding: 5px;
+  margin: 0 0 0 3px;
+  text-color: @foreground;
+  vertical-align: 0.5;
+}
+
+entry {
+  background-color: @background-light;
+  blink: true;
+  margin: 0 0 0 3px;
+  padding: 5px;
+  placeholder: "Search Applications";
+  placeholder-color: @foreground-dark;
+}
+
+listview {
+  border: 2px;
+  layout: vertical;
+  margin: 5px 0;
+  scrollbar: true;
+  spacing: 0;
+}
+
+scrollbar {
+  background-color: @border-color-light;
+  border: 2px;
+  border-color: @border-color-light;
+  border-radius: 100%;
+  handle-color: @scrollbar-handle;
+  handle-width: 7px;
+  margin: 0 0 0 9px;
 }
 
 element {
-    background-color:               @background;
-    text-color:                     @foreground;
-    orientation:                    horizontal;
-    border-radius:                  @radius;
-    margin:                         0px 5px 0px 5px;
-    padding:                        10px 0px 10px 0px;
-}
-
-element-icon {
-    size:                           32px;
-    border:                         0px;
-}
-
-element-text {
-    expand:                         true;
-    horizontal-align:               0;
-    vertical-align:                 0.5;
-    margin:                         5px 10px 3px 10px;
-}
-
-element normal.urgent,
-element alternate.urgent {
-    background-color:               @urgent;
-    text-color:                     @foreground;
-    border-radius:                  @radius;
-}
-
-element normal.active,
-element alternate.active {
-    background-color:               @background;
-    text-color:                     @foreground;
+  padding: 7px 12px;
 }
 
 element selected {
-    background-color:               @selected;
-    text-color:                     @foreground;
-    border:                  		0px;
-    border-radius:                  @radius;
-    border-color:                  	@border;
-}
-
-element selected.urgent {
-    background-color:               @urgent;
-    text-color:                     @foreground;
-}
-
-element selected.active {
-    background-color:               @background-alt;
-    color:                          @foreground;
+  background-color: @accent;
+  text-color: @foreground-light;
 }
