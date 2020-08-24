@@ -24,4 +24,4 @@ nemo -n &										  # Nemo daemon
 /usr/lib/gsd-xsettings &                          # For load/hot reload of GTK
 ~/bin/theme.sh $(cat ~/.cache/theme_wallpaper) \
 $(cat ~/.cache/theme_accent_name)                 # Load the previously set theme
-exec i3                                           # Load i3
+exec awesome                                      # Load i3
