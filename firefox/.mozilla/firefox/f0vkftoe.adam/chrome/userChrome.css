@@ -1,0 +1,91 @@
+/* -------------- */
+/* Root variables */
+/* -------------- */
+
+:root {
+  --toolbar-non-lwt-bgimage: !important;
+}
+
+/* ------- */
+/* Nav bar */
+/* ------- */
+
+/* Forward/back buttons */
+#forward-button,
+#back-button {
+  display: none !important;
+}
+
+/* Container for some buttons on the far right of the bar */
+#PanelUI-button {
+  border-inline-start-width: 0px !important;
+  margin-inline-start: 0px !important;
+  padding-inline-start: 0px !important;
+}
+
+#PanelUI-menu-button {
+  padding-left: 0 !important;
+  padding-right: calc(var(--toolbarbutton-outer-padding) + 1px) !important;
+}
+
+/* Dark mode addon */
+#addon_darkreader_org-browser-action .toolbarbutton-icon {
+  list-style-image: url("./icons/lightbulb-regular.svg");
+}
+
+/* ------- */
+/* URL bar */
+/* ------- */
+
+/* URL bar container */
+#urlbar-container {
+  margin-inline-end: 0px !important;
+  margin-inline-start: 0px !important;
+}
+
+/* Actions button */
+#pageActionButton {
+  display: none !important;
+}
+
+/* Hide search icons at bottom of dropdown */
+#urlbar .search-one-offs:not([hidden]) {
+  display: none !important;
+}
+
+/* ---- */
+/* Tabs */
+/* ---- */
+
+/*  Tab loading animation in tab */
+.tab-throbber {
+  filter: grayscale(100%);
+}
+
+/* Tab loading burst animation */
+.tab-loading-burst {
+  display: none !important;
+}
+
+/* Tab dividers */
+.tabbrowser-tab::before,
+.tabbrowser-tab::after {
+  display: none !important;
+}
+
+/* Scroll buttons that appear when lots of tabs are open */
+#scrollbutton-up,
+#scrollbutton-down {
+  display: none;
+}
+
+/* Tab top border */
+:root:not([tabsintitlebar]) .tab-background {
+  border-top-style: none !important;
+}
+
+/* Tab-close button */
+.tab-close-button {
+  display: none !important;
+}
+
