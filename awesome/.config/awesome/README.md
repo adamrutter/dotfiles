@@ -4,7 +4,7 @@ My Awesome setup allows me to very easily generate _beautiful_ `( ͡~ ͜ʖ ͡°)
 
 ## Hot reloading
 
-The colour scheme is kept uniform across the desktop, and is very easy to change. A script I wrote, [`theme.sh`](../bin/theme.sh), generates colours using pywal, and takes the accent colour provided by the user and applies it to the window manager, the GTK theme, the icon theme, Rofi, and the terminal; just give it a wallpaper and an Xresources colour to use as an accent and it's off! I'll go into more detail about how it does this below...
+The colour scheme is kept uniform across the desktop, and is very easy to change. A script I wrote, [`theme.sh`](../../../bin/bin/theme.sh), generates colours using pywal, and takes the accent colour provided by the user and applies it to the window manager, the GTK theme, the icon theme, Rofi, and the terminal; just give it a wallpaper and an Xresources colour to use as an accent and it's off! I'll go into more detail about how it does this below...
 
 ### Pywal
 
@@ -24,7 +24,7 @@ Finally, the script emits an event Awesome uses to hot reload elements with thes
 
 As it's not possible to simply set a new colour for GTK or icon themes, the script will actually build a new variant for the chosen accent colour.
 
-Variants of the GTK theme are created with the help of a [script](../bin/arc-color-change.sh) I wrote that modifies the accent colour in the theme source files. `theme.sh` can then build the new variant.
+Variants of the GTK theme are created with the help of a [script](../../../bin/bin/arc-color-change.sh) I wrote that modifies the accent colour in the theme source files. `theme.sh` can then build the new variant.
 
 First, `theme.sh` will check if a variant for this accent already exists and, if it does, hot reload it using `gsettings`. If it doesn't, it will prompt the user, build one (this will take a minute or two), and hot reload using `gsettings` ([more info here on hot reloading GTK/icons](https://github.com/deviantfero/wpgtk/issues/112)).
 
