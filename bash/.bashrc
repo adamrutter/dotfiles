@@ -119,3 +119,6 @@ fi
 # Custom Prompt
 PS1="\[\033[1;34m\]<\u \w> \[\033[1;34m\]\s\[\033[0m\] "
 export PS1
+
+# API keys
+source ~/.api_keys

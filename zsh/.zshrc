@@ -141,3 +141,6 @@ function touchxa() {
 
 # Set pywal colours
 (cat ~/.cache/wal/sequences &)
+
+# API keys
+source ~/.api_keys

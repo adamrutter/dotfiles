@@ -3,3 +3,4 @@ atom/.atom/packages/*
 !atom/.atom/packages/my*
 rofi/.config/rofi/accent.rasi
 gtk/.config/gtk-3.0/bookmarks
+bash/.api_keys
