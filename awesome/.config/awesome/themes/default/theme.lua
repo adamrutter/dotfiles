@@ -14,7 +14,7 @@ theme.colors = colors
 -- Theme accent is stored externally so it can be used across various software,
 -- we need a way to read it on startup so Awesome is themed consistently with
 -- the rest of the system. io.popen() is used as this needs to be blocking
-theme.accent = colors[io.popen("cat ~/.theme_accent_name"):read()]
+theme.accent = colors[io.popen("cat ~/.cache/theme_accent_name"):read()]
 
 theme.bg_normal = theme.gtk.bg_color
 theme.bg_focus = theme.bg_normal
