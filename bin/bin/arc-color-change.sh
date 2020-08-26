@@ -86,9 +86,6 @@ files=(
   "$source/common/gtk-3.0/3.24/sass/_colors.scss"
 )
 
-echo "$new_bg_color"
-echo "$new_fg_color"
-
 # Change the accent color in each file
 for i in "${files[@]}"; do
   echo "Overwriting $i..."
