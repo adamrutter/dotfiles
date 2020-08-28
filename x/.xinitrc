@@ -1,5 +1,6 @@
 #!/bin/bash
 
+xrandr -s 1920x1440 --rate 144					  # Set resolution/refresh rate
 xgamma -rgamma 0.9 -ggamma 0.85 -bgamma 0.95      # Colour calibration; must be run before redshift
 xbindkeys                                         # Run xbindkeys; set keyboard bindings
 xset s off; xset -dpms                            # Turn off screensaver and power saving
