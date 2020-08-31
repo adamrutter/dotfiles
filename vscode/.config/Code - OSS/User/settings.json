@@ -38,6 +38,9 @@
   "bracket-pair-colorizer-2.showBracketsInRuler": true,
   "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
   "editor.rulers": [80, 120],
+  "files.associations": {
+    ".zsh_aliases": "shellscript"
+  },
   "bracket-pair-colorizer-2.colors": [
     "terminal.ansiMagenta",
     "terminal.ansiYellow",
