@@ -37,5 +37,10 @@
   "bracket-pair-colorizer-2.rulerPosition": "Full",
   "bracket-pair-colorizer-2.showBracketsInRuler": true,
   "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
-  "editor.rulers": [80, 120]
+  "editor.rulers": [80, 120],
+  "bracket-pair-colorizer-2.colors": [
+    "terminal.ansiMagenta",
+    "terminal.ansiYellow",
+    "terminal.ansiCyan"
+  ]
 }
