@@ -1,4 +1,4 @@
-PROMPT='%F{green} %n  '\
+PROMPT='%F{red} %n  '\
 ' %(5~|.../%3~|%~)  '\
 '$(git_prompt_info)'\
 '%(?..%{$fg[red]%} %? ) '\

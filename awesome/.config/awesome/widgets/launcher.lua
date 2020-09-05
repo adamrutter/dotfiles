@@ -2,14 +2,11 @@
 local function launcher()
   local content = wibox.widget.textbox()
   content.forced_width = beautiful.wibar_base_height
-  content.font = helpers.icon_font(17)  
-  content.markup = ""
+  content.font = helpers.icon_font(14)  
+  content.markup = ""
   content.align = "center"
   
-  -- Put content in a container
-  local container = wibox.container.background(content, nil, function(cr, width, height)
-    gears.shape.rounded_rect(cr, width, height, beautiful.border_radius)
-  end)
+  local container = wibox.container.background()
 
   helpers.hot_reload_bg(container, "hue_800")
   
@@ -35,6 +32,14 @@ local function launcher()
       awful.spawn("/home/adam/.config/rofi/menu/launch.sh")
     end
   end)
+
+  local padding = wibox.container.margin()
+  padding.left = beautiful.wibar_padding * 0.25
+  padding.right = beautiful.wibar_padding * 0.25
+
+  -- Construct widget
+  padding.widget = content
+  container.widget = padding
   
   return container
 end

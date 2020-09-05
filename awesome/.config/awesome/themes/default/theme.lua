@@ -45,11 +45,11 @@ theme.border_normal = "#00ff00"
 theme.border_focus = "#00ff00"
 
 -- Bar
-theme.wibar_padding = dpi(16)
+theme.wibar_padding = dpi(18)
 theme.wibar_base_height = dpi(34)
-theme.wibar_height = theme.wibar_base_height + theme.useless_gap * 2
+theme.wibar_height = theme.wibar_base_height + theme.useless_gap * 0
 theme.wibar_fg = colors.white
-theme.wibar_bg = "#00000000"
+theme.wibar_bg = theme.colors.background.hue_500
 
 -- Taglist
 theme.taglist_bg_focus = colors.color10
@@ -64,10 +64,6 @@ theme.taglist_text_focused = {"", "", "", "", "", "", "", "
 theme.menu_submenu_icon = theme_path .. "/icons/menu/submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width = dpi(100)
-
---- Titlebar
-theme.titlebar_height = dpi(28)
-theme.titlebar_close_button = ""
 
 -- Layouts
 theme.layout_fairh = theme_path .. "/icons/layouts/fairh.png"

@@ -110,3 +110,7 @@ You can now restart the X server, and you should be presented with my setup. Som
 - `super+space` for Rofi
 
 Why not try creating some more themes now Awesome is running!
+
+### Notes
+
+Titlebars/buttons are controlled by `nice`. I haven't yet implemented hot reloading for `nice`, so currently you'll need to reload Awesome manually to refresh this.

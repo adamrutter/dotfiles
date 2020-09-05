@@ -24,7 +24,7 @@ awful.screen.connect_for_each_screen(function(s)
     {
       s.tag_list,      
       layout = wibox.container.margin,
-      left = beautiful.useless_gap * 2,
+      left = beautiful.useless_gap * 0,
     },
   }
 
@@ -32,9 +32,7 @@ awful.screen.connect_for_each_screen(function(s)
     layout = wibox.layout.align.horizontal,
   }
 
-  local bar_right = wibox.container.background(nil, "#00000000", function(cr, width, height)
-    gears.shape.rounded_rect(cr, width, height, beautiful.border_radius)
-  end)
+  local bar_right = wibox.container.background()
   bar_right.shape_clip = true
   bar_right.widget = wibox.widget {
     layout = wibox.layout.align.horizontal,
@@ -46,9 +44,9 @@ awful.screen.connect_for_each_screen(function(s)
 
   s.bar:setup {
     layout = wibox.container.margin,
-    bottom = beautiful.useless_gap * 2,
-    left = beautiful.useless_gap * 2, 
-    right = beautiful.useless_gap * 2,
+    -- bottom = beautiful.useless_gap * 2,
+    -- left = beautiful.useless_gap * 2, 
+    -- right = beautiful.useless_gap * 2,
     {
       layout = wibox.layout.align.horizontal,
       expand = "none",

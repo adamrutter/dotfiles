@@ -14,13 +14,15 @@ configuration {
 }
 
 window {
-  anchor: west;
-  border-radius: 0 5px 5px 0;
-  height: 98%;
-  location: west;
+  anchor: southwest;
+  border: 1px solid;
+  border-color: @border-color-dark;
+  border-radius: 5px;
+  height: 74%;
+  location: southwest;
   width: 25%;
-  x-offset: 0;
-  y-offset: 0;
+  x-offset: 7;
+  y-offset: -41;
 }
 
 mainbox {
