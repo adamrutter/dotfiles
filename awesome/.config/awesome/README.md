@@ -34,7 +34,7 @@ Pywal supports Rofi natively, but it has no concept of what our accent colour is
 
 ## Setting this up for yourself
 
-I'm using the stable release of Awesome (4.3), so first install that using your distribution's package manager
+I'm using the git version of Awesome, so first install that using a package manager/compiling from source.
 
 ### Dependencies
 
