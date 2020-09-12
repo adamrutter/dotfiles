@@ -35,6 +35,8 @@ local function widget()
   icon.font = helpers.icon_font()
   awful.spawn.easy_async_with_shell("pamixer --get-volume-human", function(stdout) 
     icon.text = icon_text(format_vol(stdout)) 
+    -- Stop icon getting clipped
+    icon.forced_width = icon:get_preferred_size() + 1
   end)
   
   -- Create an value textbox, and asynchronously set a value as its intial text
@@ -48,6 +50,8 @@ local function widget()
     local vol = format_vol(stdout)   
     value.text = vol .. "%"
     icon.text = icon_text(vol)
+    -- Stop icon getting clipped
+    icon.forced_width = icon:get_preferred_size() + 1
   end)
   
   -- Mouse bindings for the widget

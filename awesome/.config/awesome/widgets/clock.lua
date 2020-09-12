@@ -10,6 +10,8 @@ local function widget()
   local icon = wibox.widget.textbox()
   icon.font = helpers.icon_font()
   icon.text = ""
+  -- Stop icon getting clipped
+  icon.forced_width = icon:get_preferred_size() + 1
 
   -- Init clock/calendar
   local clock = wibox.widget.textclock("%H:%M")
