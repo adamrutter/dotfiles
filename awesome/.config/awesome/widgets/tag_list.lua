@@ -35,7 +35,7 @@ local update_taglist = function (item, tag, index)
   -- Empty tag
   else
     item.bg = bg_normal
-    item.fg = beautiful.colors.foreground.hue_900
+    item.fg = tostring(Color.new(beautiful.colors.background.hue_500):lighten_to(0.4))
     icon_parent.widget = tag_item(beautiful.taglist_text_empty[index])
     icon_parent.widget.font = helpers.icon_font(nil, "light")
   end  
