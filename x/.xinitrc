@@ -18,6 +18,8 @@ export QT_STYLE_OVERRIDE=gtk2                     # Force Qt applications to use
 /home/adam/bin/audio-notify.sh &                  # Notification daemon for audio players
 flashfocus --flash-on-focus &                     # Window focus animations
 /usr/lib/gsd-xsettings &                          # For load/hot reload of GTK
-~/bin/theme.sh $(cat ~/.cache/theme_wallpaper) \
-$(cat ~/.cache/theme_accent_name)                 # Load the previously set theme
+sh ~/.fehbg &                                     # Set wallpaper
+change_gtk.sh -t=`cat ~/.cache/theme_gtk_theme`   # Set GTK theme
+change_gtk.sh -i=`cat ~/.cache/theme_icon_theme`  # Set icon theme
+wal -n -R                                         # Set pywal theme
 exec awesome                                      # Load awesome

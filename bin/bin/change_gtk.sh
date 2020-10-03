@@ -25,7 +25,13 @@ Change the current GTK theme using gsettings.
 done
 
 # Change theme
-[[ ! -z "$theme" ]] && gsettings set org.gnome.desktop.interface gtk-theme "$theme" || :
+if [[ -n "$theme" ]]; then
+  gsettings set org.gnome.desktop.interface gtk-theme "$theme"
+  echo "$theme" > "$HOME"/.cache/theme_gtk_theme
+fi
 
 # Change icons
-[[ ! -z "$icons" ]] && gsettings set org.gnome.desktop.interface icon-theme "$icons" || :
+if [[ -n "$icons" ]]; then
+  gsettings set org.gnome.desktop.interface icon-theme "$icons"
+  echo "$icons" > "$HOME"/.cache/theme_icon_theme
+fi
