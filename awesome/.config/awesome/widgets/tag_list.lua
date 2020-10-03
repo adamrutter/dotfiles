@@ -15,11 +15,11 @@ end
 local update_taglist = function (item, tag, index)
   local icon_parent = item:get_children_by_id("icon_parent")[1]
   local bg_normal = beautiful.colors.background.hue_500
-  local bg_active = beautiful.accent.hue_600
+  local bg_active = beautiful.icon_color
   -- Current tag
   if tag.selected then
     item.bg = bg_active
-    item.fg = helpers.calculate_fg(bg_active)
+    item.fg = helpers.calculate_fg(bg_normal)
     icon_parent.widget = tag_item(beautiful.taglist_text_focused[index])
     icon_parent.widget.font = helpers.icon_font(font_size, "solid")
   -- Urgent tag

@@ -24,7 +24,7 @@ local function widget()
   -- Background colour
   local container = wibox.container.background()
   local bg = beautiful.accent.hue_600
-  container.bg = bg
+  -- container.bg = bg
   container.fg = helpers.calculate_fg(bg)
   
   -- Content container with to pad inside of background container
@@ -33,13 +33,16 @@ local function widget()
   content.right = beautiful.wibar_padding * 0.75
   
   -- Create an icon textbox, and asynchronously set an icon as its inital text
-  local icon = wibox.widget.textbox()
-  icon.font = helpers.icon_font()
+  local icon = wibox.widget.background()
+  icon.fg = beautiful.icon_color
+  local icon_content = wibox.widget.textbox()
+  icon_content.font = helpers.icon_font()
   awful.spawn.easy_async_with_shell("pamixer --get-volume-human", function(stdout) 
-    icon.text = icon_text(format_vol(stdout)) 
+    icon_content.text = icon_text(format_vol(stdout)) 
     -- Stop icon getting clipped
-    icon.forced_width = icon:get_preferred_size() + 1
+    icon_content.forced_width = icon_content:get_preferred_size() + 1
   end)
+  icon.widget = icon_content
   
   -- Create an value textbox, and asynchronously set a value as its intial text
   local value = wibox.widget.textbox()
@@ -53,7 +56,7 @@ local function widget()
     value.text = vol .. "%"
     icon.text = icon_text(vol)
     -- Stop icon getting clipped
-    icon.forced_width = icon:get_preferred_size() + 1
+    icon_content.forced_width = icon_content:get_preferred_size() + 1
   end)
   
   -- Mouse bindings for the widget

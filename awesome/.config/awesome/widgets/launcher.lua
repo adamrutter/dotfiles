@@ -8,8 +8,7 @@ local function launcher()
   
   local container = wibox.container.background()
   local bg = beautiful.accent.hue_800
-  container.bg = bg
-  container.fg = helpers.calculate_fg(bg)
+  container.fg = beautiful.icon_color
   
   container:connect_signal("mouse::enter", function(self)
     -- container.bg = "#ff0000"

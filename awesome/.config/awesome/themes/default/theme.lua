@@ -12,6 +12,7 @@ theme.gtk = beautiful.gtk.get_theme_variables()
 -- Colors
 theme.colors = colors
 theme.accent = colors.color5
+theme.icon_color = theme.accent.hue_400
 
 theme.bg_normal = theme.gtk.bg_color
 theme.bg_focus = theme.bg_normal

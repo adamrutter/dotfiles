@@ -2,7 +2,7 @@ local function widget(s)
   bg_color = "hue_700"
   
   local container = wibox.container.background()
-  container.bg = beautiful.accent[bg_color]
+  -- container.bg = beautiful.accent[bg_color]
   container.fg = helpers.calculate_fg(beautiful.accent[bg_color])
 
   container:buttons(gears.table.join(
@@ -18,7 +18,7 @@ local function widget(s)
   content.bottom = beautiful.wibar_padding * 0.5
   
   local icon = awful.widget.layoutbox(s)
-  beautiful.theme_assets.recolor_layout(beautiful, helpers.calculate_fg(beautiful.accent[bg_color]))
+  beautiful.theme_assets.recolor_layout(beautiful, beautiful.icon_color)
 
   local text = wibox.widget.textbox()
  

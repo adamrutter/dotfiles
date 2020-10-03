@@ -2,18 +2,21 @@
 local function widget()
   local container = wibox.container.background()
   local bg = beautiful.accent.hue_800
-  container.bg = bg
+  -- container.bg = bg
   container.fg = helpers.calculate_fg(bg)
 
   local content = wibox.container.margin()
   content.left = beautiful.wibar_padding * 0.75
   content.right = beautiful.wibar_padding * 0.75
 
-  local icon = wibox.widget.textbox()
-  icon.font = helpers.icon_font()
-  icon.text = ""
+  local icon = wibox.widget.background()
+  icon.fg = beautiful.icon_color
+  local icon_content = wibox.widget.textbox()
+  icon_content.font = helpers.icon_font()
+  icon_content.text = ""
+  icon.widget = icon_content
   -- Stop icon getting clipped
-  icon.forced_width = icon:get_preferred_size() + 1
+  icon_content.forced_width = icon_content:get_preferred_size() + 1
 
   -- Init clock/calendar
   local clock = wibox.widget.textclock("%H:%M")
