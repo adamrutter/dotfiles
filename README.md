@@ -22,16 +22,19 @@ Change to the dotfiles directory, and:
 
 ### Colour scheme
 
-The colour cheme is kept uniform across the desktop, and is very easy to change. [This script](bin/bin/theme.sh) I wrote generates colours using pywal, and takes the accent colour provided by the user and applies it to the window manager, the GTK theme, the icon theme, Rofi, and the terminal.
+The colour cheme is kept uniform across the desktop, and is very easy to change. Pywal generates the colour scheme.
 
 ### Awesome
 
-A lot of effort has been put into seamlessly integrating Awesome into the hot reload flow described above, and it works flawlessly. It listens for custom events emitted from [theme.sh](bin/bin/theme.sh), generates a more complex pallete of tints/shades from Xresources and hot reloads where these colours are used.
+Awesome generates a more complex pallete of tints/shades for all Xresources colors. A base accent colour is explicitly picked in `theme.lua` (`color1` for example), tints/shades of which are then used throughout.
 
-For more info on installing my Awesome setup, see the [README in the awesome directory](awesome/.config/awesome/README.md).
+Dependencies for my Awesome config are:
+
+- `rofi`
+- `pamixer`
 
 My setup was inspired by [adi1090x's polybar-themes](https://github.com/adi1090x/polybar-themes), [elenapan's Awesome setup](https://github.com/elenapan/dotfiles), and [material-awesome](https://github.com/HikariKnight/material-awesome). Go check out their work!
 
 ### GTK
 
-A custom variant of [Arc](https://github.com/jnsh/arc-theme) is used. [This script](bin/bin/arc-color-change.sh) I wrote modifies the accent colour in the Arc source files, which can then be built as usual with the changes.
+A custom variant of [Arc](https://github.com/jnsh/arc-theme) is used. Checkout [my Arc repo](https://github.com/adamrutter/arc-theme) for the script I use to build Arc variants. I run the `gsd-xsettings` daemon in `xinitrc` so I can hot reload the GTK theme.
