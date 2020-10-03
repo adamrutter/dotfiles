@@ -7,8 +7,9 @@ local function launcher()
   content.align = "center"
   
   local container = wibox.container.background()
-
-  helpers.hot_reload_bg(container, "hue_800")
+  local bg = beautiful.accent.hue_800
+  container.bg = bg
+  container.fg = helpers.calculate_fg(bg)
   
   container:connect_signal("mouse::enter", function(self)
     -- container.bg = "#ff0000"

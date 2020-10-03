@@ -72,13 +72,6 @@ local function widget(s)
   container.left = beautiful.wibar_padding * 0
   container.shape_clip = true
 
-  -- Hack to get current tag indicator to hot reload
-  -- Not proud, get rekt
-  awesome.connect_signal("hot_reload::colors", function()
-    awful.tag.viewnext(s)
-    awful.tag.viewprev(s)
-  end)
-
   return container
 end
 

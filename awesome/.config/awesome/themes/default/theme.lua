@@ -11,10 +11,7 @@ theme.gtk = beautiful.gtk.get_theme_variables()
 
 -- Colors
 theme.colors = colors
--- Theme accent is stored externally so it can be used across various software,
--- we need a way to read it on startup so Awesome is themed consistently with
--- the rest of the system. io.popen() is used as this needs to be blocking
-theme.accent = colors[io.popen("cat ~/.cache/theme_accent_name"):read()]
+theme.accent = colors.color5
 
 theme.bg_normal = theme.gtk.bg_color
 theme.bg_focus = theme.bg_normal
@@ -50,6 +47,7 @@ theme.wibar_base_height = dpi(34)
 theme.wibar_height = theme.wibar_base_height + theme.useless_gap * 0
 theme.wibar_fg = colors.white
 theme.wibar_bg = theme.colors.background.hue_500
+theme.wibar_popup_offset = theme.useless_gap * -1
 
 -- Taglist
 theme.taglist_bg_focus = colors.color10

@@ -61,25 +61,6 @@ function helpers.calculate_fg(hex)
   return (red * 0.299 + green * 0.587 + blue * 0.114) > 186 and beautiful.colors.black or beautiful.colors.white
 end
 
--- Initially set the background color for the given element, then set up a
--- listener to reload it on the hot_reload::colors event. Also set the most 
--- appropriate foreground color given the background color
-function helpers.hot_reload_bg(element, bg, ignore_fg)
-	element["bg"] = beautiful.accent[bg]
-	if not ignore_fg then 
-		element["fg"] = helpers.calculate_fg(beautiful.accent[bg])
-	end
-
-  local function hot_reload()
-		element["bg"] = beautiful.accent[bg]
-		if not ignore_fg then 
-			element["fg"] = helpers.calculate_fg(beautiful.accent[bg])
-		end
-	end
-
-  awesome.connect_signal("hot_reload::colors", hot_reload)
-end
-
 -- Print a table to the console
 -- https://stackoverflow.com/a/27028488
 function helpers.print_table(o)

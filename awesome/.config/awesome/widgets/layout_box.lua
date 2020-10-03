@@ -2,7 +2,8 @@ local function widget(s)
   bg_color = "hue_700"
   
   local container = wibox.container.background()
-  helpers.hot_reload_bg(container, bg_color)
+  container.bg = beautiful.accent[bg_color]
+  container.fg = helpers.calculate_fg(beautiful.accent[bg_color])
 
   container:buttons(gears.table.join(
     awful.button({ }, 1, function () awful.layout.inc(1) end),

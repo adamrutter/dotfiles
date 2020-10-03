@@ -23,7 +23,9 @@ local function widget()
 
   -- Background colour
   local container = wibox.container.background()
-  helpers.hot_reload_bg(container, "hue_600")
+  local bg = beautiful.accent.hue_600
+  container.bg = bg
+  container.fg = helpers.calculate_fg(bg)
   
   -- Content container with to pad inside of background container
   local content = wibox.container.margin()
