@@ -4,6 +4,7 @@ local tag_list = require("widgets.tag_list")
 local clock = require("widgets.clock")
 local launcher = require("widgets.launcher")
 local volume = require("widgets.volume")
+local date = require("widgets.date")
 local weather = require("widgets.weather")
 
 -- Create a wibox for each screen and add it
@@ -14,6 +15,7 @@ awful.screen.connect_for_each_screen(function(s)
   s.clock = clock()
   s.launcher = launcher()
   s.volume = volume()
+  s.date = date()
   s.weather = weather()
 
   -- Create the wibox
@@ -41,6 +43,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.volume,
     s.layout_box,
     s.weather,
+    s.date,
     s.clock,
   }
 
