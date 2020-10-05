@@ -1,10 +1,10 @@
-local font_size = 12
+local font_size = 14
 
 -- Individual tag icon
 local function tag_item(icon)
   return wibox.widget {
     widget = wibox.widget.textbox,
-    font = helpers.icon_font(font_size),
+    font = helpers.font("material design icons", font_size),
     forced_width = beautiful.wibar_base_height,
     align = "center",
     text = icon
@@ -18,26 +18,20 @@ local update_taglist = function (item, tag, index)
   local bg_active = beautiful.icon_color
   -- Current tag
   if tag.selected then
-    item.bg = bg_active
-    item.fg = helpers.calculate_fg(bg_normal)
+    item.fg = beautiful.icon_color
     icon_parent.widget = tag_item(beautiful.taglist_text_focused[index])
-    icon_parent.widget.font = helpers.icon_font(font_size, "solid")
   -- Urgent tag
   elseif tag.urgent then
-    item.bg = beautiful.bg_urgent
     item.fg = beautiful.colors.white
     icon_parent.widget = tag_item(beautiful.taglist_text_urgent[index])
   -- Occupied tag
   elseif #tag:clients() > 0 then
-    item.bg = bg_normal
     item.fg = beautiful.colors.foreground.hue_500
     icon_parent.widget = tag_item(beautiful.taglist_text_occupied[index])
   -- Empty tag
   else
-    item.bg = bg_normal
     item.fg = tostring(Color.new(beautiful.colors.background.hue_500):lighten_to(0.4))
     icon_parent.widget = tag_item(beautiful.taglist_text_empty[index])
-    icon_parent.widget.font = helpers.icon_font(nil, "light")
   end  
 end
 

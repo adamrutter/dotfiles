@@ -54,10 +54,10 @@ theme.wibar_popup_offset = theme.useless_gap * -1
 theme.taglist_bg_focus = colors.color10
 theme.taglist_fg_focus = colors.white
 theme.taglist_bg_occupied = theme.bg_normal
-theme.taglist_text_urgent = {"", "", "", "", "", "", "", "", "", }
-theme.taglist_text_empty = {"", "", "", "", "", "", "", "", "", }
-theme.taglist_text_occupied = {"", "", "", "", "", "", "", "", "", }
-theme.taglist_text_focused = {"", "", "", "", "", "", "", "", "", }
+theme.taglist_text_urgent = {"󰎤", "󰎧", "󰎪", "󰎭", "󰎱", "󰎳", "󰎶", "󰎹", "󰎼", }
+theme.taglist_text_empty = {"󰎦", "󰎩", "󰎬", "󰎮", "󰎰", "󰎵", "󰎸", "󰎻", "󰎾", }
+theme.taglist_text_occupied = {"󰎤", "󰎧", "󰎪", "󰎭", "󰎱", "󰎳", "󰎶", "󰎹", "󰎼", }
+theme.taglist_text_focused = {"󰎤", "󰎧", "󰎪", "󰎭", "󰎱", "󰎳", "󰎶", "󰎹", "󰎼", }
 
 -- Menus
 theme.menu_submenu_icon = theme_path .. "/icons/menu/submenu.png"
