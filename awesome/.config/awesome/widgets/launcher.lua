@@ -2,7 +2,7 @@
 local function launcher()
   local content = wibox.widget.textbox()
   content.forced_width = beautiful.wibar_base_height
-  content.font = helpers.icon_font(14)  
+  content.font = helpers.icon_font(12)  
   content.markup = ""
   content.align = "center"
   
