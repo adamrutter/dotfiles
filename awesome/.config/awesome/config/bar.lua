@@ -4,6 +4,7 @@ local tag_list = require("widgets.tag_list")
 local clock = require("widgets.clock")
 local launcher = require("widgets.launcher")
 local volume = require("widgets.volume")
+local weather = require("widgets.weather")
 
 -- Create a wibox for each screen and add it
 awful.screen.connect_for_each_screen(function(s)
@@ -13,6 +14,7 @@ awful.screen.connect_for_each_screen(function(s)
   s.clock = clock()
   s.launcher = launcher()
   s.volume = volume()
+  s.weather = weather()
 
   -- Create the wibox
   s.bar = awful.wibar({ position = "bottom", screen = s })
@@ -35,10 +37,10 @@ awful.screen.connect_for_each_screen(function(s)
   local bar_right = wibox.container.background()
   bar_right.shape_clip = true
   bar_right.widget = wibox.widget {
-    layout = wibox.layout.align.horizontal,
-    widget = bar_right_container,
+    layout = wibox.layout.fixed.horizontal,
     s.volume,
     s.layout_box,
+    s.weather,
     s.clock,
   }
 

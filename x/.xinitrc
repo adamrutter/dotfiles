@@ -22,4 +22,5 @@ sh ~/.fehbg &                                     # Set wallpaper
 change_gtk.sh -t=`cat ~/.cache/theme_gtk_theme`   # Set GTK theme
 change_gtk.sh -i=`cat ~/.cache/theme_icon_theme`  # Set icon theme
 wal -n -R                                         # Set pywal theme
+source ~/.api_keys                                # Source API keys for awesome
 exec awesome                                      # Load awesome

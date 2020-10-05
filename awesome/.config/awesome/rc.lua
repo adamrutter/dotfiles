@@ -15,6 +15,7 @@ require("awful.autofocus")
 -- Helper functions
 Color = require("shared.colors")
 helpers = require("shared.helpers")
+json = require("shared.json")
 
 -- Errors
 require("config.errors")
