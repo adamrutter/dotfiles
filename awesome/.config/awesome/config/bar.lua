@@ -18,13 +18,20 @@ awful.screen.connect_for_each_screen(function(s)
   s.date = date()
   s.weather = weather()
 
+  local separator = wibox.widget.separator()
+  separator.orientation = "vertical"
+  separator.span_ratio = 0.5
+  separator.forced_width = beautiful.wibar_widget_margin * 2
+  separator.color = beautiful.fg_inactive
+
   -- Create the wibox
   s.bar = awful.wibar({ position = "bottom", screen = s })
 
   -- Add widgets to the wibox
   local bar_left = wibox.widget {
-    layout = wibox.layout.align.horizontal,
+    layout = wibox.layout.fixed.horizontal,
     s.launcher,
+    separator,
     {
       s.tag_list,      
       layout = wibox.container.margin,
@@ -42,6 +49,7 @@ awful.screen.connect_for_each_screen(function(s)
     layout = wibox.layout.fixed.horizontal,
     s.volume,
     s.layout_box,
+    separator,
     s.weather,
     s.date,
     s.clock,
