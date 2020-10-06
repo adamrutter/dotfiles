@@ -50,6 +50,7 @@ theme.wibar_fg = colors.white
 theme.wibar_bg = theme.colors.background.hue_500
 theme.wibar_popup_offset = theme.useless_gap * -1
 theme.wibar_widget_margin = theme.wibar_padding * 0.75
+
 -- Taglist
 theme.taglist_bg_focus = colors.color10
 theme.taglist_fg_focus = colors.white
