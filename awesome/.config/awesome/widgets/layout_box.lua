@@ -12,8 +12,8 @@ local function widget(s)
 
   
   local content = wibox.container.margin()
-  content.left = beautiful.wibar_padding * 0.75
-  content.right = beautiful.wibar_padding * 0.75
+  content.left = beautiful.wibar_widget_margin
+  content.right = beautiful.wibar_widget_margin
   content.top = beautiful.wibar_padding * 0.5
   content.bottom = beautiful.wibar_padding * 0.5
   

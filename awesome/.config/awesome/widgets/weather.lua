@@ -34,8 +34,8 @@ local function widget()
   container.fg = helpers.calculate_fg(bg)
 
   local content = wibox.container.margin()
-  content.left = beautiful.wibar_padding * 0.75
-  content.right = beautiful.wibar_padding * 0.75
+  content.left = beautiful.wibar_widget_margin
+  content.right = beautiful.wibar_widget_margin
 
   local icon_content = wibox.widget.textbox()
   icon_content.font = helpers.icon_font()

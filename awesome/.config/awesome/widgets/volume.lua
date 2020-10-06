@@ -29,8 +29,8 @@ local function widget()
   
   -- Content container with to pad inside of background container
   local content = wibox.container.margin()
-  content.left = beautiful.wibar_padding * 0.75
-  content.right = beautiful.wibar_padding * 0.75
+  content.left = beautiful.wibar_widget_margin
+  content.right = beautiful.wibar_widget_margin
   
   -- Create an icon textbox, and asynchronously set an icon as its inital text
   local icon = wibox.widget.background()
