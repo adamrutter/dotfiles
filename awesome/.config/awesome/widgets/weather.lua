@@ -51,7 +51,7 @@ local function widget()
     layout = wibox.layout.fixed.horizontal,
     icon,
     temp,
-    spacing = beautiful.wibar_padding / 2
+    spacing = beautiful.wibar_widget_icon_margin
   }
 
   -- Set icon/text

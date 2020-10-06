@@ -37,7 +37,7 @@ local function widget(s)
     icon,
     text,
     layout = wibox.layout.fixed.horizontal,
-    spacing = beautiful.wibar_padding / 2
+    spacing = beautiful.wibar_widget_icon_margin
   }
 
   return container
