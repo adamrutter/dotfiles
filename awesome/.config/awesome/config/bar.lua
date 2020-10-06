@@ -4,6 +4,9 @@ local tag_list = require("widgets.tag_list")
 local clock = require("widgets.clock")
 local launcher = require("widgets.launcher")
 local volume = require("widgets.volume")
+local fs = require("widgets.fs")
+local gpu = require("widgets.gpu")
+local cpu = require("widgets.cpu")
 local date = require("widgets.date")
 local weather = require("widgets.weather")
 
@@ -15,6 +18,9 @@ awful.screen.connect_for_each_screen(function(s)
   s.clock = clock()
   s.launcher = launcher()
   s.volume = volume()
+  s.fs = fs()
+  s.gpu = gpu()
+  s.cpu = cpu()
   s.date = date()
   s.weather = weather()
 
@@ -47,7 +53,11 @@ awful.screen.connect_for_each_screen(function(s)
   bar_right.shape_clip = true
   bar_right.widget = wibox.widget {
     layout = wibox.layout.fixed.horizontal,
-    s.volume,
+    s.fs,
+    s.gpu,
+    s.cpu,
+    separator,
+    s.volume,    
     s.layout_box,
     separator,
     s.weather,
