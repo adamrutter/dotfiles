@@ -24,6 +24,7 @@ theme.fg_normal = colors.grey.hue_600
 theme.fg_focus = colors.grey.hue_100
 theme.fg_urgent = colors.white
 theme.fg_minimize = colors.white
+theme.fg_inactive = tostring(Color.new(theme.colors.background.hue_500):lighten_to(0.4))
 
 -- Fonts
 theme.font = "mono"

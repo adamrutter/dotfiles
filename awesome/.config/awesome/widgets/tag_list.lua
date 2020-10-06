@@ -30,7 +30,7 @@ local update_taglist = function (item, tag, index)
     icon_parent.widget = tag_item(beautiful.taglist_text_occupied[index])
   -- Empty tag
   else
-    item.fg = tostring(Color.new(beautiful.colors.background.hue_500):lighten_to(0.4))
+    item.fg = beautiful.fg_inactive
     icon_parent.widget = tag_item(beautiful.taglist_text_empty[index])
   end  
 end
