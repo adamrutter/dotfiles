@@ -58,7 +58,7 @@ local function widget()
   get_forecast = awful.spawn.with_line_callback(forecast_api, {
     stdout = function(data)
       local forecast = json.decode(data)
-      temp.text = math.floor(forecast.main.temp+0.5) .. "°"
+      temp.text = helpers.round(forecast.main.temp) .. "°"
       icon_content.text = icon_map[forecast.weather[1].icon]
       -- Stop icon getting clipped
       icon_content.forced_width = icon_content:get_preferred_size() + 1

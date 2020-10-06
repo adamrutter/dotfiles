@@ -126,4 +126,9 @@ function helpers.icon_font(size, style)
 	return tostring(font  .. " " .. style .. " " .. size)
 end
 
+function helpers.round(num)
+  local num = tonumber(num)
+  return num >=0 and math.floor(num + 0.5) or math.ceil(num - 0.5)
+end
+
 return helpers
