@@ -114,14 +114,14 @@ end
 
 function helpers.font(font, size, style)
   local font = font or beautiful.font
-  local size = size or "12"
+  local size = size or beautiful.font_size
   local style = style or "regular"
   return tostring(font .. " " .. style .. " " .. size)
 end
 
 function helpers.icon_font(size, style) 
 	local font = beautiful.icon_font
-	local size = size or "12"
+	local size = size or beautiful.icon_size
 	local style = style or "regular"
 	return tostring(font  .. " " .. style .. " " .. size)
 end

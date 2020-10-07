@@ -28,7 +28,9 @@ theme.fg_inactive = tostring(Color.new(theme.colors.background.hue_500):lighten_
 
 -- Fonts
 theme.font = "mono"
+theme.font_size = "12"
 theme.icon_font = "font awesome 5 pro"
+theme.icon_size = "12"
 
 -- Icon theme
 theme.icon_theme = nil
