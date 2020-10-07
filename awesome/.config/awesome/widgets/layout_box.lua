@@ -14,11 +14,19 @@ local function widget(s)
   local content = wibox.container.margin()
   content.left = beautiful.wibar_widget_margin
   content.right = beautiful.wibar_widget_margin
-  content.top = beautiful.wibar_padding * 0.5
-  content.bottom = beautiful.wibar_padding * 0.5
-  
+ 
   local icon = awful.widget.layoutbox(s)
   beautiful.theme_assets.recolor_layout(beautiful, beautiful.icon_color)
+  icon.forced_height = dpi(15)
+  icon.forced_width = dpi(15)
+
+  local align_icon = wibox.widget {
+    layout = wibox.layout.align.vertical,
+    nil,
+    icon,
+    nil,
+    expand = "outside"
+  }
 
   local text = wibox.widget.textbox()
  
@@ -34,7 +42,7 @@ local function widget(s)
 
   container.widget = content
   content.widget = wibox.widget {
-    icon,
+    align_icon,
     text,
     layout = wibox.layout.fixed.horizontal,
     spacing = beautiful.wibar_widget_icon_margin

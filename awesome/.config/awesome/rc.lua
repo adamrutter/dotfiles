@@ -11,6 +11,7 @@ naughty = require("naughty")
 menubar = require("menubar")
 hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.autofocus")
+dpi = xresources.apply_dpi
 
 -- Helper functions
 Color = require("shared.colors")
