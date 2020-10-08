@@ -48,8 +48,8 @@ local function widget(s)
       id = "background",
       {
         widget = wibox.container.margin,
-        left = beautiful.wibar_padding * 0.125,
-        right = beautiful.wibar_padding * 0.125,
+        left = beautiful.wibar_spacer * 0.125,
+        right = beautiful.wibar_spacer * 0.125,
         id = "icon_parent"
       },
       create_callback = function(self, tag, index, _)
@@ -63,7 +63,7 @@ local function widget(s)
   }
 
   local container = wibox.container.margin(tag_list)
-  container.left = beautiful.wibar_padding * 0
+  container.left = beautiful.wibar_spacer * 0
   container.shape_clip = true
 
   return container

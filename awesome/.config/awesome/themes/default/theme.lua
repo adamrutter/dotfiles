@@ -45,15 +45,15 @@ theme.border_normal = "#00ff00"
 theme.border_focus = "#00ff00"
 
 -- Bar
-theme.wibar_padding = dpi(18)
+theme.wibar_spacer = dpi(18)
 theme.wibar_base_height = dpi(34)
 theme.wibar_height = theme.wibar_base_height + theme.useless_gap * 0
 theme.wibar_fg = colors.white
 theme.wibar_bg = theme.colors.background.hue_500
 theme.wibar_popup_offset = theme.useless_gap * -1
 
-theme.wibar_widget_margin = theme.wibar_padding * 0.75
-theme.wibar_widget_icon_margin = theme.wibar_padding * 0.75
+theme.wibar_widget_margin = theme.wibar_spacer * 0.75
+theme.wibar_widget_icon_margin = theme.wibar_spacer * 0.5
 
 -- Taglist
 theme.taglist_bg_focus = colors.color10

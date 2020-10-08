@@ -34,8 +34,8 @@ local function launcher()
   end)
 
   local padding = wibox.container.margin()
-  padding.left = beautiful.wibar_padding * 0.25
-  padding.right = beautiful.wibar_padding * 0.25
+  padding.left = beautiful.wibar_spacer * 0.25
+  padding.right = beautiful.wibar_spacer * 0.25
 
   -- Construct widget
   padding.widget = content
