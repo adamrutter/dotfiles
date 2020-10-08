@@ -109,4 +109,11 @@ theme.layout_name = {
 	cornerse = "Corner (SE)",
 }
 
+-- Progress bars
+theme.progressbar_bg = theme.colors.background.hue_500
+theme.progressbar_fg = theme.icon_color
+theme.progressbar_paddings = 0
+theme.progressbar_border_width = 1
+theme.progressbar_border_color = theme.colors.background.hue_600
+
 return theme

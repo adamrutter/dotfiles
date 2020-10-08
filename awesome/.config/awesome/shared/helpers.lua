@@ -131,4 +131,17 @@ function helpers.round(num)
   return num >=0 and math.floor(num + 0.5) or math.ceil(num - 0.5)
 end
 
+-- Split string
+-- https://stackoverflow.com/a/7615129
+function helpers.split_str(inputstr, sep)
+  if sep == nil then
+    sep = "%s"
+  end
+  local t={}
+  for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+    table.insert(t, str)
+  end
+  return t
+end
+
 return helpers
