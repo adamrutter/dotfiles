@@ -20,16 +20,6 @@ local function widget()
 
   -- Init clock/calendar
   local clock = wibox.widget.textclock("%H:%M")
-  local cal = awful.widget.calendar_popup.month()
-
-  -- Spawn calendar popup
-  -- container:connect_signal("mouse::enter", function()
-  --   cal.visible = true
-  --   cal:call_calendar(0, "br")
-  -- end)
-  -- container:connect_signal("mouse::leave", function()
-  --   cal.visible = false
-  -- end)
 
   -- Construct widget
   container.widget = content

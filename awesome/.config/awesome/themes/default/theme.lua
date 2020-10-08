@@ -116,4 +116,17 @@ theme.progressbar_paddings = 0
 theme.progressbar_border_width = 1
 theme.progressbar_border_color = theme.colors.background.hue_600
 
+-- Calendar
+theme.calendar_font = helpers.font(theme.font, theme.font_size)
+theme.calendar_spacing = theme.wibar_popup_spacer * 0
+theme.calendar_weekend_bg = theme.colors.background.hue_600
+theme.calendar_focus_style = {
+	bg = theme.icon_color,
+	fg = theme.colors.white
+}
+theme.calendar_weekday_style = {
+	fg = theme.accent.hue_200,
+	markup = function(t) return '<b>' .. t .. '</b>' end,
+}
+
 return theme
