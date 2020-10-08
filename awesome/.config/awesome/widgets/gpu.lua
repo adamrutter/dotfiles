@@ -16,8 +16,8 @@ local function widget()
   icon.fg = beautiful.icon_color
   icon.widget = icon_content
   
-  local get_cpu_temp = [[ bash -c "sensors -u 2>/dev/null | awk '/amdgpu-pci-0900/,/^$/' | awk '/temp1_input/{print $2}'" ]]
-  local value = awful.widget.watch(get_cpu_temp, 5, function(widget, stdout)
+  local get_gpu_temp = [[ bash -c "sensors -u 2>/dev/null | awk '/amdgpu-pci-0900/,/^$/' | awk '/temp1_input/{print $2}'" ]]
+  local value = awful.widget.watch(get_gpu_temp, 5, function(widget, stdout)
     widget:set_text(helpers.round(stdout:match("%g*")) .. "°")
   end)
   

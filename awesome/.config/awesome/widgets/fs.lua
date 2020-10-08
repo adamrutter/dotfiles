@@ -16,8 +16,8 @@ local function widget()
   icon.fg = beautiful.icon_color
   icon.widget = icon_content
   
-  local get_cpu_temp = [[ bash -c "df -h 2>/dev/null | awk '/\/home/{print $5}'" ]]
-  local value = awful.widget.watch(get_cpu_temp, 5, function(widget, stdout)
+  local get_fs_usage = [[ bash -c "df -h 2>/dev/null | awk '/\/home/{print $5}'" ]]
+  local value = awful.widget.watch(get_fs_usage, 5, function(widget, stdout)
     widget:set_text(stdout:match("%g*"))
   end)
   
