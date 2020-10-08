@@ -38,29 +38,29 @@ local function widget()
   local icon_content = wibox.widget.textbox()
   icon_content.font = helpers.icon_font()
   awful.spawn.easy_async_with_shell("pamixer --get-volume-human", function(stdout) 
-    icon_content.text = icon_text(format_vol(stdout)) 
-    -- Stop icon getting clipped
-    icon_content.forced_width = icon_content:get_preferred_size() + 1
-  end)
-  icon.widget = icon_content
-  
-  -- Create an value textbox, and asynchronously set a value as its intial text
-  local value = wibox.widget.textbox()
-  awful.spawn.easy_async_with_shell("pamixer --get-volume-human", function(stdout) 
-    value.text = format_vol(stdout) .. "%"
-  end)
-  
-  -- Listen for a volume_changed signal, and update the icon/value
-  awesome.connect_signal("volume_changed", function(stdout)
-    local vol = format_vol(stdout)   
-    value.text = vol .. "%"
-    icon.text = icon_text(vol)
-    -- Stop icon getting clipped
-    icon_content.forced_width = icon_content:get_preferred_size() + 1
-  end)
-  
-  -- Mouse bindings for the widget
-  container:buttons(gears.table.join(
+  icon_content.text = icon_text(format_vol(stdout)) 
+  -- Stop icon getting clipped
+  icon_content.forced_width = icon_content:get_preferred_size() + 1
+end)
+icon.widget = icon_content
+
+-- Create an value textbox, and asynchronously set a value as its intial text
+local value = wibox.widget.textbox()
+awful.spawn.easy_async_with_shell("pamixer --get-volume-human", function(stdout) 
+value.text = format_vol(stdout) .. "%"
+end)
+
+-- Listen for a volume_changed signal, and update the icon/value
+awesome.connect_signal("volume_changed", function(stdout)
+  local vol = format_vol(stdout)   
+  value.text = vol .. "%"
+  icon_content.text = icon_text(vol)
+  -- Stop icon getting clipped
+  icon_content.forced_width = icon_content:get_preferred_size() + 1
+end)
+
+-- Mouse bindings for the widget
+container:buttons(gears.table.join(
     awful.button(nil, 1, function() awful.spawn.easy_async_with_shell(
       "pamixer --toggle-mute && pamixer --get-volume-human", 
       function(stdout)
