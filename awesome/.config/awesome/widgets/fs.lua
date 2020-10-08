@@ -97,7 +97,7 @@ local function widget()
   end
 
   local update_timer = gears.timer {
-    timeout = 1,
+    timeout = 10,
     call_now = true,
     autostart = true,
     callback = popup_update
