@@ -2,6 +2,7 @@ local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local colors = require("themes.default.colors")
 local beautiful = require("beautiful")
+dpi = xresources.apply_dpi
 
 local theme = { }
 
