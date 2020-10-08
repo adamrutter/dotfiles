@@ -14,13 +14,13 @@ theme.colors = colors
 theme.accent = colors.color5
 theme.icon_color = theme.accent.hue_400
 
-theme.bg_normal = theme.gtk.bg_color
+theme.bg_normal = theme.colors.background.hue_400
 theme.bg_focus = theme.bg_normal
 theme.bg_urgent = theme.colors.red
 theme.bg_minimize = "#ff00ff"
 theme.bg_systray = theme.bg_normal
 
-theme.fg_normal = colors.grey.hue_600
+theme.fg_normal = colors.foreground.hue_500
 theme.fg_focus = colors.grey.hue_100
 theme.fg_urgent = colors.white
 theme.fg_minimize = colors.white
@@ -55,6 +55,8 @@ theme.wibar_popup_offset = theme.useless_gap * -1
 
 theme.wibar_widget_margin = theme.wibar_spacer * 0.75
 theme.wibar_widget_icon_margin = theme.wibar_spacer * 0.5
+
+theme.wibar_popup_spacer = theme.wibar_spacer
 
 -- Taglist
 theme.taglist_bg_focus = colors.color10
