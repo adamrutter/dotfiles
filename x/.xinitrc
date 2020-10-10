@@ -12,7 +12,6 @@ export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0         # Fix for fullscreen games; Al
 xset b off                                        # Turn terminal bong off for X
 export QT_STYLE_OVERRIDE=gtk2                     # Force Qt applications to use the GTK theme
 /usr/lib/kdeconnectd &                            # Start KDE Connect
-/usr/bin/dunst &                                  # Start dunst; notification server
 /home/adam/bin/mouse-acceleration.sh off          # Turn mouse acceleration off
 /home/adam/bin/mouse-sensitivity.sh -0.2          # Set mouse sensitivity
 /home/adam/bin/audio-notify.sh &                  # Notification daemon for audio players

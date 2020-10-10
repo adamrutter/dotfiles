@@ -57,3 +57,6 @@ require("config.tags")
 
 -- Client
 require("config.client")
+
+-- Notifications
+require("config.notifications")

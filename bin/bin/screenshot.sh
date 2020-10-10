@@ -4,4 +4,4 @@ DATE=$(date +"%Y-%m-%d-%H-%M-%S")
 FILE=$DIRECTORY/$DATE.png
 scrot "$FILE"
 notify-send "Screenshot" "$FILE" -u low
-canberra-gtk-play -i camera-shutter
+# canberra-gtk-play -i camera-shutter

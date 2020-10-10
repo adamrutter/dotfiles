@@ -25,6 +25,9 @@ theme.fg_focus = colors.grey.hue_100
 theme.fg_urgent = colors.white
 theme.fg_minimize = colors.white
 theme.fg_inactive = tostring(Color.new(theme.colors.background.hue_500):lighten_to(0.4))
+theme.fg_darker = tostring(Color.new(theme.colors.background.hue_500):lighten_to(0.8))
+
+theme.border_color = theme.colors.background.hue_600
 
 -- Fonts
 theme.font = "mono"
@@ -114,7 +117,7 @@ theme.progressbar_bg = theme.colors.background.hue_500
 theme.progressbar_fg = theme.icon_color
 theme.progressbar_paddings = 0
 theme.progressbar_border_width = 1
-theme.progressbar_border_color = theme.colors.background.hue_600
+theme.progressbar_border_color = theme.border_color
 
 -- Calendar
 theme.calendar_font = helpers.font(theme.font, theme.font_size)
@@ -128,5 +131,22 @@ theme.calendar_weekday_style = {
 	fg = theme.accent.hue_200,
 	markup = function(t) return '<b>' .. t .. '</b>' end,
 }
+
+-- Notifications
+theme.notification_margin = dpi(10)
+theme.notification_border_width = 1
+theme.notification_border_color = theme.border_color
+theme.notification_spacing = theme.useless_gap
+theme.notification_width = dpi(350)
+theme.notification_padding = dpi(15)
+theme.notification_icon_bg = {
+	["low"] = theme.colors.background.hue_600,
+	["normal"] = theme.colors.background.hue_600,
+	["critical"] = "darkred"
+}
+theme.notification_message_fg = theme.fg_darker
+theme.notification_title_font = helpers.font(theme.font, theme.font_size + 1)
+theme.notification_title_margin_bottom = theme.font_size * 0.25
+theme.notification_max_height = dpi(250)
 
 return theme
