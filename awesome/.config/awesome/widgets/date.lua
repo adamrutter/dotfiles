@@ -59,15 +59,18 @@ local function widget()
     }
   end
 
-  local cal = wibox.widget {
-    date = os.date('*t'),
-    widget = wibox.widget.calendar.month,
-    fn_embed = decorate_cal,
-  }
+  local function cal() 
+    return wibox.widget {
+      date = os.date('*t'),
+      widget = wibox.widget.calendar.month,
+      fn_embed = decorate_cal,
+    }
+  end
 
   -- Spawn calendar popup
-  local popup = popup_template(cal)
+  local popup = popup_template()
   container:connect_signal("mouse::enter", function()
+    popup.widget = cal()
     popup:move_next_to(mouse.current_widget_geometries[5])
     popup.visible = true
   end)
