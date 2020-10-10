@@ -29,23 +29,30 @@ local function widget()
       widget:set_markup(style.markup(widget:get_text()))
     end
 
-    -- Change background color for weekends
-    local d = {
-      year = date.year, 
-      month = date.month or 1, 
-      day = date.day or 1
-    }
-    local weekday = tonumber(os.date('%w', os.time(d)))
-    local weekend_bg = (weekday==0 or weekday==6) and beautiful.calendar_weekend_bg
+    -- Return the weekend bg color if current day is weekend, and cell is either
+    -- a heading or a day (currently focused day is specific cell type)
+    local function weekend_bg_color()
+      local this_day = tonumber(os.date('%w', os.time({
+        year = date.year, 
+        month = date.month or 1, 
+        day = date.day or 1
+      })))
+
+      if (this_day == 0 and flag == "normal") then return beautiful.calendar_weekend_bg
+      elseif (this_day == 0 and flag == "weekday") then return beautiful.calendar_weekend_bg
+      elseif (this_day == 6 and flag == "normal") then return beautiful.calendar_weekend_bg
+      elseif (this_day == 6 and flag == "weekday") then return beautiful.calendar_weekend_bg
+      end
+    end
     
     return wibox.widget {
       {
         widget,
-        widget  = wibox.container.margin,
+        widget = wibox.container.margin,
         margins = beautiful.wibar_popup_spacer * 0.4
       },
       widget = wibox.container.background,
-      bg = style.bg or weekend_bg,
+      bg = style.bg or weekend_bg_color() or nil,
       fg = style.fg,
       border_width = style.border_width,
       border_color = style.border_color
@@ -53,8 +60,8 @@ local function widget()
   end
 
   local cal = wibox.widget {
-    date     = os.date('*t'),
-    widget   = wibox.widget.calendar.month,
+    date = os.date('*t'),
+    widget = wibox.widget.calendar.month,
     fn_embed = decorate_cal,
   }
 
