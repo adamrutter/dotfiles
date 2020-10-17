@@ -5,6 +5,7 @@ local clock = require("widgets.clock")
 local launcher = require("widgets.launcher")
 local volume = require("widgets.volume")
 local fs = require("widgets.fs")
+local mem = require("widgets.mem")
 local gpu = require("widgets.gpu")
 local cpu = require("widgets.cpu")
 local date = require("widgets.date")
@@ -19,6 +20,7 @@ awful.screen.connect_for_each_screen(function(s)
   s.launcher = launcher()
   s.volume = volume()
   s.fs = fs()
+  s.mem = mem()
   s.gpu = gpu()
   s.cpu = cpu()
   s.date = date()
@@ -54,6 +56,7 @@ awful.screen.connect_for_each_screen(function(s)
   bar_right.widget = wibox.widget {
     layout = wibox.layout.fixed.horizontal,
     s.fs,
+    s.mem,
     s.gpu,
     s.cpu,
     separator,
