@@ -7,7 +7,7 @@ xset s off; xset -dpms                            # Turn off screensaver and pow
 xrdb ~/.Xresources                                # Set xresources
 redshift -l manual &                              # Start redshift; blue light filter
 /home/adam/bin/mount-phone.sh &                   # Run script to automatically mount phone
-~/bin/picom --config ~/.config/picom/picom.conf & # Start picom; compositing manager
+picom --config ~/.config/picom/picom.conf &       # Start picom; compositing manager
 export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0         # Fix for fullscreen games; Allows workspaces to be changed without the game disappearing
 xset b off                                        # Turn terminal bong off for X
 export QT_STYLE_OVERRIDE=gtk2                     # Force Qt applications to use the GTK theme
