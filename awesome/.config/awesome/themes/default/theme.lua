@@ -20,7 +20,7 @@ theme.bg_urgent = theme.colors.red
 theme.bg_minimize = "#ff00ff"
 theme.bg_systray = theme.bg_normal
 
-theme.fg_normal = colors.foreground.hue_500
+theme.fg_normal = "#f4f4f4"
 theme.fg_focus = colors.grey.hue_100
 theme.fg_urgent = colors.white
 theme.fg_minimize = colors.white
@@ -52,7 +52,7 @@ theme.border_focus = "#00ff00"
 theme.wibar_spacer = dpi(18)
 theme.wibar_base_height = dpi(34)
 theme.wibar_height = theme.wibar_base_height + theme.useless_gap * 0
-theme.wibar_fg = colors.white
+theme.wibar_fg = colors.fg_normal
 theme.wibar_bg = theme.colors.background.hue_500
 theme.wibar_popup_offset = theme.useless_gap * -1
 
@@ -128,7 +128,7 @@ theme.calendar_focus_style = {
 	fg = theme.colors.white
 }
 theme.calendar_weekday_style = {
-	fg = theme.accent.hue_200,
+	fg = theme.accent.hue_300,
 	markup = function(t) return '<b>' .. t .. '</b>' end,
 }
 

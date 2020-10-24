@@ -10,7 +10,7 @@ nice {
   },
   ontop_color = beautiful.accent.hue_400,
   maximize_color = beautiful.accent.hue_500,
-  close_color = beautiful.accent.hue_700,
+  close_color = beautiful.accent.hue_600,
   titlebar_height = 32,
   button_size = 14
 }

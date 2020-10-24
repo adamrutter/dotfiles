@@ -10,14 +10,14 @@ configuration {
 
 * {
   border-size: 1px;
-  radius: 3px;
+  radius: 1px;
 }
 
 window {
   anchor: southwest;
   border: 1px solid;
   border-color: @border-color-dark;
-  border-radius: 5px;
+  border-radius: 1px;
   height: 74%;
   location: southwest;
   width: 25%;

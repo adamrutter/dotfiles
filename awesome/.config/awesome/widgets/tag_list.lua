@@ -24,7 +24,7 @@ local update_taglist = function (item, tag, index)
   -- Urgent tag
   elseif tag.urgent then
     item.bg = beautiful.bg_urgent
-    item.fg = helpers.calculate_fg(beautiful.bg_urgent)
+    item.fg = beautiful.fg_urgent
     icon_parent.widget = tag_item(beautiful.taglist_text_urgent[index])
   -- Occupied tag
   elseif #tag:clients() > 0 then

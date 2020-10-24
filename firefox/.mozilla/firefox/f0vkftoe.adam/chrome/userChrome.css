@@ -89,3 +89,7 @@
   display: none !important;
 }
 
+/* Selected tab text */
+.tabbrowser-tab[selected="true"] {
+  color: white !important;
+}

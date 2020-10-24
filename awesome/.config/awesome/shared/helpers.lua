@@ -58,7 +58,7 @@ function helpers.calculate_fg(hex)
   local blue = tonumber("0x"..hex:sub(5,6))
   -- Calculate/return the best foreground colour
   -- http://stackoverflow.com/a/3943023/112731
-  return (red * 0.299 + green * 0.587 + blue * 0.114) > 186 and beautiful.colors.black or beautiful.colors.white
+  return (red * 0.299 + green * 0.587 + blue * 0.114) > 186 and beautiful.colors.black or beautiful.fg_normal
 end
 
 -- Print a table to the console
