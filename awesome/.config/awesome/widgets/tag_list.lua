@@ -18,18 +18,22 @@ local update_taglist = function (item, tag, index)
   local bg_active = beautiful.icon_color
   -- Current tag
   if tag.selected then
+    item.bg = bg_normal
     item.fg = beautiful.icon_color
     icon_parent.widget = tag_item(beautiful.taglist_text_focused[index])
   -- Urgent tag
   elseif tag.urgent then
-    item.fg = beautiful.colors.white
+    item.bg = beautiful.bg_urgent
+    item.fg = helpers.calculate_fg(beautiful.bg_urgent)
     icon_parent.widget = tag_item(beautiful.taglist_text_urgent[index])
   -- Occupied tag
   elseif #tag:clients() > 0 then
+    item.bg = bg_normal
     item.fg = beautiful.colors.foreground.hue_500
     icon_parent.widget = tag_item(beautiful.taglist_text_occupied[index])
   -- Empty tag
   else
+    item.bg = bg_normal
     item.fg = beautiful.fg_inactive
     icon_parent.widget = tag_item(beautiful.taglist_text_empty[index])
   end  
