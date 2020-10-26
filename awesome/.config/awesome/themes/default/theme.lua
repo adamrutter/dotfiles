@@ -20,7 +20,7 @@ theme.bg_urgent = theme.colors.red
 theme.bg_minimize = "#ff00ff"
 theme.bg_systray = theme.bg_normal
 
-theme.fg_normal = "#f4f4f4"
+theme.fg_normal = theme.colors.foreground.hue_500
 theme.fg_focus = colors.grey.hue_100
 theme.fg_urgent = colors.white
 theme.fg_minimize = colors.white
@@ -148,5 +148,8 @@ theme.notification_message_fg = theme.fg_darker
 theme.notification_title_font = helpers.font(theme.font, theme.font_size + 1)
 theme.notification_title_margin_bottom = theme.font_size * 0.25
 theme.notification_max_height = dpi(250)
+
+-- Titlebar
+theme.titlebar_fg = theme.colors.white
 
 return theme
