@@ -7,7 +7,6 @@ local function launcher()
   content.align = "center"
   
   local container = wibox.container.background()
-  local bg = beautiful.accent.hue_800
   container.fg = beautiful.icon_color
   
   container:connect_signal("mouse::enter", function(self)

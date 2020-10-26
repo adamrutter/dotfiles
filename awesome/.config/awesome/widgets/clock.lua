@@ -1,9 +1,6 @@
 -- Display a clock/calendar
 local function widget()
   local container = wibox.container.background()
-  local bg = beautiful.accent.hue_800
-  -- container.bg = bg
-  container.fg = helpers.calculate_fg(bg)
 
   local content = wibox.container.margin()
   content.left = beautiful.wibar_widget_margin

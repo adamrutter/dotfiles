@@ -3,7 +3,6 @@ local popup_template = require("widgets.popup")
 local function widget()
   -- Bar widget
   local container = wibox.container.background()
-  local bg = beautiful.accent.hue_500
   
   local content = wibox.container.margin()
   content.left = beautiful.wibar_widget_margin
