@@ -17,7 +17,7 @@ local function widget()
   icon.widget = icon_content
   
   local get_mem_usage = [[ bash -c "cat /proc/meminfo | grep 'MemTotal\|MemAvailable' | awk '{print $2}' | tr '\n' ' ' | awk '{print (1 - ($2 / $1)) * 100}' | awk -F. '{print $1}'" ]]
-  local value = awful.widget.watch(get_mem_usage, 5, function(widget, stdout)
+  local value = awful.widget.watch(get_mem_usage, 2, function(widget, stdout)
     widget:set_text(helpers.round(stdout:match("%g*")) .. "%")
   end)
   
