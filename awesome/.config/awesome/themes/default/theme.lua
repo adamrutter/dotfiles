@@ -30,8 +30,9 @@ theme.fg_darker = tostring(Color.new(theme.colors.background.hue_500):lighten_to
 theme.border_color = theme.colors.background.hue_600
 
 -- Fonts
-theme.font = "mono"
-theme.font_size = "12"
+theme.font_name = "ubuntu"
+theme.font_size = "10"
+theme.font = theme.font_name .. " " .. " " .. theme.font_size
 theme.icon_font = "font awesome 5 pro"
 theme.icon_size = "12"
 
@@ -49,17 +50,15 @@ theme.border_normal = "#00ff00"
 theme.border_focus = "#00ff00"
 
 -- Bar
-theme.wibar_spacer = dpi(18)
+theme.wibar_spacer = theme.font_size * 1.75
 theme.wibar_base_height = dpi(34)
 theme.wibar_height = theme.wibar_base_height + theme.useless_gap * 0
 theme.wibar_fg = colors.fg_normal
 theme.wibar_bg = theme.colors.background.hue_500
-theme.wibar_popup_offset = theme.useless_gap * -1
 
 theme.wibar_widget_margin = theme.wibar_spacer * 0.75
 theme.wibar_widget_icon_margin = theme.wibar_spacer * 0.5
 
-theme.wibar_popup_spacer = theme.wibar_spacer
 
 -- Taglist
 theme.taglist_bg_focus = colors.color10
@@ -118,6 +117,17 @@ theme.progressbar_fg = theme.icon_color
 theme.progressbar_paddings = 0
 theme.progressbar_border_width = 1
 theme.progressbar_border_color = theme.border_color
+theme.progressbar_shape = gears.shape.rounded_bar
+theme.progressbar_bar_shape = gears.shape.rounded_bar
+
+-- Popups
+theme.wibar_popup_offset = theme.useless_gap * -1
+theme.wibar_popup_spacer = theme.wibar_spacer
+theme.popup_line_margin = theme.wibar_popup_spacer * 0.4
+theme.popup_padding_top = theme.wibar_popup_spacer * 0.9
+theme.popup_padding_bottom = theme.wibar_popup_spacer * 0.9
+theme.popup_padding_left = theme.wibar_popup_spacer * 0.75
+theme.popup_padding_right = theme.wibar_popup_spacer * 0.75
 
 -- Calendar
 theme.calendar_font = helpers.font(theme.font, theme.font_size)

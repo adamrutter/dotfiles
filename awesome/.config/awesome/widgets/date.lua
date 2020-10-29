@@ -46,7 +46,7 @@ local function widget()
       {
         widget,
         widget = wibox.container.margin,
-        margins = beautiful.wibar_popup_spacer * 0.4
+        margins = beautiful.font_size * 0.4
       },
       widget = wibox.container.background,
       bg = style.bg or weekend_bg_color() or nil,
@@ -67,7 +67,13 @@ local function widget()
   -- Spawn calendar popup
   local popup = popup_template()
   container:connect_signal("mouse::enter", function()
-    popup.widget = cal()
+    popup.widget = wibox.widget {
+      layout = wibox.container.margin,
+      margins = beautiful.font_size * 0.5,
+      { 
+        widget = cal()
+      }
+    }
     popup:move_next_to(mouse.current_widget_geometries[5])
     popup.visible = true
   end)

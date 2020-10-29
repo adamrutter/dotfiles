@@ -113,7 +113,7 @@ function helpers.set_xresources_colors(colors)
 end
 
 function helpers.font(font, size, style)
-  local font = font or beautiful.font
+  local font = font or beautiful.font_name
   local size = size or beautiful.font_size
   local style = style or "regular"
   return tostring(font .. " " .. style .. " " .. size)

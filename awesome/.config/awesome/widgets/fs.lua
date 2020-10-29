@@ -24,7 +24,7 @@ local function widget()
 
   -- Popup
   local popup_content = wibox.layout.fixed.vertical() 
-  local popup = popup_template(popup_content)
+  local popup = popup_template(popup_content, "File system usage")
 
   local function fs_bar(mount_point, free, usage, type)   
     local icon = wibox.widget.textbox()
@@ -50,7 +50,7 @@ local function widget()
     local bar_width = 150
     bar.value = tonumber(usage:sub(1, -2))
     bar.max_value = 100
-    bar.forced_height = 20
+    bar.forced_height = 5
     bar.forced_width = bar_width
 
     local free_space = wibox.widget.textbox()
@@ -70,15 +70,15 @@ local function widget()
     }
 
     local container = wibox.container.margin()
-    container.margins = beautiful.wibar_popup_spacer * 0.5
+    container.top = beautiful.popup_line_margin
+    container.bottom = beautiful.popup_line_margin
     container.widget = {
       layout = wibox.layout.fixed.horizontal,
-      spacing = beautiful.wibar_popup_spacer,
+      spacing = beautiful.wibar_popup_spacer * 0.5,
       icon_container,
       name,
       bar_container
     }
-
     return container
   end
 
