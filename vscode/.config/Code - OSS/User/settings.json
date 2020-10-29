@@ -45,5 +45,8 @@
     "terminal.ansiMagenta",
     "terminal.ansiYellow",
     "terminal.ansiCyan"
-  ]
+  ],
+  "editor.renameOnType": true,
+  "editor.renderControlCharacters": false,
+  "breadcrumbs.enabled": true
 }
