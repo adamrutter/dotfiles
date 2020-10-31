@@ -34,7 +34,7 @@ theme.font_name = "ubuntu"
 theme.font_size = "10"
 theme.font = theme.font_name .. " " .. " " .. theme.font_size
 theme.icon_font = "font awesome 5 pro"
-theme.icon_size = "12"
+theme.icon_size = "11"
 
 -- Icon theme
 theme.icon_theme = nil

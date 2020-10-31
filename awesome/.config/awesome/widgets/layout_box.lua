@@ -14,8 +14,8 @@ local function widget(s)
  
   local icon = awful.widget.layoutbox(s)
   beautiful.theme_assets.recolor_layout(beautiful, beautiful.icon_color)
-  icon.forced_height = dpi(15)
-  icon.forced_width = dpi(15)
+  icon.forced_height = dpi(beautiful.icon_size + 4)
+  icon.forced_width = dpi(beautiful.icon_size + 4)
 
   local align_icon = wibox.widget {
     layout = wibox.layout.align.vertical,

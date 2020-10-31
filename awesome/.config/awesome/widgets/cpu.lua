@@ -7,7 +7,7 @@ local function widget()
   content.right = beautiful.wibar_widget_margin
   
   local icon_content = wibox.widget.textbox()
-  icon_content.font = helpers.font("material design icons", 15)
+  icon_content.font = helpers.font("material design icons", beautiful.icon_size + 3)
   icon_content.text = "󰍛"
   -- Stop icon getting clipped
   icon_content.forced_width = icon_content:get_preferred_size() + 1
