@@ -1,20 +1,23 @@
 local function widget(content, title)
-  local heading = wibox.widget {
-    widget = wibox.widget.background,
-    bg = beautiful.colors.background.hue_500,
-    fg = beautiful.colors.white,
-    {
-      widget = wibox.container.margin,
-      top = beautiful.popup_padding_top * 0.75,
-      bottom = beautiful.popup_padding_bottom * 0.75,
-      left = beautiful.popup_padding_left,
-      right = beautiful.popup_padding_right,
+  local heading = nil
+  if title then
+    heading = wibox.widget {
+      widget = wibox.widget.background,
+      bg = beautiful.colors.background.hue_500,
+      fg = beautiful.colors.white,
       {
-        widget = wibox.widget.textbox,
-        text = title,
-      }
-    }    
-  }
+        widget = wibox.container.margin,
+        top = beautiful.popup_padding_top * 0.75,
+        bottom = beautiful.popup_padding_bottom * 0.75,
+        left = beautiful.popup_padding_left,
+        right = beautiful.popup_padding_right,
+        {
+          widget = wibox.widget.textbox,
+          text = title,
+        }
+      }    
+    }
+  end
 
   local container = wibox.widget {
     widget = wibox.container.margin,
