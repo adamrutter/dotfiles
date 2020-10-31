@@ -6,3 +6,8 @@ end)
 awesome.connect_signal('exit', function()
   awesome.kill(get_forecast, awesome.unix_signal.SIGTERM)
 end)
+
+-- Emit a signal when the layout changes
+tag.connect_signal("property::layout", function() 
+  awesome.emit_signal("layout_changed")
+end)
