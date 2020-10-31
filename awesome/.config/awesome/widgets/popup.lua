@@ -20,8 +20,6 @@ local function widget(content, title)
     widget = wibox.container.margin,
     top = beautiful.popup_padding_top,
     bottom = beautiful.popup_padding_bottom,
-    left = beautiful.popup_padding_left,
-    right = beautiful.popup_padding_right,
     content
   }
 
