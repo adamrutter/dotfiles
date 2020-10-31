@@ -7,8 +7,8 @@ local function widget(content, title)
       fg = beautiful.colors.white,
       {
         widget = wibox.container.margin,
-        top = beautiful.popup_padding_top * 0.75,
-        bottom = beautiful.popup_padding_bottom * 0.75,
+        top = beautiful.popup_padding_y * 0.75,
+        bottom = beautiful.popup_padding_y * 0.75,
         left = beautiful.popup_padding_left,
         right = beautiful.popup_padding_right,
         {
@@ -21,8 +21,8 @@ local function widget(content, title)
 
   local container = wibox.widget {
     widget = wibox.container.margin,
-    top = beautiful.popup_padding_top,
-    bottom = beautiful.popup_padding_bottom,
+    top = beautiful.popup_padding_y,
+    bottom = beautiful.popup_padding_y,
     content
   }
 

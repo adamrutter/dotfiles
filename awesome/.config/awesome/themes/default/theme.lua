@@ -124,10 +124,8 @@ theme.progressbar_bar_shape = gears.shape.rounded_bar
 theme.wibar_popup_offset = theme.useless_gap * -1
 theme.wibar_popup_spacer = theme.wibar_spacer
 theme.popup_line_margin = theme.wibar_popup_spacer * 0.4
-theme.popup_padding_top = theme.wibar_popup_spacer * 0.9
-theme.popup_padding_bottom = theme.wibar_popup_spacer * 0.9
-theme.popup_padding_left = theme.wibar_popup_spacer * 0.75
-theme.popup_padding_right = theme.wibar_popup_spacer * 0.75
+theme.popup_padding_x = theme.wibar_popup_spacer * 0.75
+theme.popup_padding_y = theme.wibar_popup_spacer * 0.9
 
 -- Calendar
 theme.calendar_font = helpers.font(theme.font, theme.font_size)

@@ -58,8 +58,8 @@ local function widget(s)
         widget = wibox.container.margin,
         top = beautiful.popup_line_margin,
         bottom = beautiful.popup_line_margin,
-        left = beautiful.popup_padding_left,
-        right = beautiful.popup_padding_right,
+        left = beautiful.popup_padding_x,
+        right = beautiful.popup_padding_x,
         {
           widget = wibox.widget.textbox,
           text = beautiful.layout_name[value.name]

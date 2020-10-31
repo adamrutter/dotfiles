@@ -57,8 +57,8 @@ local function widget()
     local container = wibox.container.margin()
     container.top = beautiful.popup_line_margin
     container.bottom = beautiful.popup_line_margin
-    container.left = beautiful.popup_padding_left
-    container.right = beautiful.popup_padding_right
+    container.left = beautiful.popup_padding_x
+    container.right = beautiful.popup_padding_x
     container.widget = {
       layout = wibox.layout.fixed.horizontal,
       spacing = beautiful.wibar_popup_spacer * 0.5,
