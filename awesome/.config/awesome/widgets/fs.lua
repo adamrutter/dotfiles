@@ -24,24 +24,9 @@ local function widget()
 
   -- Popup
   local popup_content = wibox.layout.fixed.vertical() 
-  local popup = popup_template(popup_content, "File system usage")
+  local popup = popup_template(popup_content)
 
   local function fs_bar(mount_point, free, usage, type)   
-    local icon = wibox.widget.textbox()
-    icon.font = helpers.icon_font()
-    icon.text = ""
-    icon.align = "center"
-    icon.forced_width = 20
-    local icon_container = wibox.container.background()
-    icon_container.fg = beautiful.icon_color
-    icon_container.widget = icon
-    -- Add custom icons for specific mount points
-    if mount_point:match("^/$") then icon.text = ""
-    elseif mount_point:match("games") then icon.text = ""
-    elseif mount_point:match("home") then icon.text = ""
-    elseif mount_point:match("ntfs") then icon.text = ""
-    end
-
     local name = wibox.widget.textbox()
     name.forced_width = 100
     name.text = mount_point
@@ -72,10 +57,11 @@ local function widget()
     local container = wibox.container.margin()
     container.top = beautiful.popup_line_margin
     container.bottom = beautiful.popup_line_margin
+    container.left = beautiful.popup_padding_left
+    container.right = beautiful.popup_padding_right
     container.widget = {
       layout = wibox.layout.fixed.horizontal,
       spacing = beautiful.wibar_popup_spacer * 0.5,
-      icon_container,
       name,
       bar_container
     }
