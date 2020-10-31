@@ -1,8 +1,10 @@
+local popup_template = require("widgets.popup")
+
 -- Display the current weather
 local function widget()
   -- Command to fetch API data
   local forecast_api = [[bash -c "while true; do
-      echo $(curl -s http://api.openweathermap.org/data/2.5/weather?q=chichester,gb\&appid=$OPEN_WEATHER_MAP_API_KEY\&units=metric)
+      echo $(curl -s https://api.openweathermap.org/data/2.5/onecall?lat=50.8376\&lon=0.7749\&appid=$OPEN_WEATHER_MAP_API_KEY\&units=metric)
       sleep 200
     done"
   ]]
@@ -52,16 +54,83 @@ local function widget()
     spacing = beautiful.wibar_widget_icon_margin
   }
 
-  -- Set icon/text
-  get_forecast = awful.spawn.with_line_callback(forecast_api, {
-    stdout = function(data)
-      local forecast = json.decode(data)
-      temp.text = helpers.round(forecast.main.temp) .. "°"
-      icon_content.text = icon_map[forecast.weather[1].icon]
-      -- Stop icon getting clipped
-      icon_content.forced_width = icon_content:get_preferred_size() + 1
-    end
-  })
+   -- Init popup
+   local popup_content = wibox.layout.fixed.horizontal() 
+   local popup = popup_template(popup_content, nil, beautiful.popup_padding_x)
+
+    -- Set icon/text
+    get_forecast = awful.spawn.with_line_callback(forecast_api, {
+      stdout = function(data)
+        local forecast = json.decode(data)
+        temp.text = helpers.round(forecast.current.temp) .. "°"
+        icon_content.text = icon_map[forecast.current.weather[1].icon]
+        -- Stop icon getting clipped
+        icon_content.forced_width = icon_content:get_preferred_size() + 1
+
+        -- Popup content
+        popup_content:reset()
+        local number_of_hours = 5
+        for i = 1, number_of_hours do
+          local time = wibox.widget {
+            widget = wibox.container.margin,
+            bottom = dpi(6),
+            {
+              widget = wibox.container.background,
+              fg = beautiful.fg_darker,
+              {
+                widget = wibox.widget.textbox,
+                text = os.date("%H:%M", forecast.hourly[i].dt),
+                align = "center"
+              }   
+            }                             
+          }
+          
+          local icon_and_temp = wibox.widget {
+            layout = wibox.layout.fixed.vertical,
+            spacing = beautiful.popup_line_margin * 0.75,
+            {
+              widget = wibox.widget.textbox,
+              text = icon_map[forecast.hourly[i].weather[1].icon],
+              font = helpers.icon_font(beautiful.icon_size + 12),
+              align = "center"
+            },
+            {
+              widget = wibox.widget.textbox,
+              align = "center",
+              font = helpers.font(nil, beautiful.font_size + 3),
+              markup = "<b>"..helpers.round(forecast.hourly[i].temp) .. "°</b>",
+            },                             
+          }
+
+          local wind = wibox.widget {
+            widget = wibox.container.background,
+            fg = beautiful.fg_darker,         
+            {
+              widget = wibox.widget.textbox,
+              text = helpers.round(forecast.hourly[i].wind_speed) .. "mph",
+              align = "center"
+            }, 
+          }
+
+          local section = wibox.widget {                      
+            widget = wibox.container.margin,
+            left = beautiful.popup_padding_x * 0.33,
+            right = beautiful.popup_padding_x * 0.33,
+            {
+              layout = wibox.layout.fixed.vertical,
+              spacing = beautiful.popup_line_margin * 2,
+              forced_width = beautiful.font_size * 5,
+              time,
+              icon_and_temp,
+              wind
+            }          
+          }
+          popup_content:add(section)
+        end
+      end
+    })
+
+  helpers.toggle_popup(popup, container, 5)
 
   return container
 end

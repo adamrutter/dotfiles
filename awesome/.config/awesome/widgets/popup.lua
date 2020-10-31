@@ -1,4 +1,4 @@
-local function widget(content, title)
+local function widget(content, title, x_padding)
   local heading = nil
   if title then
     heading = wibox.widget {
@@ -23,6 +23,8 @@ local function widget(content, title)
     widget = wibox.container.margin,
     top = beautiful.popup_padding_y,
     bottom = beautiful.popup_padding_y,
+    left = x_padding,
+    right = x_padding,
     content
   }
 

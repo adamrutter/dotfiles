@@ -159,4 +159,26 @@ function helpers.toggle_popup(popup, parent, parent_depth)
   end)
 end
 
+-- Change degrees to cardinal directions
+function helpers.cardinal_dir(deg)
+  if (deg > 349 or deg <= 11) then return "N"
+  elseif (deg > 11 and deg <= 34) then return "NNE"
+  elseif (deg > 34 and deg <= 56) then return "NE"
+  elseif (deg > 56 and deg <= 79) then return "ENE"
+  elseif (deg > 79 and deg <= 101) then return "E"
+  elseif (deg > 101 and deg <= 124) then return "ESE"
+  elseif (deg > 123 and deg <= 146) then return "SE"
+  elseif (deg > 146 and deg <= 169) then return "SSE"
+  elseif (deg > 169 and deg <= 191) then return "S"
+  elseif (deg > 191 and deg <= 213) then return "SSW"
+  elseif (deg > 213 and deg <= 236) then return "SW"
+  elseif (deg > 236 and deg <= 259) then return "WSW"
+  elseif (deg > 259 and deg <= 281) then return "W"
+  elseif (deg > 281 and deg <= 303) then return "WNW"
+  elseif (deg > 303 and deg <= 326) then return "NW"
+  elseif (deg > 326 and deg <= 349) then return "NNW"
+  else return "?"
+  end
+end
+
 return helpers
