@@ -144,4 +144,19 @@ function helpers.split_str(inputstr, sep)
   return t
 end
 
+-- Show/hide a popup
+function helpers.toggle_popup(popup, parent, parent_depth)
+  parent:connect_signal("mouse::enter", function()
+    awful.placement.next_to(popup, {
+      preferred_anchors = "middle",
+      geometry = mouse.current_widget_geometries[parent_depth],
+      offset = { y = beautiful.wibar_popup_offset}
+    })
+    popup.visible = true
+  end)
+  parent:connect_signal("mouse::leave", function()
+    popup.visible = false
+  end)
+end
+
 return helpers
