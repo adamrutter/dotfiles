@@ -49,7 +49,7 @@ local function widget(s)
 
   -- Popup
   local popup_content = wibox.layout.fixed.vertical() 
-  local popup = popup_template(popup_content)
+  local popup = popup_template(popup_content, nil, 0)
 
   for key, value in pairs(awful.layout.layouts) do
     local line = wibox.widget {

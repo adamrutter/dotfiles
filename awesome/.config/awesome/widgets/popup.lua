@@ -23,8 +23,11 @@ local function widget(content, title, x_padding)
     widget = wibox.container.margin,
     top = beautiful.popup_padding_y,
     bottom = beautiful.popup_padding_y,
-    left = x_padding,
-    right = x_padding,
+    -- Left/right padding is done like this so menu items can be highlighted
+    -- without having margins. In that case, padding will be handled in the
+    -- widget
+    left = x_padding or beautiful.popup_padding_x,
+    right = x_padding or beautiful.popup_padding_x,
     content
   }
 

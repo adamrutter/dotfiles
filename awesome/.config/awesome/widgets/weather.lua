@@ -56,7 +56,7 @@ local function widget()
 
    -- Init popup
    local popup_content = wibox.layout.fixed.horizontal() 
-   local popup = popup_template(popup_content, nil, beautiful.popup_padding_x)
+   local popup = popup_template(popup_content)
 
     -- Set icon/text
     get_forecast = awful.spawn.with_line_callback(forecast_api, {
