@@ -26,46 +26,67 @@ local function widget()
   local popup_content = wibox.layout.fixed.vertical() 
   local popup = popup_template(popup_content)
 
-  local function fs_bar(mount_point, free, usage, type)   
-    local name = wibox.widget.textbox()
-    name.forced_width = 100
-    name.text = mount_point
+  local function fs_bar(mount_point, free, usage, type, total)
+    local function fs_icon(mount_point)
+      if mount_point:match("^/$") then return ""
+      elseif mount_point:match("games") then return ""
+      elseif mount_point:match("home") then return ""
+      elseif mount_point:match("ntfs") then return ""
+      end
+    end
+    
+    local icon = wibox.widget {
+      widget = wibox.widget.textbox,
+      text = fs_icon(mount_point),
+      font = helpers.icon_font(20, "light"),
+      align = "center",
+      forced_width = 34
+    }
 
-    local bar = wibox.widget.progressbar()
+    local name = wibox.widget {
+      widget = wibox.widget.textbox,
+      text = mount_point,
+    }
+
     local bar_width = 150
-    bar.value = tonumber(usage:sub(1, -2))
-    bar.max_value = 100
-    bar.forced_height = 5
-    bar.forced_width = bar_width
-
-    local free_space = wibox.widget.textbox()
-    free_space.forced_width = bar_width
-    free_space.text = free .. " free"
-    free_space.align = "center"
-    free_space.font = helpers.font(nil, beautiful.font_size - 2)
-
-    local free_space_container = wibox.container.background()
-    free_space_container.fg = helpers.calculate_fg(beautiful.bg_normal)
-    free_space_container.widget = free_space
-
-    local bar_container = wibox.widget {
-      layout = wibox.layout.stack,
-      bar,
-      free_space_container
+    local bar = wibox.widget {
+      widget = wibox.widget.progressbar,
+      value = tonumber(usage:sub(1, -2)),
+      max_value = 100,
+      forced_height = 14,
+      forced_width = bar_width
     }
 
-    local container = wibox.container.margin()
-    container.top = beautiful.popup_line_margin
-    container.bottom = beautiful.popup_line_margin
-    container.left = beautiful.popup_padding_x
-    container.right = beautiful.popup_padding_x
-    container.widget = {
-      layout = wibox.layout.fixed.horizontal,
-      spacing = beautiful.wibar_popup_spacer * 0.5,
-      name,
-      bar_container
+    local free_space = wibox.widget {
+      widget = wibox.container.background,
+      fg = beautiful.fg_darker,
+      {
+        widget = wibox.widget.textbox,
+        forced_width = bar_width,
+        text = free .. " free of " .. total,
+        font = helpers.font(nil, beautiful.font_size - 1)
+      }     
     }
-    return container
+
+    return wibox.widget {
+      widget = wibox.container.margin(),
+      top = beautiful.popup_line_margin * 1.25,
+      bottom = beautiful.popup_line_margin * 1.25,
+      left = beautiful.popup_padding_x,
+      right = beautiful.popup_padding_x,
+      {
+        layout = wibox.layout.fixed.horizontal,
+        spacing = beautiful.wibar_popup_spacer * 0.75,
+        icon,
+        {
+          layout = wibox.layout.fixed.vertical,
+          spacing = beautiful.wibar_popup_spacer * 0.25,
+          name,
+          bar,
+          free_space
+        }       
+      }
+    }
   end
 
   local function popup_update()
@@ -75,7 +96,7 @@ local function widget()
       for i, line in pairs(lines) do
         if line:match(".*/dev/sd.*") then
           local data = helpers.split_str(line, "%s")
-          popup_content:add(fs_bar(data[7], data[5], data[6], data[2]))
+          popup_content:add(fs_bar(data[7], data[5], data[6], data[2], data[3]))
         end
       end
     end)

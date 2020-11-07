@@ -117,8 +117,8 @@ theme.progressbar_fg = theme.icon_color
 theme.progressbar_paddings = 0
 theme.progressbar_border_width = 1
 theme.progressbar_border_color = theme.border_color
-theme.progressbar_shape = gears.shape.rounded_bar
-theme.progressbar_bar_shape = gears.shape.rounded_bar
+-- theme.progressbar_shape = gears.shape.rounded_bar
+-- theme.progressbar_bar_shape = gears.shape.rounded_bar
 
 -- Popups
 theme.wibar_popup_offset = theme.useless_gap * -1
