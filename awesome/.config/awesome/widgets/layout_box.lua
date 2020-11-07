@@ -68,7 +68,7 @@ local function widget(s)
     }
 
     -- Highlight current layout
-    awesome.connect_signal("layout_changed", function()
+    local function highlight_current_layout(value)
       if (value.name == awful.layout.get(s).name) then
         line.bg = beautiful.accent.hue_500
         line.fg = beautiful.colors.white
@@ -76,6 +76,14 @@ local function widget(s)
         line.bg = nil
         line.fg = nil
       end
+    end
+
+    awesome.connect_signal("layout_changed", function()
+      highlight_current_layout(value)
+    end)
+
+    awesome.connect_signal("tag_changed", function()
+      highlight_current_layout(value)
     end)
 
     popup_content:add(line)

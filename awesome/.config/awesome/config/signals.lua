@@ -11,3 +11,10 @@ end)
 tag.connect_signal("property::layout", function() 
   awesome.emit_signal("layout_changed")
 end)
+
+-- Emit a signal when the tag changes
+tag.connect_signal("property::selected", function(tag)
+  if (tag.selected == true) then
+    awesome.emit_signal("tag_changed")
+  end
+end)
