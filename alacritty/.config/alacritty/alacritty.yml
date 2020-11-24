@@ -1,0 +1,16 @@
+window:
+  title: Terminal
+  dynamic_title: false
+  padding:
+    x: 20
+    y: 20
+font:
+  size: 12.0
+  glyph_offset:
+    x: 0
+    y: 2
+  offset:
+    # Letter spacing
+    x: 0
+    # Line spacing
+    y: 5
