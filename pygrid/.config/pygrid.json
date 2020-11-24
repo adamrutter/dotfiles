@@ -1,0 +1,34 @@
+{
+  "default": {
+    "maxheight": 0.67,
+    "maxwidth": 0.68,
+    "minheight": 0.33,
+    "minwidth": 0.32,
+    "padding": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "snaptocursor": false,
+    "spacing": 10,
+    "xdivs": 6,
+    "ydivs": 2
+  },
+  "keys": {
+    "accelerator": "<Alt>",
+    "commands": {
+      "KP_0": "maximize",
+      "z": "bottomleft",
+      "x": "bottom",
+      "c": "bottomright",
+      "a": "left",
+      "s": "middle",
+      "d": "right",
+      "q": "topleft",
+      "w": "top",
+      "e": "topright",
+      "KP_Enter": "cycle-monitor"
+    }
+  }
+}
