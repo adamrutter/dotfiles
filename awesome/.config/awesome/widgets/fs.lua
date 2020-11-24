@@ -40,7 +40,7 @@ local function widget()
       text = fs_icon(mount_point),
       font = helpers.icon_font(20, "light"),
       align = "center",
-      forced_width = 34
+      forced_width = 35
     }
 
     local name = wibox.widget {
@@ -72,8 +72,6 @@ local function widget()
       widget = wibox.container.margin(),
       top = beautiful.popup_line_margin * 1.25,
       bottom = beautiful.popup_line_margin * 1.25,
-      left = beautiful.popup_padding_x,
-      right = beautiful.popup_padding_x,
       {
         layout = wibox.layout.fixed.horizontal,
         spacing = beautiful.wibar_popup_spacer * 0.75,
