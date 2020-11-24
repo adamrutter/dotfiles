@@ -1,2 +1,0 @@
--- Mouse bindings for the root window (desktop)
--- root.buttons(gears.table.join())
