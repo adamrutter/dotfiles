@@ -57,6 +57,15 @@
 /* Tabs */
 /* ---- */
 
+/* Pre/post tab list spacers */
+.titlebar-spacer[type="pre-tabs"] {
+  display: none;
+}
+
+.titlebar-spacer[type="post-tabs"] {
+  width: 10px !important;
+}
+
 /*  Tab loading animation in tab */
 .tab-throbber {
   filter: grayscale(100%);
