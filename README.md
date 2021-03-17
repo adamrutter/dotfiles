@@ -2,8 +2,6 @@
 
 My dotfiles for Linux.
 
-![A screenshot of my desktop](screenshot.png)
-
 ## Installation
 
 The dotfiles are managed by [GNU Stow](https://www.gnu.org/software/stow/), so installation and management is simple!
