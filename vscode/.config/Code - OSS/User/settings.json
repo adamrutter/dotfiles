@@ -1,9 +1,7 @@
 {
-  "window.zoomLevel": 0,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "none",
   "editor.fontFamily": "monospace, 'Droid Sans Fallback'",
-  "editor.fontSize": 16,
   "editor.tabSize": 2,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.accessibilitySupport": "off",
@@ -48,5 +46,15 @@
   ],
   "editor.renameOnType": true,
   "editor.renderControlCharacters": false,
-  "breadcrumbs.enabled": true
+  "breadcrumbs.enabled": true,
+  "editor.lineHeight": 21,
+  "editor.fontSize": 15,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
