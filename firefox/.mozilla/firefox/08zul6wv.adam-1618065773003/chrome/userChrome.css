@@ -28,10 +28,24 @@
   padding-right: calc(var(--toolbarbutton-outer-padding) + 1px) !important;
 }
 
-/* Dark mode addon */
-#addon_darkreader_org-browser-action .toolbarbutton-icon {
-  list-style-image: url("./icons/lightbulb-regular.svg");
+/* Overflow menu button */
+#nav-bar-overflow-button {
+  display: none !important;
 }
+
+/* Dark mode addon */
+@media (prefers-color-scheme: light) {
+  #addon_darkreader_org-browser-action .toolbarbutton-icon {
+    list-style-image: url("./icons/lightbulb-regular-dark.svg");
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #addon_darkreader_org-browser-action .toolbarbutton-icon {
+    list-style-image: url("./icons/lightbulb-regular-light.svg");
+  }
+}
+
 
 /* ------- */
 /* URL bar */
@@ -98,7 +112,28 @@
   display: none !important;
 }
 
+/* Selected tab highlighted border */
+@media (prefers-color-scheme: light) {
+  .tabbrowser-tab[selected="true"] .tab-line {
+  background-color: #ffa300 !important;
+}
+}
+
+@media (prefers-color-scheme: dark) {
+  .tabbrowser-tab[selected="true"] .tab-line {
+  background-color: #FBB86C !important;
+}
+}
+
 /* Selected tab text */
-.tabbrowser-tab[selected="true"] {
-  color: white !important;
+@media (prefers-color-scheme: light) {
+  .tabbrowser-tab[selected="true"] {
+    color: hsl(0, 0%, 1%) !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .tabbrowser-tab[selected="true"] {
+    color: white !important;
+  }
 }
