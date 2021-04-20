@@ -4,3 +4,4 @@ atom/.atom/packages/*
 rofi/.config/rofi/accent.rasi
 gtk/.config/gtk-3.0/bookmarks
 bash/.api_keys
+fish/.config/fish/fish_variables
