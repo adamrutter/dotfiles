@@ -14,7 +14,7 @@ set -gx EDITOR vim
 set -gx WINEDLLOVERRIDES winemenubuilder.exe=d
 
 # Pywal
-cat ~/.cache/wal/sequences
+cat /home/adam/.cache/wal/sequences
 
 # Set fish color scheme to terminal colori scheme
 set -U fish_color_autosuggestion      brblack
