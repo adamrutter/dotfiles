@@ -73,7 +73,7 @@
 
 /* Pre/post tab list spacers */
 .titlebar-spacer[type="pre-tabs"] {
-  display: none;
+  width: 2px !important;
 }
 
 .titlebar-spacer[type="post-tabs"] {
