@@ -1,0 +1,168 @@
+# i3 config file (v4)
+
+#
+# Variables
+#
+
+set_from_resource $foreground i3wm.foreground
+set_from_resource $background i3wm.background
+set $border #262e2e
+set_from_resource $accent i3wm.accent
+set_from_resource $alert i3wm.color1
+
+#
+# Theme
+#
+
+# Font
+# Set larger than the font used in the title bar, so there is padding
+font pango:Ubuntu 14
+
+#Colours
+#class                  border  backgr.     text        indicator child_border
+client.focused          $border $accent     #ffffff     $accent   $border
+client.focused_inactive $border $accent     #ffffff     #484e50   $border
+client.unfocused        $border $background $foreground #292d2e   $border
+client.urgent           $border $alert      #ffffff     $alert    $border
+client.background       $background
+
+# Gaps and borders
+gaps inner 35
+for_window [class="^.*"] border pixel 0
+
+# Window title bar
+# Set the title font smaller than the font defined above, so there is padding
+for_window [class="^.*"] title_format "<span font='10'>  %title</span>"
+
+#
+# Workspaces
+#
+
+# Browser
+set $ws1 "1: "
+# Code
+set $ws2 "2: "
+# Files
+set $ws3 "3: "
+# Graphics
+set $ws4 "4: "
+# Media
+set $ws5 "5: "
+# Games
+set $ws6 "6: "
+# Other
+set $ws7 "7: "
+# Other
+set $ws8 "8: "
+# Torrents
+set $ws9 "9: "
+# Audio
+set $ws10 "10: "
+
+workspace_auto_back_and_forth yes
+
+#
+# Window rules
+#
+
+assign [class="^Atom$"] $ws2
+assign [class="^Nemo$"] $ws3
+assign [class="Gimp"] $ws4
+assign [class="^Blender$"] $ws4
+assign [class="^Pencil$"] $ws4
+assign [class="^Inkscape$"] $ws4
+assign [class="^vlc$"] $ws5
+assign [class="^Deluge-gtk$"] $ws9
+assign [class="^ck2$"] $ws6
+assign [class="^VisualBoyAdvance$"] $ws6
+assign [class="^Gvba$"] $ws6
+assign [class="^KSP.x86_64$"] $ws6
+assign [instance="^nocashgba.exe$"] $ws6
+for_window [instance="^nocashgba.exe$"] floating enable
+assign [class="^Pcsxr$"] $ws6
+assign [class="^net-minecraft-bootstrap-Bootstrap$"] $ws6
+assign [class="Minecraft"] $ws6
+assign [class="^factorio$"] $ws6
+assign [class="^Steam$"] $ws6
+assign [class="figma"] $ws4
+assign [class="^fw.x86_64$"] $ws6
+assign [class="^Desmume$"] $ws6
+for_window [title="^DeSmuME - Running$"] floating enable
+#for_window [class="Spotify"] move to workspace $ws10
+assign [class="^Rhythmbox$"] $ws10
+assign [class="^retroarch$"] $ws6
+for_window [class="^retroarch$"] floating enable
+assign [class="^Lutris$"] $ws6
+assign [title="^Banished$"] $ws6
+assign [class="^dolphin-emu$"] $ws6
+assign [class="^code-oss$"] $ws2
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+#
+# Bindings
+#
+
+set $mod Mod4
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+space exec ~/.config/rofi/menu/launch.sh
+bindsym $mod+q kill
+bindsym $mod+Shift+f fullscreen toggle
+floating_modifier $mod
+bindsym $mod+Shift+r exec "i3-msg restart && pkill picom && sleep 1 && /home/adam/bin/picom"
+bindsym $mod+Shift+Control+e exit
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+i focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+i move up
+bindsym $mod+Shift+l move right
+bindsym $mod+a resize shrink width 5 px or 5 ppt
+bindsym $mod+s resize grow height 5 px or 5 ppt
+bindsym $mod+w resize shrink height 5 px or 5 ppt
+bindsym $mod+d resize grow width 5 px or 5 ppt
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+shift+space layout toggle splith splitv tabbed
+bindsym $mod+t floating toggle
+bindsym $mod+Shift+t focus mode_toggle
+bindsym $mod+shift+a focus parent
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+F1 workspace $ws11
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+F1 move container to workspace $ws11
+bindsym $mod+Tab workspace next
+bindsym $mod+shift+Tab workspace prev
+bindsym --release button2 kill
+bindsym $mod+c move position center
+bindsym Scroll_Lock exec --no-startup-id flash_window
+bindsym $mod+plus exec ~/bin/toggle-i3-gaps.sh
+
+#
+# Status bar
+#
+
+#exec_always --no-startup-id killall polybar; sleep 1
+#exec_always --no-startup-id polybar bottom
+exec_always --no-startup-id ~/bin/polybar.sh
