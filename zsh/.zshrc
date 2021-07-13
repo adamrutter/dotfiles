@@ -49,3 +49,6 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Set pywal colours
 (cat ~/.cache/wal/sequences &)
+
+# API keys
+source ~/.api_keys
