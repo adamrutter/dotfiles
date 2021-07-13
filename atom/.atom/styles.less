@@ -1,0 +1,166 @@
+@import 'ui-variables';
+
+// Accent colour
+@accent: #54a87b;
+
+// Bracket matcher, find results, double-click select
+atom-text-editor.editor .highlight .region:not(.selection) {
+  border: 1px solid fade(@text-color, 50%);
+  border-radius: 3px;
+}
+
+// Bracket matcher
+.bracket-matcher .region {
+  background-color: @background-color-selected;
+}
+
+// Linter gutter
+[gutter-name="linter-ui-default"] {
+  left: -1em !important;
+  position: absolute !important;
+}
+
+// Linter error icon
+[gutter-name="linter-ui-default"] .linter-gutter::before {
+  content: '!';
+  font-weight: 900;
+  left: 1em !important;
+  position: relative !important;
+  top: 0 !important;
+}
+
+// Linter icon
+atom-text-editor .linter-gutter.icon::before {
+  position: relative;
+  top: 1px;
+}
+
+// Line numbers
+atom-text-editor .line-number {
+  padding-left: 15px;
+  padding-right: 5px;
+  opacity: 0.5;
+  text-align: right;
+}
+
+// Current/selected line number
+atom-text-editor .gutter .line-number.cursor-line {
+  background-color: @text-color-subtle;
+  color: @text-color-selected;
+}
+
+// Fold icon
+atom-text-editor .line-number .icon-right {
+  padding: 0;
+  position: relative;
+  right: -2px;
+}
+
+// Fold marker
+atom-text-editor .fold-marker::after {
+  content: ' ... ';
+  font-family: var(--editor-font-family);
+  font-size: 1em;
+  padding: 0;
+}
+
+// Tab bar icons
+.tab-bar .tab .title.title:before {
+  font-size: 2em;
+  left: 3px;
+  line-height: 0.5;
+  margin-right: 0;
+  margin-top: 9px;
+  position: absolute;
+  vertical-align: top;
+}
+
+atom-workspace.theme-genesis-ui .tab-bar .tab .title::before, atom-workspace.theme-one-dark-ui .tab-bar .tab .title::before, atom-workspace.theme-one-light-ui .tab-bar .tab .title::before {
+  margin-top: 9px;
+}
+
+// Tab title overflow
+.tab-bar .tab .title,
+.tab-bar .tab.active .title {
+  padding: 0 1.7em;
+}
+
+// Active tab indicator
+.tab.active:before {
+  height: 2px;
+  left: 0px !important;
+  width: 100% !important;
+}
+
+// Side bar icons
+atom-workspace .entries.list-tree .file .icon::before {
+  font-size: 2em;
+  margin-right: 0.4em;
+  position: relative;
+  top: 0;
+}
+
+// Tree view icons
+.list-group .icon::before, .list-tree .icon::before {
+  top: -2px;
+}
+
+// Properly align file icons and folders in tree view
+.list-tree.has-collapsable-children li.list-item {
+  margin-left: 1em;
+}
+
+// Repo icon
+.icon-repo {
+  filter: grayscale(1) !important;
+}
+
+// Linter tooltip
+#linter-tooltip linter-message {
+  padding: 7px;
+}
+
+#linter-tooltip linter-message:last-child {
+  border-bottom: none !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.linter-ui-default-fix-btn {
+  background: rgba(0, 0, 0, 0.05);
+  color: @text-color;
+}
+
+// Gutter
+.gutter.line-numbers {
+  background: fade(@syntax-selection-color, 15%) !important;
+}
+
+.line-number.folded {
+  filter: brightness(1.1);
+}
+
+// Git gutter line numbers
+.gutter .line-number.git-line-ignored,
+.gutter .line-number.git-line-added,
+.gutter .line-number.git-line-modified,
+.gutter .line-number.git-line-removed,
+.gutter .line-number.git-line-renamed {
+  padding-left: 13px !important;
+}
+
+// Hide first indent guide
+.line .indent-guide:first-of-type {
+  visibility: hidden !important;
+}
+
+// Cursor
+atom-text-editor.editor .cursor {
+  border-color: @accent;
+  border-width: 2px;
+}
+
+// Status bar linter icons
+.status-bar a.icon-info::before {
+  position: relative;
+  top: 1px;
+}
