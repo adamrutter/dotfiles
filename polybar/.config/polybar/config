@@ -1,0 +1,130 @@
+[variables]
+accent = ${xrdb:accent}
+alert = ${xrdb:color1}
+background = ${xrdb:background}
+background-alt = ${xrdb:background}
+foreground = ${xrdb:color15}
+foreground-bright = #ffffff
+foreground-dim = ${xrdb:foreground-alt-2}
+foreground-dark = ${xrdb:foreground-alt}
+transparent = #00000000
+padding = 3
+
+[base]
+background = ${variables.background}
+enable-ipc = true
+font-0 = sans serif:size=10;1
+font-1= FontAwesome5ProSolid:size=9;1
+font-2= Material Design Icons:size=11;2
+font-3= FontAwesome5ProSolid:size=13;3
+font-4= FontAwesome5ProSolid:size=10;1
+font-5= Material Design Icons:size=12;2
+font-6= FontAwesome5ProSolid:size=8;1
+foreground = ${variables.foreground}
+height = 30
+module-margin-right = 1
+padding = 1
+
+[bar/top]
+border-top-size = 2
+border-top-color = ${variables.accent}
+inherit = base
+modules-center = i3
+modules-left = temperature-cpu temperature-gpu memory filesystem
+modules-right = player-mpris-tail phone openweathermap volume time
+wm-restack = i3
+
+[module/temperature-cpu]
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+interval = 5
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input
+label = %{T6}%{F#a7adba}﻽%{F-}%{T-}  %temperature-c%°
+thermal-zone = 0
+type = internal/temperature
+units = false
+warn-temperature = 999
+
+[module/temperature-gpu]
+exec = ~/.config/polybar/scripts/gpu-temp.sh
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+interval = 5
+label = %{F#a7adba}%{T6}%{T-}%{F-}  %output%°
+type = custom/script
+units = false
+
+[module/memory]
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+interval = 5
+label = %{T7}%{F#a7adba}%{F-}%{T-}  %percentage_used%%
+type = internal/memory
+
+[module/filesystem]
+format-mounted-background = ${variables.background-alt}
+format-mounted-padding = ${variables.padding}
+interval = 30
+label-mounted = %{F#a7adba}%{F-}  %percentage_used%%
+mount-0 = /home
+type = internal/fs
+
+[module/i3]
+enable-scroll = false
+label = %{T4}%name%%{T-}
+label-focused = ${self.label}
+label-focused-foreground = ${variables.foreground-bright}
+label-focused-padding = ${variables.padding}
+label-unfocused = ${self.label}
+label-unfocused-foreground = ${variables.foreground-dark}
+label-unfocused-padding = ${variables.padding}
+label-urgent = ${self.label}
+label-urgent-background = ${variables.alert}
+label-urgent-foreground = ${variables.foreground-bright}
+label-urgent-padding = ${variables.padding}
+strip-wsnumbers = true
+type = internal/i3
+
+[module/player-mpris-tail]
+click-left = ~/.config/polybar/scripts/player-mpris-tail.py play-pause &
+click-middle = ~/.config/polybar/scripts/player-mpris-tail.py previous &
+click-right = ~/.config/polybar/scripts/player-mpris-tail.py next &
+exec = ~/.config/polybar/scripts/player-mpris-tail.py --icon-playing '' --icon-paused '' --truncate-text '...' -f '%{F#a7adba}{icon}%{F-}  {:artist:t12:{artist} -:}{:artist: :}{:t20:{title}:}'
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+tail = true
+type = custom/script
+
+[module/phone]
+exec = ~/.config/polybar/scripts/phone.sh
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+label = %output%
+type = custom/script
+
+[module/openweathermap]
+exec = ~/.config/polybar/scripts/openweathermap.sh
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+interval = 600
+label = %output%
+type = custom/script
+
+[module/volume]
+click-left = ~/.config/polybar/scripts/volume.sh --mute &
+exec = ~/.config/polybar/scripts/volume.sh
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+label = %output%
+scroll-down = ~/.config/polybar/scripts/volume.sh --down &
+scroll-up = ~/.config/polybar/scripts/volume.sh --up &
+tail = true
+type = custom/script
+
+[module/time]
+format-background = ${variables.background-alt}
+format-padding = ${variables.padding}
+interval = 5
+label =%{F#a7adba} %{F-}  %time%
+time = %H:%M
+type = internal/date
