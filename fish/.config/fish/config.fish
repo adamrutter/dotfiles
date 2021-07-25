@@ -44,3 +44,13 @@ set -U fish_pager_color_description   yellow
 set -U fish_pager_color_prefix        'white' '--bold' '--underline'
 set -U fish_pager_color_progress      'brwhite' '--background=cyan'
 
+# pure prompt config
+# https://github.com/pure-fish/pure 
+set -U pure_symbol_prompt \>
+set -U pure_symbol_reverse_prompt \<
+set -U pure_symbol_git_unpulled_commits ↓
+set -U pure_symbol_git_unpushed_commits ↑
+set -U pure_symbol_git_stash %
+set -U pure_color_success green
+set -U pure_color_mute white
+
