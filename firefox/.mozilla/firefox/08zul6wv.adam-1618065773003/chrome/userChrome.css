@@ -16,11 +16,17 @@
   display: none !important;
 }
 
+/* Container for some buttons on the left side of the bar */
+#stop-reload-button {
+  padding: 0 var(--toolbarbutton-outer-padding);
+}
+
 /* Container for some buttons on the far right of the bar */
 #PanelUI-button {
   border-inline-start-width: 0px !important;
   margin-inline-start: 0px !important;
-  padding-inline-start: 0px !important;
+  margin-inline-end: var(--toolbarbutton-outer-padding) !important;
+  padding-inline-start: var(--toolbarbutton-outer-padding) !important;
 }
 
 #PanelUI-menu-button {
@@ -53,7 +59,7 @@
 
 /* URL bar container */
 #urlbar-container {
-  margin-inline-end: 0px !important;
+  margin-inline-end: var(--toolbarbutton-outer-padding) !important;
   margin-inline-start: 0px !important;
 }
 
