@@ -4,14 +4,6 @@ My dotfiles for Linux.
 
 ## Installation
 
-The dotfiles are managed by [GNU Stow](https://www.gnu.org/software/stow/), so installation and management is simple!
+Clone, `cd` to the repo, and `stow fish`.
 
-### Download
-
-`git clone https://github.com/adamrutter/dotfiles.git`
-
-### Install a specific configuration
-
-Change to the dotfiles directory, and:
-
-`stow awesome`
+TF2 requires `stow tf2 -t /mnt/games/team-fortress-2`.
